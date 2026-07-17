@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "КарьерГид",
+    "slug": "careerguid",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0a0a1a"
+    },
+    "android": {
+      "package": "com.careerguid.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#6366f1"
+      },
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+    },
+    "ios": {
+      "bundleIdentifier": "com.careerguid.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "КарьерГид использует геолокацию, чтобы подсказывать курсы и места рядом с тобой."
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "КарьерГид использует геолокацию, чтобы подсказывать курсы и места рядом с тобой."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "careerguid"
+      }
+    }
+  }
+}

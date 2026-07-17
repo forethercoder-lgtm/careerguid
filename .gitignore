@@ -1,0 +1,13 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+.env
+server/.env
+*.env
+server/users.json
+.DS_Store
+.claude/settings.local.json
+.firebase/
+mobile/.expo/
+tmp_auth.json

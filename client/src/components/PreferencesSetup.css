@@ -1,0 +1,219 @@
+.prefs-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(ellipse at 30% 30%, rgba(99,102,241,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 70%, rgba(16,185,129,0.1) 0%, transparent 60%);
+}
+
+.prefs-card {
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  animation: fadeIn 0.5s ease;
+}
+
+.prefs-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.prefs-greeting {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.prefs-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.prefs-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.prefs-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  position: relative;
+}
+.prefs-progress::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--border);
+}
+.prefs-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+.prefs-dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-faint);
+  transition: all 0.3s;
+}
+.prefs-step.active .prefs-dot {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 0 15px rgba(99,102,241,0.5);
+}
+.prefs-step.done .prefs-dot {
+  background: var(--success);
+  border-color: transparent;
+  color: white;
+}
+.prefs-step span {
+  font-size: 11px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.prefs-step.active span { color: var(--text); font-weight: 600; }
+.prefs-step.done span { color: var(--success); }
+
+.prefs-body {
+  min-height: 220px;
+  margin-bottom: 28px;
+}
+
+.prefs-question {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.prefs-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  padding: 9px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.chip:hover {
+  border-color: var(--border-bright);
+  color: var(--text);
+}
+.chip.selected {
+  background: rgba(99,102,241,0.15);
+  border-color: var(--primary);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.radio-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+.radio-btn:hover {
+  border-color: var(--border-bright);
+  color: var(--text);
+}
+.radio-btn.selected {
+  background: rgba(99,102,241,0.1);
+  border-color: var(--primary);
+  color: var(--text);
+  font-weight: 600;
+}
+.radio-circle {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.radio-btn.selected .radio-circle {
+  border-color: var(--primary);
+  background: rgba(99,102,241,0.15);
+}
+
+.prefs-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.prefs-textarea,
+.prefs-textinput {
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px 16px;
+  resize: vertical;
+}
+.prefs-textarea:focus,
+.prefs-textinput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
