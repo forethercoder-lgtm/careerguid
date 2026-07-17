@@ -7,7 +7,7 @@ server/.env
 *.env
 server/users.json
 .DS_Store
-.claude/settings.local.json
+.claude/
 .firebase/
 mobile/.expo/
 tmp_auth.json
