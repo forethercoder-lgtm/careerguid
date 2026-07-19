@@ -1,4 +1,10 @@
 require('dotenv').config();
+
+if (!process.env.JWT_SECRET) {
+  console.error('❌ JWT_SECRET не задан в переменных окружения — сервер не может безопасно работать без него.');
+  process.exit(1);
+}
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -19,7 +25,7 @@ function requireAuth(req, res, next) {
   const header = req.headers.authorization;
   if (!header) return res.status(401).json({ error: 'Требуется авторизация' });
   try {
-    const { userId } = jwt.verify(header.replace('Bearer ', ''), process.env.JWT_SECRET || 'careerguid_jwt_secret_2026');
+    const { userId } = jwt.verify(header.replace('Bearer ', ''), process.env.JWT_SECRET);
     req.userId = userId;
     next();
   } catch {

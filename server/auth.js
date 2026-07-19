@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { findByEmail, findById, createUser, updateUser } = require('./db');
 
 const router = express.Router();
-const SECRET = process.env.JWT_SECRET || 'careerguid_jwt_secret_2026';
+const SECRET = process.env.JWT_SECRET;
 
 function sign(userId) {
   return jwt.sign({ userId: String(userId) }, SECRET, { expiresIn: '30d' });
