@@ -21,3 +21,19 @@ export async function apiDailyTasks(token, items, goal) {
 export async function apiSuggestLocal(token, { lat, lon, city }, topic) {
   return callServer('/api/suggest-local', token, { lat, lon, city, topic });
 }
+
+export async function apiOrientationChat(token, messages) {
+  return callServer('/api/orientation-chat', token, { messages });
+}
+
+export async function apiSuggestSpecialties(token, lastMessage) {
+  return callServer('/api/suggest-specialties', token, { lastMessage });
+}
+
+export async function apiSuggestUniversities(token, { specialty, strategy, countries, educationLevel }) {
+  return callServer('/api/suggest-universities', token, { specialty, strategy, countries, educationLevel });
+}
+
+export async function apiGenerateStarterPlan(token, { specialty, university, goal }) {
+  return callServer('/api/generate-starter-plan', token, { specialty, university, goal });
+}

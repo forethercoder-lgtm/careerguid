@@ -7,6 +7,8 @@ import WelcomeScreen from './src/screens/WelcomeScreen';
 import AuthScreen from './src/screens/AuthScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import PlanScreen from './src/screens/PlanScreen';
+import OrientationChatScreen from './src/screens/OrientationChatScreen';
+import OrientationResultsScreen from './src/screens/OrientationResultsScreen';
 import TasksScreen from './src/screens/TasksScreen';
 
 const Stack = createNativeStackNavigator();
@@ -20,6 +22,8 @@ export default function App() {
           <Stack.Screen name="Auth" component={AuthScreen} />
           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
           <Stack.Screen name="Plan" component={PlanScreen} />
+          <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
+          <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
           <Stack.Screen name="Tasks" component={TasksScreen} />
         </Stack.Navigator>
       </NavigationContainer>

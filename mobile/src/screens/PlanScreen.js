@@ -114,6 +114,9 @@ export default function PlanScreen({ route, navigation }) {
           <Text style={s.secondaryBtnText}>{breaking ? 'Разбиваю...' : '🤖 Разбить на дни'}</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity style={s.orientBtn} onPress={() => navigation.navigate('OrientationChat', { token, user, onboarding })}>
+        <Text style={s.orientBtnText}>🎓 Помощь с выбором</Text>
+      </TouchableOpacity>
 
       <FlatList
         data={planItems}
@@ -192,6 +195,8 @@ const s = StyleSheet.create({
   actions: { flexDirection: 'row', gap: 10, padding: 16 },
   secondaryBtn: { borderRadius: 12, paddingVertical: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: C.surface, borderWidth: 1, borderColor: C.border },
   secondaryBtnText: { color: C.text, fontWeight: '700', fontSize: 14 },
+  orientBtn: { marginHorizontal: 16, marginBottom: 4, borderRadius: 12, paddingVertical: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(245,158,11,0.12)', borderWidth: 1, borderColor: C.accent },
+  orientBtnText: { color: C.accent, fontWeight: '700', fontSize: 13 },
   list: { padding: 16, gap: 12, paddingBottom: 60 },
   empty: { alignItems: 'center', paddingTop: 60 },
   emptyIcon: { fontSize: 48, marginBottom: 12 },

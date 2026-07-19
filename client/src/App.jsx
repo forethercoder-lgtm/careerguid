@@ -6,6 +6,7 @@ import AuthScreen from './components/AuthScreen';
 import WelcomeScreen from './components/WelcomeScreen';
 import PreferencesSetup from './components/PreferencesSetup';
 import PlanBuilder from './components/PlanBuilder';
+import Orientation from './components/Orientation';
 import TaskManager from './components/TaskManager';
 import AIAssistant from './components/AIAssistant';
 import './App.css';
@@ -165,7 +166,12 @@ export default function App() {
           }} />
         )}
         {screen === 'plan' && (
-          <PlanBuilder token={token} userEmail={user?.uid} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif} />
+          <PlanBuilder token={token} userEmail={user?.uid} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
+            onOrientation={() => setScreen('orientation')} />
+        )}
+        {screen === 'orientation' && (
+          <Orientation token={token} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
+            onDone={() => setScreen('plan')} onCancel={() => setScreen('plan')} />
         )}
         {screen === 'tasks' && (
           <TaskManager userEmail={user?.uid} tasks={tasks} setTasks={setTasks} />

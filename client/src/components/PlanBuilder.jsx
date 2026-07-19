@@ -6,7 +6,7 @@ const CATS = ['📚 Учёба', '📝 Документы', '🗣 Языки', '
 
 function getToday() { return new Date().toISOString().split('T')[0]; }
 
-export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, showNotif }) {
+export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation }) {
   const [showAdd, setShowAdd] = useState(false);
   const [form, setForm] = useState({ title: '', cat: CATS[0], note: '' });
   const [breaking, setBreaking] = useState(false);
@@ -81,6 +81,7 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
         <button className="btn btn-ghost" onClick={breakIntoDays} disabled={breaking || planItems.length === 0}>
           {breaking ? 'Разбиваю...' : '🤖 Разбить на дни'}
         </button>
+        <button className="btn btn-ghost" onClick={onOrientation}>🎓 Помощь с выбором</button>
       </div>
 
       {showAdd && (
