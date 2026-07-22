@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as Location from 'expo-location';
 import { C, S } from '../theme';
-import { setJSON } from '../storage';
+import { setJSON, getJSON } from '../storage';
 
 const LEVELS = [
   { id: 'bachelor', label: 'Бакалавр' },
@@ -48,8 +48,11 @@ export default function OnboardingScreen({ navigation, route }) {
     const finalLocation = location || (manualCity.trim() ? { manualCity: manualCity.trim() } : null);
     const onboarding = { goal: goal.trim(), level, strategy, targetSchool: targetSchool.trim(), location: finalLocation };
     await setJSON(`onboarding_${user?.email}`, onboarding);
+    const existingTasks = await getJSON(`tasks_${user?.email}`) || [];
+    const hasPlan = existingTasks.some(t => t.origin === 'plan');
     setSaving(false);
-    navigation.replace('Plan', { token, user, onboarding });
+    if (hasPlan) navigation.replace('Plan', { token, user, onboarding });
+    else navigation.replace('OrientationChat', { token, user, onboarding });
   }
 
   return (

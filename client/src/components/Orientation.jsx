@@ -109,6 +109,13 @@ export default function Orientation({ token, prefs, tasks, setTasks, showNotif, 
 
       {step === 'chat' && (
         <div className="orient-chat">
+          <div className="orient-chat-header">
+            <div className="orient-chat-avatar">🎓</div>
+            <div>
+              <div className="orient-chat-name">ИИ-консультант</div>
+              <div className="orient-chat-status">онлайн</div>
+            </div>
+          </div>
           <div className="orient-messages">
             {messages.map((m, i) => (
               <div key={i} className={`orient-msg ${m.role}`}>{m.content}</div>

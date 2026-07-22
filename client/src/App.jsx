@@ -54,6 +54,10 @@ export default function App() {
     catch { return []; }
   }
 
+  function hasPlanItems(uid) {
+    return loadTasks(uid).some(t => t.origin === 'plan');
+  }
+
   function loadStreak(uid) {
     try {
       const s = localStorage.getItem(`streak_${uid}`);
@@ -92,7 +96,8 @@ export default function App() {
       showNotif('⚠️ Не удалось подключиться к серверу ИИ — попробуй обновить страницу');
     }
 
-    setScreen(prefs ? 'plan' : 'preferences');
+    if (!prefs) setScreen('preferences');
+    else setScreen(hasPlanItems(fbUser.uid) ? 'plan' : 'orientation');
   }
 
   useEffect(() => {
@@ -162,7 +167,7 @@ export default function App() {
           <PreferencesSetup user={user} onDone={(prefs) => {
             localStorage.setItem(`prefs_${user.uid}`, JSON.stringify(prefs));
             setUserPrefs(prefs);
-            setScreen('plan');
+            setScreen(hasPlanItems(user.uid) ? 'plan' : 'orientation');
           }} />
         )}
         {screen === 'plan' && (

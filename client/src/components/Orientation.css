@@ -15,13 +15,42 @@
   font-weight: 800;
 }
 
+/* WhatsApp-inspired dark chat styling */
 .orient-chat {
   display: flex;
   flex-direction: column;
   height: 60vh;
-  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
+  background: #0b141a;
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.orient-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #202c33;
+  color: #e9edef;
+}
+.orient-chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #005c4b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.orient-chat-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.orient-chat-status {
+  font-size: 12px;
+  color: #8696a0;
 }
 .orient-messages {
   flex: 1;
@@ -29,25 +58,28 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 .orient-msg {
-  max-width: 80%;
-  padding: 10px 14px;
-  border-radius: 14px;
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 10px;
   font-size: 14px;
   line-height: 1.4;
   white-space: pre-wrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 .orient-msg.assistant {
   align-self: flex-start;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: #202c33;
+  color: #e9edef;
+  border-bottom-left-radius: 3px;
 }
 .orient-msg.user {
   align-self: flex-end;
-  background: var(--primary);
-  color: white;
+  background: #005c4b;
+  color: #e9edef;
+  border-bottom-right-radius: 3px;
 }
 .orient-typing {
   opacity: 0.6;
@@ -56,22 +88,31 @@
 .orient-input-row {
   display: flex;
   gap: 8px;
-  padding: 12px;
-  border-top: 1px solid var(--border);
+  padding: 10px;
+  background: #202c33;
 }
 .orient-input-row input {
   flex: 1;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 14px;
-  color: var(--text);
+  background: #2a3942;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  color: #e9edef;
   font-family: inherit;
   font-size: 14px;
 }
 .orient-input-row input:focus {
   outline: none;
-  border-color: var(--primary);
+}
+.orient-input-row .btn-primary {
+  background: #00a884;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .orient-loading {
