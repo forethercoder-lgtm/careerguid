@@ -217,9 +217,7 @@
 }
 
 @media (max-width: 768px) {
-  .bottom-nav { display: flex; }
   .header-nav { display: none; }
-  .app-main { padding-bottom: 70px; }
   .user-name { display: none; }
   .user-badge { padding: 6px; }
   .header-streak { padding: 5px 10px; font-size: 13px; }

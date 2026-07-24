@@ -1,0 +1,9 @@
+.home-page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.home-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 12px 20px 0;
+}

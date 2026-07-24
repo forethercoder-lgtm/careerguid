@@ -37,3 +37,16 @@ export async function apiSuggestUniversities(token, { specialty, strategy, count
 export async function apiGenerateStarterPlan(token, { specialty, university, goal }) {
   return callServer('/api/generate-starter-plan', token, { specialty, university, goal });
 }
+
+export async function apiParseDocument(token, file) {
+  const formData = new FormData();
+  formData.append('document', file);
+  const res = await fetch('/api/parse-document', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+    body: formData,
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Ошибка сервера');
+  return data;
+}

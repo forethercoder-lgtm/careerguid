@@ -9,7 +9,6 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import PlanScreen from './src/screens/PlanScreen';
 import OrientationChatScreen from './src/screens/OrientationChatScreen';
 import OrientationResultsScreen from './src/screens/OrientationResultsScreen';
-import TasksScreen from './src/screens/TasksScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +23,6 @@ export default function App() {
           <Stack.Screen name="Plan" component={PlanScreen} />
           <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
           <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
-          <Stack.Screen name="Tasks" component={TasksScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

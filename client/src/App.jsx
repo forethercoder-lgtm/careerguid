@@ -5,16 +5,10 @@ import { ensureBackendSession } from './serverAuth';
 import AuthScreen from './components/AuthScreen';
 import WelcomeScreen from './components/WelcomeScreen';
 import PreferencesSetup from './components/PreferencesSetup';
-import PlanBuilder from './components/PlanBuilder';
+import Home from './components/Home';
 import Orientation from './components/Orientation';
-import TaskManager from './components/TaskManager';
 import AIAssistant from './components/AIAssistant';
 import './App.css';
-
-const NAV = [
-  { id: 'plan', icon: '📋', label: 'План' },
-  { id: 'tasks', icon: '✅', label: 'Задачи' },
-];
 
 export default function App() {
   const [screen, setScreen] = useState('loading');
@@ -97,7 +91,7 @@ export default function App() {
     }
 
     if (!prefs) setScreen('preferences');
-    else setScreen(hasPlanItems(fbUser.uid) ? 'plan' : 'orientation');
+    else setScreen(hasPlanItems(fbUser.uid) ? 'home' : 'orientation');
   }
 
   useEffect(() => {
@@ -134,19 +128,11 @@ export default function App() {
 
       {isApp && (
         <header className="app-header">
-          <div className="header-logo" onClick={() => setScreen('plan')} style={{ cursor: 'pointer' }}>
+          <div className="header-logo" onClick={() => setScreen('home')} style={{ cursor: 'pointer' }}>
             <span className="logo-icon">🎓</span>
             <span className="logo-text">КарьерГид</span>
           </div>
           {streak > 0 && <div className="header-streak">🔥 {streak}</div>}
-          <nav className="header-nav">
-            {NAV.map(n => (
-              <button key={n.id} className={`hnav-btn ${screen === n.id ? 'active' : ''}`} onClick={() => setScreen(n.id)}>
-                <span className="hnav-icon">{n.icon}</span>
-                <span className="hnav-label">{n.label}</span>
-              </button>
-            ))}
-          </nav>
           {installPrompt && (
             <button className="install-btn" onClick={installApp}>📲 Установить</button>
           )}
@@ -167,32 +153,18 @@ export default function App() {
           <PreferencesSetup user={user} onDone={(prefs) => {
             localStorage.setItem(`prefs_${user.uid}`, JSON.stringify(prefs));
             setUserPrefs(prefs);
-            setScreen(hasPlanItems(user.uid) ? 'plan' : 'orientation');
+            setScreen(hasPlanItems(user.uid) ? 'home' : 'orientation');
           }} />
         )}
-        {screen === 'plan' && (
-          <PlanBuilder token={token} userEmail={user?.uid} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
+        {screen === 'home' && (
+          <Home token={token} userEmail={user?.uid} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
             onOrientation={() => setScreen('orientation')} />
         )}
         {screen === 'orientation' && (
           <Orientation token={token} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
-            onDone={() => setScreen('plan')} onCancel={() => setScreen('plan')} />
-        )}
-        {screen === 'tasks' && (
-          <TaskManager userEmail={user?.uid} tasks={tasks} setTasks={setTasks} />
+            onDone={() => setScreen('home')} onCancel={() => setScreen('home')} />
         )}
       </main>
-
-      {isApp && (
-        <nav className="bottom-nav">
-          {NAV.map(n => (
-            <button key={n.id} className={`bnav-btn ${screen === n.id ? 'active' : ''}`} onClick={() => setScreen(n.id)}>
-              <span className="bnav-icon">{n.icon}</span>
-              <span className="bnav-label">{n.label}</span>
-            </button>
-          ))}
-        </nav>
-      )}
 
       {isApp && token && <AIAssistant token={token} />}
     </div>

@@ -9,8 +9,11 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
 const { connectDB } = require('./db');
 const authRouter = require('./auth');
+
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
 const app = express();
 const allowedOrigins = process.env.ALLOWED_ORIGIN
@@ -334,6 +337,72 @@ app.post('/api/generate-starter-plan', requireAuth, async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+app.post('/api/parse-document', requireAuth, upload.single('document'), async (req, res) => {
+  const file = req.file;
+  if (!file) return res.status(400).json({ error: 'Файл не загружен' });
+
+  let text = '';
+  try {
+    if (file.mimetype === 'application/pdf') {
+      const pdfParse = require('pdf-parse');
+      const data = await pdfParse(file.buffer);
+      text = data.text;
+    } else if (file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+      const mammoth = require('mammoth');
+      const result = await mammoth.extractRawText({ buffer: file.buffer });
+      text = result.value;
+    } else if (file.mimetype === 'text/plain') {
+      text = file.buffer.toString('utf-8');
+    } else {
+      return res.status(400).json({ error: 'Поддерживаются только PDF, DOCX и TXT файлы' });
+    }
+  } catch (e) {
+    return res.status(400).json({ error: 'Не удалось прочитать файл: ' + e.message });
+  }
+
+  if (!text.trim()) return res.status(400).json({ error: 'В документе не найден текст' });
+
+  const client = requireGroq(res);
+  if (!client) return;
+  try {
+    const truncated = text.slice(0, 8000);
+    const prompt = `Из этого документа извлеки конкретные задачи/действия для плана поступления в университет. Ответь ТОЛЬКО JSON.
+
+Текст документа:
+${truncated}
+
+{
+  "items": [
+    {
+      "title": "Конкретное действие (глагол + что делать)",
+      "category": "documents",
+      "note": "Детали, включая даты/дедлайны если они есть в документе"
+    }
+  ]
+}
+
+Категории: documents, languages, universities, essays, study, finances, other
+ВАЖНО: если в документе есть даты или дедлайны — переноси их В ТОЧНОСТИ как написано в документе, не меняй числа и месяцы.
+Ответь ТОЛЬКО JSON.`;
+
+    const response = await client.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 2000,
+      messages: [{ role: 'user', content: prompt }]
+    });
+    res.json(extractJson(response.choices[0].message.content, { items: [] }));
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError || err?.message?.includes('File too large')) {
+    return res.status(400).json({ error: 'Файл слишком большой (максимум 10 МБ)' });
+  }
+  next(err);
 });
 
 const clientBuild = path.join(__dirname, '../client/dist');

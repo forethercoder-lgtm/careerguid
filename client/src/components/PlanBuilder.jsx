@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { apiDailyTasks, apiSuggestLocal } from '../api';
+import React, { useState, useRef } from 'react';
+import { apiDailyTasks, apiSuggestLocal, apiParseDocument } from '../api';
 import './PlanBuilder.css';
 
 const CATS = ['📚 Учёба', '📝 Документы', '🗣 Языки', '💰 Финансы', '🏫 Университеты', '✍️ Эссе', '🔖 Другое'];
@@ -10,7 +10,9 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
   const [showAdd, setShowAdd] = useState(false);
   const [form, setForm] = useState({ title: '', cat: CATS[0], note: '' });
   const [breaking, setBreaking] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [localResults, setLocalResults] = useState(null); // { taskId, city, results } | { taskId, loading: true }
+  const fileInputRef = useRef(null);
 
   const planItems = tasks.filter(t => t.origin === 'plan');
 
@@ -54,6 +56,27 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
     setBreaking(false);
   }
 
+  async function handleFileChange(e) {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    setUploading(true);
+    try {
+      const data = await apiParseDocument(token, file);
+      const items = data.items || [];
+      const today = getToday();
+      const newItems = items.map((it, i) => ({
+        id: Date.now() + i, title: it.title, cat: it.category || 'other',
+        note: it.note || '', origin: 'plan', done: false, createdAt: today,
+      }));
+      setTasks(existing => [...existing, ...newItems.filter(nt => !existing.some(e => e.title === nt.title))]);
+      showNotif?.(`✅ Из документа добавлено ${items.length} задач в план`);
+    } catch (e) {
+      showNotif?.('⚠️ Не удалось прочитать документ: ' + e.message);
+    }
+    setUploading(false);
+  }
+
   async function findLocal(item) {
     setLocalResults({ taskId: item.id, loading: true });
     try {
@@ -82,6 +105,16 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
           {breaking ? 'Разбиваю...' : '🤖 Разбить на дни'}
         </button>
         <button className="btn btn-ghost" onClick={onOrientation}>🎓 Помощь с выбором</button>
+        <button className="btn btn-ghost" onClick={() => fileInputRef.current?.click()} disabled={uploading}>
+          {uploading ? 'Читаю документ...' : '📄 Загрузить документ'}
+        </button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept=".pdf,.docx,.txt"
+          style={{ display: 'none' }}
+          onChange={handleFileChange}
+        />
       </div>
 
       {showAdd && (
