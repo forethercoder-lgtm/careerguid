@@ -154,9 +154,11 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
         )}
         {planItems.map(item => (
           <div key={item.id} className={`task-card ${item.done ? 'done' : ''}`}>
-            <button className="task-toggle" onClick={() => toggle(item.id)}>{item.done ? '✅' : '⬜'}</button>
+            <button className={`task-avatar ${item.done ? 'done' : ''}`} onClick={() => toggle(item.id)}>
+              {item.done ? '✅' : (item.cat || '').split(' ')[0] || '📌'}
+            </button>
             <div className="task-body">
-              <div className="task-title">{item.cat} {item.title}</div>
+              <div className="task-title">{item.title}</div>
               {item.note && <div className="plan-item-note">{item.note}</div>}
               <button className="plan-local-btn" onClick={() => findLocal(item)}>📍 Найти варианты</button>
               {localResults?.taskId === item.id && (

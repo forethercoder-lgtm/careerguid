@@ -176,7 +176,8 @@ export default function PlanScreen({ route, navigation }) {
   }
 
   return (
-    <ScrollView style={s.page} contentContainerStyle={{ paddingBottom: 60 }}>
+    <View style={{ flex: 1, backgroundColor: C.bg }}>
+    <ScrollView style={s.page} contentContainerStyle={{ paddingBottom: 90 }}>
       <View style={s.header}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <Text style={s.title}>Мой план</Text>
@@ -208,13 +209,18 @@ export default function PlanScreen({ route, navigation }) {
           <Text style={s.emptyText}>Впиши свой план — добавь первую задачу</Text>
         </View>
       ) : planItems.map(item => (
-        <View key={item.id} style={s.card}>
-          <TouchableOpacity style={s.cardRow} onPress={() => toggle(item.id)} onLongPress={() => removeItem(item.id)}>
-            <Text style={s.check}>{item.done ? '✅' : '⬜'}</Text>
-            <Text style={[s.cardTitle, item.done && s.cardTitleDone]}>{CATS[item.category] || '📌'} {item.title}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={s.localBtn} onPress={() => findLocal(item)}>
-            <Text style={s.localBtnText}>📍 Найти варианты</Text>
+        <View key={item.id}>
+          <TouchableOpacity style={s.row} onPress={() => toggle(item.id)} onLongPress={() => removeItem(item.id)}>
+            <View style={[s.avatar, item.done && s.avatarDone]}>
+              <Text style={s.avatarEmoji}>{item.done ? '✅' : (CATS[item.category] || '📌')}</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={[s.rowTitle, item.done && s.rowTitleDone]}>{item.title}</Text>
+              {item.note ? <Text style={s.rowSubtitle} numberOfLines={1}>{item.note}</Text> : null}
+            </View>
+            <TouchableOpacity onPress={() => findLocal(item)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+              <Text style={s.rowAction}>📍</Text>
+            </TouchableOpacity>
           </TouchableOpacity>
           {localFor === item.id && localData && (
             <View style={s.localPanel}>
@@ -234,6 +240,7 @@ export default function PlanScreen({ route, navigation }) {
               )}
             </View>
           )}
+          <View style={s.hairline} />
         </View>
       ))}
 
@@ -263,18 +270,19 @@ export default function PlanScreen({ route, navigation }) {
           <Text style={s.emptyText}>{filter === 'today' ? 'На сегодня задач нет' : 'Задач нет'}</Text>
         </View>
       ) : filteredTracker.map(task => (
-        <TouchableOpacity key={task.id} style={[s.task, task.done && s.taskDone]} onPress={() => toggle(task.id)} onLongPress={() => removeItem(task.id)}>
-          <Text style={s.taskCheck}>{task.done ? '✅' : '⬜'}</Text>
-          <View style={{ flex: 1 }}>
-            <Text style={[s.taskTitle, task.done && s.taskTitleDone]}>{CATS[task.category] || '📌'} {task.title}</Text>
-            {task.note && <Text style={s.taskNote}>{task.note}</Text>}
-          </View>
-        </TouchableOpacity>
+        <View key={task.id}>
+          <TouchableOpacity style={s.row} onPress={() => toggle(task.id)} onLongPress={() => removeItem(task.id)}>
+            <View style={[s.avatar, task.done && s.avatarDone]}>
+              <Text style={s.avatarEmoji}>{task.done ? '✅' : (CATS[task.category] || '📌')}</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={[s.rowTitle, task.done && s.rowTitleDone]}>{task.title}</Text>
+              {task.note ? <Text style={s.rowSubtitle} numberOfLines={1}>{task.note}</Text> : null}
+            </View>
+          </TouchableOpacity>
+          <View style={s.hairline} />
+        </View>
       ))}
-
-      <TouchableOpacity style={s.addTaskBtn} onPress={() => setShowAddTask(true)}>
-        <Text style={s.addTaskBtnText}>+ Добавить задачу в трекер</Text>
-      </TouchableOpacity>
 
       <Modal visible={showAddPlan} transparent animationType="slide">
         <View style={s.modal}>
@@ -326,6 +334,11 @@ export default function PlanScreen({ route, navigation }) {
         </View>
       </Modal>
     </ScrollView>
+
+    <TouchableOpacity style={s.fab} onPress={() => setShowAddTask(true)}>
+      <Text style={s.fabIcon}>+</Text>
+    </TouchableOpacity>
+    </View>
   );
 }
 
@@ -345,20 +358,24 @@ const s = StyleSheet.create({
   empty: { alignItems: 'center', paddingTop: 40, paddingBottom: 20 },
   emptyIcon: { fontSize: 48, marginBottom: 12 },
   emptyText: { color: C.muted, fontSize: 15 },
-  card: { backgroundColor: C.surface, borderRadius: 14, borderWidth: 1, borderColor: C.border, padding: 14, marginHorizontal: 16, marginTop: 12 },
-  cardRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  check: { fontSize: 20 },
-  cardTitle: { color: C.text, fontSize: 14, fontWeight: '600', flex: 1 },
-  cardTitleDone: { textDecorationLine: 'line-through', color: C.muted },
-  localBtn: { marginTop: 10, alignSelf: 'flex-start', borderWidth: 1, borderColor: C.border, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 5 },
-  localBtnText: { color: C.primary, fontSize: 12, fontWeight: '600' },
-  localPanel: { marginTop: 10, backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 10, gap: 8 },
+  row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, paddingVertical: 10 },
+  avatar: { width: 42, height: 42, borderRadius: 21, backgroundColor: 'rgba(99,102,241,0.15)', alignItems: 'center', justifyContent: 'center' },
+  avatarDone: { backgroundColor: 'rgba(16,185,129,0.15)' },
+  avatarEmoji: { fontSize: 19 },
+  rowTitle: { color: C.text, fontSize: 15, fontWeight: '600' },
+  rowTitleDone: { textDecorationLine: 'line-through', color: C.muted },
+  rowSubtitle: { color: C.muted, fontSize: 12, marginTop: 2 },
+  rowAction: { fontSize: 18, padding: 4 },
+  hairline: { height: 1, backgroundColor: C.border, marginLeft: 70 },
+  localPanel: { marginTop: 6, marginBottom: 6, marginHorizontal: 16, backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 10, gap: 8 },
   localError: { color: C.danger, fontSize: 13 },
   localCity: { color: C.muted, fontSize: 12 },
   resultItem: { backgroundColor: C.bg2, borderRadius: 8, padding: 10 },
   resultTitle: { color: C.text, fontWeight: '600', fontSize: 13, marginBottom: 3 },
   resultContent: { color: C.muted, fontSize: 12, lineHeight: 16 },
-  divider: { height: 1, backgroundColor: C.border, marginTop: 24, marginHorizontal: 16 },
+  divider: { height: 8, backgroundColor: C.bg2, marginTop: 16 },
+  fab: { position: 'absolute', right: 20, bottom: 24, width: 56, height: 56, borderRadius: 28, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center', elevation: 6, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 } },
+  fabIcon: { color: '#000', fontSize: 28, fontWeight: '300', marginTop: -2 },
   trackerHeader: { padding: 16, paddingBottom: 8 },
   progress: { height: 6, backgroundColor: C.surface, borderRadius: 3, overflow: 'hidden', marginTop: 8, marginBottom: 6 },
   progressBar: { height: '100%', backgroundColor: C.success, borderRadius: 3 },
@@ -368,14 +385,6 @@ const s = StyleSheet.create({
   filterActive: { backgroundColor: C.primary },
   filterText: { color: C.muted, fontSize: 12, fontWeight: '600' },
   filterTextActive: { color: '#fff' },
-  task: { flexDirection: 'row', gap: 12, backgroundColor: C.surface, borderRadius: 14, borderWidth: 1, borderColor: C.border, padding: 14, alignItems: 'center', marginHorizontal: 16, marginTop: 10 },
-  taskDone: { opacity: 0.5 },
-  taskCheck: { fontSize: 22 },
-  taskTitle: { color: C.text, fontSize: 14, fontWeight: '600' },
-  taskTitleDone: { textDecorationLine: 'line-through', color: C.muted },
-  taskNote: { color: C.faint, fontSize: 12, marginTop: 2 },
-  addTaskBtn: { marginHorizontal: 16, marginTop: 14, borderRadius: 12, paddingVertical: 12, alignItems: 'center', borderWidth: 1, borderColor: C.border, borderStyle: 'dashed' },
-  addTaskBtnText: { color: C.muted, fontWeight: '600', fontSize: 13 },
   modal: { flex: 1, backgroundColor: 'rgba(0,0,0,0.7)', justifyContent: 'flex-end' },
   modalCard: { backgroundColor: C.bg2, borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: 24, paddingBottom: 40 },
   modalTitle: { color: C.text, fontSize: 18, fontWeight: '800', marginBottom: 16 },

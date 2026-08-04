@@ -146,8 +146,8 @@ export default function TaskManager({ userEmail, tasks, setTasks }) {
         )}
         {displayed.map(task => (
           <div key={task.id} className={`task-card ${task.done ? 'done' : ''}`}>
-            <button className="task-toggle" onClick={() => toggle(task.id)}>
-              {task.done ? '✅' : '⬜'}
+            <button className={`task-avatar ${task.done ? 'done' : ''}`} onClick={() => toggle(task.id)}>
+              {task.done ? '✅' : '📌'}
             </button>
             <div className="task-body">
               <div className="task-title">{task.title}</div>

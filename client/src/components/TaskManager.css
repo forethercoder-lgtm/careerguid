@@ -183,17 +183,22 @@
 .task-card.done { opacity: 0.5; }
 .task-card.done .task-title { text-decoration: line-through; color: var(--text-faint); }
 
-.task-toggle {
-  font-size: 22px;
-  background: none;
+.task-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(99,102,241,0.15);
   border: none;
   cursor: pointer;
   flex-shrink: 0;
-  transition: transform 0.2s;
-  padding: 0;
-  line-height: 1;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s, background 0.2s;
 }
-.task-toggle:hover { transform: scale(1.2); }
+.task-avatar:hover { transform: scale(1.08); }
+.task-avatar.done { background: rgba(16,185,129,0.18); }
 
 .task-body { flex: 1; min-width: 0; }
 .task-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
