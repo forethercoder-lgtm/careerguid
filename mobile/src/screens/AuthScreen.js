@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
-import { setItem } from '../storage';
+import { setItem, setJSON, getJSON } from '../storage';
 
 export default function AuthScreen({ navigation, route }) {
   const [tab, setTab] = useState('login');
@@ -26,7 +26,10 @@ export default function AuthScreen({ navigation, route }) {
       const data = await res.json();
       if (!res.ok) { Alert.alert('Ошибка', data.error || 'Ошибка входа'); return; }
       await setItem('token', data.token);
-      navigation.replace('Onboarding', { token: data.token, user: data.user });
+      await setJSON('user', data.user);
+      const onboarding = await getJSON(`onboarding_${data.user?.email}`);
+      if (onboarding) navigation.replace('Plan', { token: data.token, user: data.user, onboarding });
+      else navigation.replace('Onboarding', { token: data.token, user: data.user });
     } catch (e) {
       Alert.alert('Ошибка', 'Сервер недоступен. Проверь подключение.');
     } finally {

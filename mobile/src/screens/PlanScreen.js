@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet, TextInput, Modal,
 import * as DocumentPicker from 'expo-document-picker';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
-import { getJSON, setJSON } from '../storage';
+import { getJSON, setJSON, removeItem } from '../storage';
 
 const CATS = { documents: '📄', languages: '🗣', universities: '🏫', essays: '✍️', study: '📚', finances: '💰', other: '📌' };
 
@@ -162,10 +162,26 @@ export default function PlanScreen({ route, navigation }) {
   });
   const doneCount = todayTasks.filter(x => x.done).length;
 
+  function logout() {
+    Alert.alert('Выйти?', '', [
+      { text: 'Отмена', style: 'cancel' },
+      {
+        text: 'Выйти', style: 'destructive', onPress: async () => {
+          await removeItem('token');
+          await removeItem('user');
+          navigation.reset({ index: 0, routes: [{ name: 'Welcome' }] });
+        }
+      },
+    ]);
+  }
+
   return (
     <ScrollView style={s.page} contentContainerStyle={{ paddingBottom: 60 }}>
       <View style={s.header}>
-        <Text style={s.title}>Мой план</Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <Text style={s.title}>Мой план</Text>
+          <TouchableOpacity onPress={logout}><Text style={s.logoutText}>Выйти</Text></TouchableOpacity>
+        </View>
         {onboarding?.goal && <Text style={s.goal}>🎯 {onboarding.goal}</Text>}
       </View>
 
@@ -318,6 +334,7 @@ const s = StyleSheet.create({
   header: { padding: 20, paddingTop: 50, borderBottomWidth: 1, borderBottomColor: C.border },
   title: { color: C.text, fontSize: 22, fontWeight: '900', marginBottom: 4 },
   goal: { color: C.muted, fontSize: 13, fontStyle: 'italic' },
+  logoutText: { color: C.muted, fontSize: 13, fontWeight: '600' },
   actions: { flexDirection: 'row', gap: 10, paddingHorizontal: 16, paddingTop: 16 },
   secondaryBtn: { borderRadius: 12, paddingVertical: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: C.surface, borderWidth: 1, borderColor: C.border },
   secondaryBtnText: { color: C.text, fontWeight: '700', fontSize: 14 },
