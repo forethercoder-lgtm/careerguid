@@ -4,6 +4,8 @@ import * as DocumentPicker from 'expo-document-picker';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 import { getJSON, setJSON, removeItem } from '../storage';
+import BadgesRow from '../components/BadgesRow';
+import * as docStorage from '../docStorage';
 
 const CATS = { documents: '📄', languages: '🗣', universities: '🏫', essays: '✍️', study: '📚', finances: '💰', other: '📌' };
 
@@ -26,16 +28,38 @@ export default function PlanScreen({ route, navigation }) {
   const [localFor, setLocalFor] = useState(null);
   const [localData, setLocalData] = useState(null);
   const [filter, setFilter] = useState('today');
+  const [scholarships, setScholarships] = useState(null);
+  const [streak, setStreak] = useState(0);
+  const [documents, setDocuments] = useState([]);
 
   const key = `tasks_${user?.email}`;
   const planItems = allTasks.filter(t => t.origin === 'plan');
   const trackerTasks = allTasks.filter(t => !t.origin || t.origin === 'ai-daily');
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => { load(); loadStreak(); loadDocuments(); }, []);
 
   async function load() {
     const saved = await getJSON(key) || [];
     setAllTasks(saved);
+  }
+
+  async function loadStreak() {
+    const skey = `streak_${user?.email}`;
+    const data = (await getJSON(skey)) || { count: 0, lastDate: '' };
+    const t = today();
+    if (data.lastDate !== t) {
+      const yd = new Date(); yd.setDate(yd.getDate() - 1);
+      const yds = yd.toISOString().split('T')[0];
+      const newCount = data.lastDate === yds ? data.count + 1 : 1;
+      await setJSON(skey, { count: newCount, lastDate: t });
+      setStreak(newCount);
+    } else {
+      setStreak(data.count);
+    }
+  }
+
+  async function loadDocuments() {
+    setDocuments(await docStorage.getDocuments(user?.email));
   }
 
   async function save(updated) {
@@ -127,11 +151,45 @@ export default function PlanScreen({ route, navigation }) {
       }));
       const merged = [...allTasks, ...newItems.filter(nt => !allTasks.some(e => e.title === nt.title))];
       await save(merged);
+
+      if (file.size && file.size <= docStorage.MAX_DOC_SIZE) {
+        try { setDocuments(await docStorage.saveDocument(user?.email, file)); } catch {}
+      }
+
       Alert.alert('Готово!', `Из документа добавлено ${items.length} задач в план`);
     } catch {
       Alert.alert('Ошибка', 'Не удалось загрузить документ');
     }
     setUploading(false);
+  }
+
+  async function findScholarships() {
+    setScholarships({ loading: true });
+    try {
+      const res = await fetch(`${API_URL}/api/suggest-scholarships`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ specialty: onboarding?.goal, educationLevel: onboarding?.level }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setScholarships({ error: data.error || 'Ошибка' }); return; }
+      setScholarships({ results: data.scholarships || [] });
+    } catch {
+      setScholarships({ error: 'Сервер недоступен' });
+    }
+  }
+
+  async function addScholarshipToPlan(sch) {
+    const item = {
+      id: Date.now(), title: `Подать заявку на стипендию «${sch.name}»${sch.deadline ? ' до ' + sch.deadline : ''}`,
+      category: 'finances', note: sch.whyFit || sch.eligibility || '', origin: 'plan', done: false, createdAt: today(),
+    };
+    await save([...allTasks, item]);
+    Alert.alert('Готово!', 'Стипендия добавлена в план');
+  }
+
+  async function deleteDoc(id) {
+    setDocuments(await docStorage.deleteDocument(user?.email, id));
   }
 
   async function findLocal(item) {
@@ -180,11 +238,16 @@ export default function PlanScreen({ route, navigation }) {
     <ScrollView style={s.page} contentContainerStyle={{ paddingBottom: 90 }}>
       <View style={s.header}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <Text style={s.title}>Мой план</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <Text style={s.title}>Мой план</Text>
+            {streak > 0 && <Text style={s.streak}>🔥 {streak}</Text>}
+          </View>
           <TouchableOpacity onPress={logout}><Text style={s.logoutText}>Выйти</Text></TouchableOpacity>
         </View>
         {onboarding?.goal && <Text style={s.goal}>🎯 {onboarding.goal}</Text>}
       </View>
+
+      <BadgesRow streak={streak} doneCount={doneCount} planCount={planItems.length} />
 
       <View style={s.actions}>
         <TouchableOpacity style={[S.btn, S.btnPrimary, { flex: 1 }]} onPress={() => setShowAddPlan(true)}>
@@ -202,6 +265,32 @@ export default function PlanScreen({ route, navigation }) {
           <Text style={s.docBtnText}>{uploading ? 'Читаю...' : '📄 Документ'}</Text>
         </TouchableOpacity>
       </View>
+      <View style={s.actions}>
+        <TouchableOpacity style={s.docBtn} onPress={findScholarships} disabled={scholarships?.loading}>
+          <Text style={s.docBtnText}>{scholarships?.loading ? 'Ищу...' : '💰 Стипендии'}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={s.docBtn} onPress={() => navigation.navigate('EssayFeedback', { token })}>
+          <Text style={s.docBtnText}>✍️ Эссе</Text>
+        </TouchableOpacity>
+      </View>
+
+      {scholarships && !scholarships.loading && (
+        <View style={s.localPanel}>
+          {scholarships.error && <Text style={s.localError}>⚠️ {scholarships.error}</Text>}
+          {scholarships.results?.length === 0 && <Text style={s.localCity}>Ничего не найдено</Text>}
+          {scholarships.results?.map((sch, i) => (
+            <View key={i} style={s.resultItem}>
+              <Text style={s.resultTitle}>{sch.name}</Text>
+              <Text style={s.resultContent}>💰 {sch.amount} · 📅 {sch.deadline}{sch.country ? ` · ${sch.country}` : ''}</Text>
+              {sch.eligibility ? <Text style={s.resultContent}>{sch.eligibility}</Text> : null}
+              {sch.whyFit ? <Text style={s.resultContent}>{sch.whyFit}</Text> : null}
+              <TouchableOpacity style={s.addToPlanBtn} onPress={() => addScholarshipToPlan(sch)}>
+                <Text style={s.addToPlanBtnText}>+ В план</Text>
+              </TouchableOpacity>
+            </View>
+          ))}
+        </View>
+      )}
 
       {planItems.length === 0 ? (
         <View style={s.empty}>
@@ -284,6 +373,26 @@ export default function PlanScreen({ route, navigation }) {
         </View>
       ))}
 
+      {documents.length > 0 && (
+        <>
+          <View style={s.divider} />
+          <View style={s.trackerHeader}>
+            <Text style={s.title}>📁 Документы</Text>
+          </View>
+          {documents.map(doc => (
+            <View key={doc.id} style={s.docRow}>
+              <TouchableOpacity style={{ flex: 1 }} onPress={() => Linking.openURL(doc.uri)}>
+                <Text style={s.rowTitle} numberOfLines={1}>{doc.name}</Text>
+                <Text style={s.rowSubtitle}>{doc.size ? `${Math.round(doc.size / 1024)} КБ` : ''}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => deleteDoc(doc.id)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+                <Text style={s.rowAction}>🗑</Text>
+              </TouchableOpacity>
+            </View>
+          ))}
+        </>
+      )}
+
       <Modal visible={showAddPlan} transparent animationType="slide">
         <View style={s.modal}>
           <View style={s.modalCard}>
@@ -347,6 +456,7 @@ const s = StyleSheet.create({
   header: { padding: 20, paddingTop: 50, borderBottomWidth: 1, borderBottomColor: C.border },
   title: { color: C.text, fontSize: 22, fontWeight: '900', marginBottom: 4 },
   goal: { color: C.muted, fontSize: 13, fontStyle: 'italic' },
+  streak: { color: '#fbbf24', fontSize: 14, fontWeight: '800' },
   logoutText: { color: C.muted, fontSize: 13, fontWeight: '600' },
   actions: { flexDirection: 'row', gap: 10, paddingHorizontal: 16, paddingTop: 16 },
   secondaryBtn: { borderRadius: 12, paddingVertical: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: C.surface, borderWidth: 1, borderColor: C.border },
@@ -373,6 +483,9 @@ const s = StyleSheet.create({
   resultItem: { backgroundColor: C.bg2, borderRadius: 8, padding: 10 },
   resultTitle: { color: C.text, fontWeight: '600', fontSize: 13, marginBottom: 3 },
   resultContent: { color: C.muted, fontSize: 12, lineHeight: 16 },
+  addToPlanBtn: { alignSelf: 'flex-start', marginTop: 8, backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 8, paddingHorizontal: 12, paddingVertical: 6 },
+  addToPlanBtnText: { color: C.text, fontSize: 12, fontWeight: '700' },
+  docRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: 16, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: C.border },
   divider: { height: 8, backgroundColor: C.bg2, marginTop: 16 },
   fab: { position: 'absolute', right: 20, bottom: 24, width: 56, height: 56, borderRadius: 28, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center', elevation: 6, shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 } },
   fabIcon: { color: '#000', fontSize: 28, fontWeight: '300', marginTop: -2 },

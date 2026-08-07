@@ -7,10 +7,20 @@
 .plan-header {
   margin-bottom: 20px;
 }
+.plan-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .plan-header h2 {
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 8px;
+}
+.plan-streak {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fbbf24;
 }
 .plan-goal {
   color: var(--text-muted);
@@ -106,4 +116,32 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.scholarships-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.scholarship-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.scholarship-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.scholarship-meta {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.scholarship-desc {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 4px;
 }

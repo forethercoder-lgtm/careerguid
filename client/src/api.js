@@ -38,10 +38,10 @@ export async function apiGenerateStarterPlan(token, { specialty, university, goa
   return callServer('/api/generate-starter-plan', token, { specialty, university, goal });
 }
 
-export async function apiParseDocument(token, file) {
+async function callServerUpload(path, token, file) {
   const formData = new FormData();
   formData.append('document', file);
-  const res = await fetch('/api/parse-document', {
+  const res = await fetch(path, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
     body: formData,
@@ -49,4 +49,20 @@ export async function apiParseDocument(token, file) {
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || 'Ошибка сервера');
   return data;
+}
+
+export async function apiParseDocument(token, file) {
+  return callServerUpload('/api/parse-document', token, file);
+}
+
+export async function apiExtractText(token, file) {
+  return callServerUpload('/api/extract-text', token, file);
+}
+
+export async function apiSuggestScholarships(token, { specialty, countries, educationLevel, budget }) {
+  return callServer('/api/suggest-scholarships', token, { specialty, countries, educationLevel, budget });
+}
+
+export async function apiEssayFeedback(token, text) {
+  return callServer('/api/essay-feedback', token, { text });
 }

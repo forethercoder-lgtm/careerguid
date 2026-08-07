@@ -7,6 +7,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import PreferencesSetup from './components/PreferencesSetup';
 import Home from './components/Home';
 import Orientation from './components/Orientation';
+import EssayFeedback from './components/EssayFeedback';
 import AIAssistant from './components/AIAssistant';
 import './App.css';
 
@@ -158,11 +159,14 @@ export default function App() {
         )}
         {screen === 'home' && (
           <Home token={token} userEmail={user?.uid} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
-            onOrientation={() => setScreen('orientation')} />
+            onOrientation={() => setScreen('orientation')} onEssayFeedback={() => setScreen('essay')} streak={streak} />
         )}
         {screen === 'orientation' && (
           <Orientation token={token} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
             onDone={() => setScreen('home')} onCancel={() => setScreen('home')} />
+        )}
+        {screen === 'essay' && (
+          <EssayFeedback token={token} onCancel={() => setScreen('home')} />
         )}
       </main>
 

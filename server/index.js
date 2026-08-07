@@ -36,7 +36,7 @@ function requireAuth(req, res, next) {
   }
 }
 
-const LANG_RULE = 'ВАЖНО ПРО ЯЗЫК: отвечай СТРОГО на русском языке, от начала и до конца. Не переключайся на английский или другие языки ни на одно слово, даже частично. Переводи на русский любые термины и понятия. Исключение — только общепринятые аббревиатуры (IELTS, TOEFL, SAT, GRE, GMAT, DAAD) и собственные названия университетов/городов/стран, которые пишутся на языке оригинала.';
+const LANG_RULE = 'ВАЖНО ПРО ЯЗЫК: этот текст пиши СТРОГО на русском языке, от начала и до конца. Не переключайся на английский или другие языки ни на одно слово, даже частично. Переводи на русский любые термины и понятия. Исключение — только общепринятые аббревиатуры (IELTS, TOEFL, SAT, GRE, GMAT, DAAD) и собственные названия университетов/городов/стран, которые пишутся на языке оригинала. ЕСЛИ ОТВЕТ В ФОРМАТЕ JSON: это правило касается ТОЛЬКО текстовых значений (values) — имена полей (keys) в JSON всегда оставляй ТОЧНО такими, как показано в примере формата (на английском, например "name", "amount", "deadline"), НИКОГДА не переводи и не переименовывай сами ключи.';
 
 const ASSISTANT_SYSTEM = `Ты — ИИ-ассистент "КарьерГид" 🎓. Помогаешь студенту с его СОБСТВЕННЫМ планом поступления — он уже знает свою цель и сам ведёт список задач, ты только помогаешь по запросу. Отвечаешь на вопросы о:
 - Поступлении в зарубежные университеты (документы, сроки, требования)
@@ -311,6 +311,93 @@ ${LANG_RULE} (названия университетов/городов/стр�
   }
 });
 
+app.post('/api/suggest-scholarships', requireAuth, async (req, res) => {
+  const { specialty, countries, educationLevel, budget } = req.body;
+  const client = requireGroq(res);
+  if (!client) return;
+
+  try {
+    const countryList = (countries || []).join(', ') || 'разные страны';
+    const searchResults = await tavilySearch(
+      `scholarships for international students ${specialty || ''} ${educationLevel || ''} ${countryList} 2026 deadline amount`, 8
+    );
+    const searchContext = searchResults.length
+      ? searchResults.map(r => `- ${r.title}: ${r.content}`).join('\n')
+      : 'Реальных данных из поиска нет — используй свои знания, но отметь что данные нужно проверить.';
+
+    const prompt = `На основе РЕАЛЬНЫХ данных из веб-поиска подбери 5-8 стипендий для студента. Ответь ТОЛЬКО JSON.
+
+Данные из поиска:
+${searchContext}
+
+Специальность: ${specialty || 'не указана'}
+Страны: ${countryList}
+Уровень: ${educationLevel || 'не указан'}
+Бюджет студента: ${budget || 'не указан'}
+
+{
+  "scholarships": [
+    {
+      "name": "Название стипендии (из данных поиска, если есть)",
+      "amount": "до $20,000 (если известно)",
+      "deadline": "Февраль 2026 (если известно)",
+      "eligibility": "Кто может подавать (1 предложение)",
+      "country": "Страна",
+      "whyFit": "Почему подходит этому студенту (1-2 предложения)"
+    }
+  ]
+}
+
+Опирайся на данные поиска выше, не выдумывай названия стипендий, которых там нет — если данных мало, честно используй общеизвестные программы по теме (Fulbright, DAAD, Chevening, Erasmus Mundus и т.п.).
+${LANG_RULE} (названия стипендий/организаций/стран — на языке оригинала, всё остальное — по-русски)
+Ответь ТОЛЬКО JSON.`;
+
+    const response = await client.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 2500,
+      messages: [{ role: 'user', content: prompt }]
+    });
+    res.json(extractJson(response.choices[0].message.content, { scholarships: [] }));
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/essay-feedback', requireAuth, async (req, res) => {
+  const { text } = req.body;
+  if (!text || !text.trim()) return res.status(400).json({ error: 'Текст эссе не указан' });
+  const client = requireGroq(res);
+  if (!client) return;
+
+  try {
+    const truncated = text.slice(0, 8000);
+    const prompt = `Ты — опытный консультант по мотивационным письмам и эссе для поступления в зарубежные университеты. Проанализируй текст ниже и дай структурированный фидбек. Ответь ТОЛЬКО JSON.
+
+Текст эссе/мотивационного письма:
+${truncated}
+
+{
+  "score": "7/10",
+  "strengths": ["Конкретная сильная сторона 1", "Сильная сторона 2"],
+  "improvements": ["Конкретное предложение по улучшению 1", "Предложение 2"],
+  "summary": "Общий вывод (2-3 предложения)"
+}
+
+ВАЖНО ПРО ЯЗЫК: сам комментарий (strengths/improvements/summary) пиши СТРОГО на русском языке. Но если приводишь цитату или пример фразы прямо из текста эссе — сохраняй её на том языке, на котором написано само эссе (не переводи цитаты).
+Будь конкретным и практичным — указывай на реальные места в тексте, а не общие фразы.
+Ответь ТОЛЬКО JSON.`;
+
+    const response = await client.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 1500,
+      messages: [{ role: 'user', content: prompt }]
+    });
+    res.json(extractJson(response.choices[0].message.content, { score: '', strengths: [], improvements: [], summary: '' }));
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.post('/api/generate-starter-plan', requireAuth, async (req, res) => {
   const { specialty, university, goal } = req.body;
   const client = requireGroq(res);
@@ -348,26 +435,45 @@ ${LANG_RULE}
   }
 });
 
+async function extractTextFromFile(file) {
+  if (file.mimetype === 'application/pdf') {
+    const pdfParse = require('pdf-parse');
+    const data = await pdfParse(file.buffer);
+    return data.text;
+  }
+  if (file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+    const mammoth = require('mammoth');
+    const result = await mammoth.extractRawText({ buffer: file.buffer });
+    return result.value;
+  }
+  if (file.mimetype === 'text/plain') {
+    return file.buffer.toString('utf-8');
+  }
+  throw new Error('UNSUPPORTED_TYPE');
+}
+
+app.post('/api/extract-text', requireAuth, upload.single('document'), async (req, res) => {
+  const file = req.file;
+  if (!file) return res.status(400).json({ error: 'Файл не загружен' });
+  try {
+    const text = await extractTextFromFile(file);
+    if (!text.trim()) return res.status(400).json({ error: 'В документе не найден текст' });
+    res.json({ text });
+  } catch (e) {
+    if (e.message === 'UNSUPPORTED_TYPE') return res.status(400).json({ error: 'Поддерживаются только PDF, DOCX и TXT файлы' });
+    res.status(400).json({ error: 'Не удалось прочитать файл: ' + e.message });
+  }
+});
+
 app.post('/api/parse-document', requireAuth, upload.single('document'), async (req, res) => {
   const file = req.file;
   if (!file) return res.status(400).json({ error: 'Файл не загружен' });
 
   let text = '';
   try {
-    if (file.mimetype === 'application/pdf') {
-      const pdfParse = require('pdf-parse');
-      const data = await pdfParse(file.buffer);
-      text = data.text;
-    } else if (file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-      const mammoth = require('mammoth');
-      const result = await mammoth.extractRawText({ buffer: file.buffer });
-      text = result.value;
-    } else if (file.mimetype === 'text/plain') {
-      text = file.buffer.toString('utf-8');
-    } else {
-      return res.status(400).json({ error: 'Поддерживаются только PDF, DOCX и TXT файлы' });
-    }
+    text = await extractTextFromFile(file);
   } catch (e) {
+    if (e.message === 'UNSUPPORTED_TYPE') return res.status(400).json({ error: 'Поддерживаются только PDF, DOCX и TXT файлы' });
     return res.status(400).json({ error: 'Не удалось прочитать файл: ' + e.message });
   }
 

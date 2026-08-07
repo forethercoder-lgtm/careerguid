@@ -1,20 +1,24 @@
 import React, { useState, useRef } from 'react';
-import { apiDailyTasks, apiSuggestLocal, apiParseDocument } from '../api';
+import { apiDailyTasks, apiSuggestLocal, apiParseDocument, apiSuggestScholarships } from '../api';
+import { saveDocument, readFileAsDataUrl, MAX_DOC_SIZE } from '../docStorage';
+import BadgesRow from './BadgesRow';
 import './PlanBuilder.css';
 
 const CATS = ['📚 Учёба', '📝 Документы', '🗣 Языки', '💰 Финансы', '🏫 Университеты', '✍️ Эссе', '🔖 Другое'];
 
 function getToday() { return new Date().toISOString().split('T')[0]; }
 
-export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation }) {
+export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation, onEssayFeedback, streak, setDocuments }) {
   const [showAdd, setShowAdd] = useState(false);
   const [form, setForm] = useState({ title: '', cat: CATS[0], note: '' });
   const [breaking, setBreaking] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [localResults, setLocalResults] = useState(null); // { taskId, city, results } | { taskId, loading: true }
+  const [scholarships, setScholarships] = useState(null); // { loading } | { results } | { error }
   const fileInputRef = useRef(null);
 
   const planItems = tasks.filter(t => t.origin === 'plan');
+  const doneCount = tasks.filter(t => t.done).length;
 
   function addItem() {
     if (!form.title.trim()) return;
@@ -70,7 +74,19 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
         note: it.note || '', origin: 'plan', done: false, createdAt: today,
       }));
       setTasks(existing => [...existing, ...newItems.filter(nt => !existing.some(e => e.title === nt.title))]);
-      showNotif?.(`✅ Из документа добавлено ${items.length} задач в план`);
+
+      if (file.size <= MAX_DOC_SIZE && setDocuments) {
+        try {
+          const dataUrl = await readFileAsDataUrl(file);
+          const doc = { id: Date.now(), name: file.name, mimetype: file.type, dataUrl, size: file.size, uploadedAt: new Date().toISOString() };
+          setDocuments(saveDocument(userEmail, doc));
+          showNotif?.(`✅ Из документа добавлено ${items.length} задач в план, файл сохранён в "Документы"`);
+        } catch {
+          showNotif?.(`✅ Из документа добавлено ${items.length} задач в план`);
+        }
+      } else {
+        showNotif?.(`✅ Из документа добавлено ${items.length} задач в план${file.size > MAX_DOC_SIZE ? ' (файл слишком большой для хранилища)' : ''}`);
+      }
     } catch (e) {
       showNotif?.('⚠️ Не удалось прочитать документ: ' + e.message);
     }
@@ -88,16 +104,42 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
     }
   }
 
+  async function findScholarships() {
+    setScholarships({ loading: true });
+    try {
+      const data = await apiSuggestScholarships(token, {
+        specialty: prefs?.goal, countries: prefs?.countries, educationLevel: prefs?.educationLevel, budget: prefs?.budget,
+      });
+      setScholarships({ results: data.scholarships || [] });
+    } catch (e) {
+      setScholarships({ error: e.message });
+    }
+  }
+
+  function addScholarshipToPlan(sch) {
+    const item = {
+      id: Date.now(), title: `Подать заявку на стипендию «${sch.name}»${sch.deadline ? ' до ' + sch.deadline : ''}`,
+      cat: '💰 Финансы', note: sch.whyFit || '', origin: 'plan', done: false, createdAt: getToday(),
+    };
+    setTasks(t => [item, ...t]);
+    showNotif?.('✅ Стипендия добавлена в план');
+  }
+
   return (
     <div className="plan-page">
       <div className="plan-header">
-        <h2>Мой план</h2>
+        <div className="plan-header-top">
+          <h2>Мой план</h2>
+          {streak > 0 && <span className="plan-streak">🔥 {streak}</span>}
+        </div>
         {prefs?.goal && <p className="plan-goal">🎯 {prefs.goal}</p>}
         <div className="plan-header-meta">
           {prefs?.educationLevel && <span className="plan-tag">{prefs.educationLevel}</span>}
           {prefs?.targetSchool && <span className="plan-tag">🏫 {prefs.targetSchool}</span>}
         </div>
       </div>
+
+      <BadgesRow streak={streak} doneCount={doneCount} planCount={planItems.length} />
 
       <div className="plan-actions">
         <button className="btn btn-primary" onClick={() => setShowAdd(true)}>+ Добавить задачу</button>
@@ -108,6 +150,10 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
         <button className="btn btn-ghost" onClick={() => fileInputRef.current?.click()} disabled={uploading}>
           {uploading ? 'Читаю документ...' : '📄 Загрузить документ'}
         </button>
+        <button className="btn btn-ghost" onClick={findScholarships} disabled={scholarships?.loading}>
+          {scholarships?.loading ? 'Ищу...' : '💰 Стипендии'}
+        </button>
+        <button className="btn btn-ghost" onClick={onEssayFeedback}>✍️ Проверить эссе</button>
         <input
           ref={fileInputRef}
           type="file"
@@ -116,6 +162,22 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
           onChange={handleFileChange}
         />
       </div>
+
+      {scholarships && !scholarships.loading && (
+        <div className="scholarships-panel">
+          {scholarships.error && <div className="plan-local-error">⚠️ {scholarships.error}</div>}
+          {scholarships.results?.length === 0 && <div className="prefs-hint">Ничего не найдено</div>}
+          {scholarships.results?.map((sch, i) => (
+            <div key={i} className="scholarship-card">
+              <div className="scholarship-title">{sch.name}</div>
+              <div className="scholarship-meta">💰 {sch.amount} · 📅 {sch.deadline} {sch.country ? `· ${sch.country}` : ''}</div>
+              {sch.eligibility && <div className="scholarship-desc">{sch.eligibility}</div>}
+              {sch.whyFit && <div className="scholarship-desc">{sch.whyFit}</div>}
+              <button className="btn btn-ghost" style={{ marginTop: 8 }} onClick={() => addScholarshipToPlan(sch)}>+ В план</button>
+            </div>
+          ))}
+        </div>
+      )}
 
       {showAdd && (
         <div className="add-task-form">

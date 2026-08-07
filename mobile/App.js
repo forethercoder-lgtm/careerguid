@@ -10,6 +10,7 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import PlanScreen from './src/screens/PlanScreen';
 import OrientationChatScreen from './src/screens/OrientationChatScreen';
 import OrientationResultsScreen from './src/screens/OrientationResultsScreen';
+import EssayFeedbackScreen from './src/screens/EssayFeedbackScreen';
 import { getItem, getJSON } from './src/storage';
 import { C } from './src/theme';
 
@@ -47,6 +48,7 @@ export default function App() {
           <Stack.Screen name="Plan" component={PlanScreen} initialParams={initial.route === 'Plan' ? initial.params : undefined} />
           <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
           <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
+          <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
