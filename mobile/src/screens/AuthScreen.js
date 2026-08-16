@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 import { setItem, setJSON, getJSON } from '../storage';
 
 export default function AuthScreen({ navigation, route }) {
+  const insets = useSafeAreaInsets();
   const [tab, setTab] = useState('login');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -38,7 +40,7 @@ export default function AuthScreen({ navigation, route }) {
   }
 
   return (
-    <ScrollView style={s.page} contentContainerStyle={s.content} keyboardShouldPersistTaps="handled">
+    <ScrollView style={s.page} contentContainerStyle={[s.content, { paddingTop: 24 + insets.top }]} keyboardShouldPersistTaps="handled">
       <Text style={s.logo}>🎓</Text>
       <Text style={S.title}>{tab === 'login' ? 'Добро пожаловать!' : 'Создай аккаунт'}</Text>
       <Text style={[S.sub, { marginBottom: 28 }]}>{tab === 'login' ? 'Войди чтобы продолжить' : 'Зарегистрируйся бесплатно'}</Text>
@@ -78,7 +80,7 @@ export default function AuthScreen({ navigation, route }) {
 
 const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: C.bg },
-  content: { padding: 24, paddingTop: 60 },
+  content: { padding: 24 },
   logo: { fontSize: 52, textAlign: 'center', marginBottom: 16 },
   tabs: { flexDirection: 'row', backgroundColor: C.surface, borderRadius: 12, padding: 4, marginBottom: 24 },
   tab: { flex: 1, paddingVertical: 10, borderRadius: 10, alignItems: 'center' },

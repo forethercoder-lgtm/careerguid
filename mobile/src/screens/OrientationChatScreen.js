@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 
 export default function OrientationChatScreen({ route, navigation }) {
   const { token, user, onboarding } = route.params;
+  const insets = useSafeAreaInsets();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -63,7 +65,7 @@ export default function OrientationChatScreen({ route, navigation }) {
 
   return (
     <KeyboardAvoidingView style={s.page} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <View style={s.header}>
+      <View style={[s.header, { paddingTop: 16 + insets.top }]}>
         <Text style={s.headerIcon}>🎓</Text>
         <View style={{ flex: 1 }}>
           <Text style={s.headerName}>Помощь с выбором</Text>
@@ -114,7 +116,7 @@ const WA = { bg: '#0b141a', header: '#202c33', outgoing: '#005c4b', incoming: '#
 
 const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: WA.bg },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 16, paddingTop: 50, backgroundColor: WA.header },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 16, backgroundColor: WA.header },
   headerIcon: { fontSize: 36 },
   headerName: { color: WA.text, fontWeight: '800', fontSize: 16 },
   headerStatus: { color: WA.muted, fontSize: 12, marginTop: 2 },

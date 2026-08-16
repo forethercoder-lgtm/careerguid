@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, TextInput, Modal, Alert, ActivityIndicator, Linking } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, TextInput, Modal, Alert, RefreshControl, LayoutAnimation, Platform, UIManager, Linking } from 'react-native';
+import { Swipeable } from 'react-native-gesture-handler';
+import * as Haptics from 'expo-haptics';
 import * as DocumentPicker from 'expo-document-picker';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 import { getJSON, setJSON, removeItem } from '../storage';
 import BadgesRow from '../components/BadgesRow';
+import Toast from '../components/Toast';
+import Skeleton from '../components/Skeleton';
 import * as docStorage from '../docStorage';
+import { pickDailyDueDates } from '../taskPacing';
+
+if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 const CATS = { documents: '📄', languages: '🗣', universities: '🏫', essays: '✍️', study: '📚', finances: '💰', other: '📌' };
 
@@ -13,6 +24,7 @@ function today() { return new Date().toISOString().split('T')[0]; }
 
 export default function PlanScreen({ route, navigation }) {
   const { token, user, onboarding } = route.params;
+  const insets = useSafeAreaInsets();
   const [allTasks, setAllTasks] = useState([]);
 
   const [showAddPlan, setShowAddPlan] = useState(false);
@@ -31,12 +43,24 @@ export default function PlanScreen({ route, navigation }) {
   const [scholarships, setScholarships] = useState(null);
   const [streak, setStreak] = useState(0);
   const [documents, setDocuments] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+  const [toast, setToast] = useState(null);
 
   const key = `tasks_${user?.email}`;
   const planItems = allTasks.filter(t => t.origin === 'plan');
   const trackerTasks = allTasks.filter(t => !t.origin || t.origin === 'ai-daily');
 
-  useEffect(() => { load(); loadStreak(); loadDocuments(); }, []);
+  useFocusEffect(
+    useCallback(() => {
+      load();
+      loadStreak();
+      loadDocuments();
+    }, [])
+  );
+
+  function showToast(message, actionLabel, onAction) {
+    setToast({ message, actionLabel, onAction });
+  }
 
   async function load() {
     const saved = await getJSON(key) || [];
@@ -62,6 +86,12 @@ export default function PlanScreen({ route, navigation }) {
     setDocuments(await docStorage.getDocuments(user?.email));
   }
 
+  async function onRefresh() {
+    setRefreshing(true);
+    await Promise.all([load(), loadStreak(), loadDocuments()]);
+    setRefreshing(false);
+  }
+
   async function save(updated) {
     setAllTasks(updated);
     await setJSON(key, updated);
@@ -69,6 +99,7 @@ export default function PlanScreen({ route, navigation }) {
 
   async function addPlanItem() {
     if (!planTitle.trim()) return;
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     const item = { id: Date.now(), title: planTitle.trim(), category: planCat, origin: 'plan', done: false, createdAt: today() };
     await save([...allTasks, item]);
     setPlanTitle('');
@@ -77,6 +108,7 @@ export default function PlanScreen({ route, navigation }) {
 
   async function addTrackerTask() {
     if (!taskTitle.trim()) return;
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     const task = { id: Date.now(), title: taskTitle.trim(), category: taskCat, type: 'daily', dueDate: today(), origin: 'ai-daily', done: false, createdAt: today() };
     await save([...allTasks, task]);
     setTaskTitle('');
@@ -84,14 +116,20 @@ export default function PlanScreen({ route, navigation }) {
   }
 
   async function toggle(id) {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     await save(allTasks.map(t => t.id === id ? { ...t, done: !t.done } : t));
   }
 
-  function removeItem(id) {
-    Alert.alert('Удалить?', '', [
-      { text: 'Отмена', style: 'cancel' },
-      { text: 'Удалить', style: 'destructive', onPress: async () => await save(allTasks.filter(t => t.id !== id)) },
-    ]);
+  function deleteTask(task) {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+    const prevTasks = allTasks;
+    save(allTasks.filter(t => t.id !== task.id));
+    showToast(`Удалено: «${task.title}»`, 'Отменить', () => {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+      save(prevTasks);
+    });
   }
 
   async function breakIntoDays() {
@@ -105,13 +143,17 @@ export default function PlanScreen({ route, navigation }) {
       });
       const data = await res.json();
       if (data.tasks?.length > 0) {
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        const existingDueDates = allTasks.filter(t => t.origin === 'ai-daily' && !t.done).map(t => t.dueDate);
+        const dueDates = pickDailyDueDates(data.tasks.length, existingDueDates);
         const newTasks = data.tasks.map((t, i) => ({
           id: Date.now() + i, title: t.title, category: t.category || 'other',
-          type: 'daily', dueDate: today(), note: t.note || '', origin: 'ai-daily', done: false,
+          type: 'daily', dueDate: dueDates[i], note: t.note || '', origin: 'ai-daily', done: false,
         }));
         const merged = [...allTasks, ...newTasks.filter(nt => !allTasks.some(e => e.title === nt.title))];
         await save(merged);
-        Alert.alert('Готово!', `${data.tasks.length} задач добавлено в трекер ниже`);
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+        showToast(`${data.tasks.length} задач добавлено — распределены по дням`);
       } else {
         Alert.alert('Ошибка', data.error || 'Не удалось разбить план');
       }
@@ -145,6 +187,7 @@ export default function PlanScreen({ route, navigation }) {
       const data = await res.json();
       if (!res.ok) { Alert.alert('Ошибка', data.error || 'Не удалось прочитать документ'); setUploading(false); return; }
       const items = data.items || [];
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       const newItems = items.map((it, i) => ({
         id: Date.now() + i, title: it.title, category: it.category || 'other',
         note: it.note || '', origin: 'plan', done: false, createdAt: today(),
@@ -156,7 +199,8 @@ export default function PlanScreen({ route, navigation }) {
         try { setDocuments(await docStorage.saveDocument(user?.email, file)); } catch {}
       }
 
-      Alert.alert('Готово!', `Из документа добавлено ${items.length} задач в план`);
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+      showToast(`Из документа добавлено ${items.length} задач в план`);
     } catch {
       Alert.alert('Ошибка', 'Не удалось загрузить документ');
     }
@@ -180,12 +224,14 @@ export default function PlanScreen({ route, navigation }) {
   }
 
   async function addScholarshipToPlan(sch) {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     const item = {
       id: Date.now(), title: `Подать заявку на стипендию «${sch.name}»${sch.deadline ? ' до ' + sch.deadline : ''}`,
       category: 'finances', note: sch.whyFit || sch.eligibility || '', origin: 'plan', done: false, createdAt: today(),
     };
     await save([...allTasks, item]);
-    Alert.alert('Готово!', 'Стипендия добавлена в план');
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+    showToast('Стипендия добавлена в план');
   }
 
   async function deleteDoc(id) {
@@ -233,10 +279,22 @@ export default function PlanScreen({ route, navigation }) {
     ]);
   }
 
+  function renderDeleteAction(task) {
+    return (
+      <TouchableOpacity style={s.swipeDelete} onPress={() => deleteTask(task)}>
+        <Text style={s.swipeDeleteIcon}>🗑</Text>
+      </TouchableOpacity>
+    );
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: C.bg }}>
-    <ScrollView style={s.page} contentContainerStyle={{ paddingBottom: 90 }}>
-      <View style={s.header}>
+    <ScrollView
+      style={s.page}
+      contentContainerStyle={{ paddingBottom: 90 + insets.bottom }}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={C.primary} colors={[C.primary]} />}
+    >
+      <View style={[s.header, { paddingTop: 20 + insets.top }]}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
             <Text style={s.title}>Мой план</Text>
@@ -274,11 +332,18 @@ export default function PlanScreen({ route, navigation }) {
         </TouchableOpacity>
       </View>
 
-      {scholarships && !scholarships.loading && (
+      {scholarships && (
         <View style={s.localPanel}>
-          {scholarships.error && <Text style={s.localError}>⚠️ {scholarships.error}</Text>}
-          {scholarships.results?.length === 0 && <Text style={s.localCity}>Ничего не найдено</Text>}
-          {scholarships.results?.map((sch, i) => (
+          {scholarships.loading && (
+            <>
+              <Skeleton height={13} width="50%" style={{ marginBottom: 10 }} />
+              <Skeleton height={80} style={{ marginBottom: 8 }} />
+              <Skeleton height={80} />
+            </>
+          )}
+          {!scholarships.loading && scholarships.error && <Text style={s.localError}>⚠️ {scholarships.error}</Text>}
+          {!scholarships.loading && scholarships.results?.length === 0 && <Text style={s.localCity}>Ничего не найдено</Text>}
+          {!scholarships.loading && scholarships.results?.map((sch, i) => (
             <View key={i} style={s.resultItem}>
               <Text style={s.resultTitle}>{sch.name}</Text>
               <Text style={s.resultContent}>💰 {sch.amount} · 📅 {sch.deadline}{sch.country ? ` · ${sch.country}` : ''}</Text>
@@ -299,21 +364,29 @@ export default function PlanScreen({ route, navigation }) {
         </View>
       ) : planItems.map(item => (
         <View key={item.id}>
-          <TouchableOpacity style={s.row} onPress={() => toggle(item.id)} onLongPress={() => removeItem(item.id)}>
-            <View style={[s.avatar, item.done && s.avatarDone]}>
-              <Text style={s.avatarEmoji}>{item.done ? '✅' : (CATS[item.category] || '📌')}</Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={[s.rowTitle, item.done && s.rowTitleDone]}>{item.title}</Text>
-              {item.note ? <Text style={s.rowSubtitle} numberOfLines={1}>{item.note}</Text> : null}
-            </View>
-            <TouchableOpacity onPress={() => findLocal(item)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-              <Text style={s.rowAction}>📍</Text>
+          <Swipeable renderRightActions={() => renderDeleteAction(item)} overshootRight={false}>
+            <TouchableOpacity style={s.row} onPress={() => toggle(item.id)}>
+              <View style={[s.avatar, item.done && s.avatarDone]}>
+                <Text style={s.avatarEmoji}>{item.done ? '✅' : (CATS[item.category] || '📌')}</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={[s.rowTitle, item.done && s.rowTitleDone]}>{item.title}</Text>
+                {item.note ? <Text style={s.rowSubtitle} numberOfLines={1}>{item.note}</Text> : null}
+              </View>
+              <TouchableOpacity onPress={() => findLocal(item)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+                <Text style={s.rowAction}>📍</Text>
+              </TouchableOpacity>
             </TouchableOpacity>
-          </TouchableOpacity>
+          </Swipeable>
           {localFor === item.id && localData && (
             <View style={s.localPanel}>
-              {localData.loading && <ActivityIndicator size="small" color={C.primary} />}
+              {localData.loading && (
+                <>
+                  <Skeleton height={13} width="60%" style={{ marginBottom: 10 }} />
+                  <Skeleton height={44} style={{ marginBottom: 8 }} />
+                  <Skeleton height={44} />
+                </>
+              )}
               {localData.error && <Text style={s.localError}>⚠️ {localData.error}</Text>}
               {localData.results && (
                 <>
@@ -360,15 +433,17 @@ export default function PlanScreen({ route, navigation }) {
         </View>
       ) : filteredTracker.map(task => (
         <View key={task.id}>
-          <TouchableOpacity style={s.row} onPress={() => toggle(task.id)} onLongPress={() => removeItem(task.id)}>
-            <View style={[s.avatar, task.done && s.avatarDone]}>
-              <Text style={s.avatarEmoji}>{task.done ? '✅' : (CATS[task.category] || '📌')}</Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={[s.rowTitle, task.done && s.rowTitleDone]}>{task.title}</Text>
-              {task.note ? <Text style={s.rowSubtitle} numberOfLines={1}>{task.note}</Text> : null}
-            </View>
-          </TouchableOpacity>
+          <Swipeable renderRightActions={() => renderDeleteAction(task)} overshootRight={false}>
+            <TouchableOpacity style={s.row} onPress={() => toggle(task.id)}>
+              <View style={[s.avatar, task.done && s.avatarDone]}>
+                <Text style={s.avatarEmoji}>{task.done ? '✅' : (CATS[task.category] || '📌')}</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={[s.rowTitle, task.done && s.rowTitleDone]}>{task.title}</Text>
+                {task.note ? <Text style={s.rowSubtitle} numberOfLines={1}>{task.note}</Text> : null}
+              </View>
+            </TouchableOpacity>
+          </Swipeable>
           <View style={s.hairline} />
         </View>
       ))}
@@ -444,16 +519,18 @@ export default function PlanScreen({ route, navigation }) {
       </Modal>
     </ScrollView>
 
-    <TouchableOpacity style={s.fab} onPress={() => setShowAddTask(true)}>
+    <TouchableOpacity style={[s.fab, { bottom: 24 + insets.bottom }]} onPress={() => setShowAddTask(true)}>
       <Text style={s.fabIcon}>+</Text>
     </TouchableOpacity>
+
+    <Toast toast={toast} onDismiss={() => setToast(null)} />
     </View>
   );
 }
 
 const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: C.bg },
-  header: { padding: 20, paddingTop: 50, borderBottomWidth: 1, borderBottomColor: C.border },
+  header: { paddingHorizontal: 20, paddingBottom: 20, borderBottomWidth: 1, borderBottomColor: C.border },
   title: { color: C.text, fontSize: 22, fontWeight: '900', marginBottom: 4 },
   goal: { color: C.muted, fontSize: 13, fontStyle: 'italic' },
   streak: { color: '#fbbf24', fontSize: 14, fontWeight: '800' },
@@ -468,7 +545,7 @@ const s = StyleSheet.create({
   empty: { alignItems: 'center', paddingTop: 40, paddingBottom: 20 },
   emptyIcon: { fontSize: 48, marginBottom: 12 },
   emptyText: { color: C.muted, fontSize: 15 },
-  row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, paddingVertical: 10 },
+  row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, paddingVertical: 10, backgroundColor: C.bg },
   avatar: { width: 42, height: 42, borderRadius: 21, backgroundColor: 'rgba(99,102,241,0.15)', alignItems: 'center', justifyContent: 'center' },
   avatarDone: { backgroundColor: 'rgba(16,185,129,0.15)' },
   avatarEmoji: { fontSize: 19 },
@@ -477,6 +554,8 @@ const s = StyleSheet.create({
   rowSubtitle: { color: C.muted, fontSize: 12, marginTop: 2 },
   rowAction: { fontSize: 18, padding: 4 },
   hairline: { height: 1, backgroundColor: C.border, marginLeft: 70 },
+  swipeDelete: { backgroundColor: C.danger, justifyContent: 'center', alignItems: 'center', width: 72 },
+  swipeDeleteIcon: { fontSize: 22 },
   localPanel: { marginTop: 6, marginBottom: 6, marginHorizontal: 16, backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 10, gap: 8 },
   localError: { color: C.danger, fontSize: 13 },
   localCity: { color: C.muted, fontSize: 12 },

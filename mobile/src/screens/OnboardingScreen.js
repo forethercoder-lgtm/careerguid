@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as Location from 'expo-location';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { setJSON, getJSON } from '../storage';
 
@@ -17,6 +18,7 @@ const STRATEGIES = [
 
 export default function OnboardingScreen({ navigation, route }) {
   const { token, user } = route.params;
+  const insets = useSafeAreaInsets();
   const [goal, setGoal] = useState('');
   const [level, setLevel] = useState('');
   const [strategy, setStrategy] = useState('');
@@ -56,7 +58,7 @@ export default function OnboardingScreen({ navigation, route }) {
   }
 
   return (
-    <ScrollView style={s.page} contentContainerStyle={s.content}>
+    <ScrollView style={s.page} contentContainerStyle={[s.content, { paddingTop: 24 + insets.top }]}>
       <Text style={S.title}>Расскажи о себе</Text>
       <Text style={[S.sub, { marginBottom: 24 }]}>Это поможет ИИ-помощнику быть полезнее</Text>
 
@@ -124,7 +126,7 @@ export default function OnboardingScreen({ navigation, route }) {
 
 const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: C.bg },
-  content: { padding: 24, paddingTop: 60, paddingBottom: 60 },
+  content: { padding: 24, paddingBottom: 60 },
   textarea: { minHeight: 90, textAlignVertical: 'top' },
   row: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
   choice: { paddingVertical: 10, paddingHorizontal: 16, borderRadius: 12, backgroundColor: C.surface, borderWidth: 1, borderColor: C.border },

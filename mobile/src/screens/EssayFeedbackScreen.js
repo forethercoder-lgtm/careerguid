@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator, Alert } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 
 export default function EssayFeedbackScreen({ route, navigation }) {
   const { token } = route.params;
+  const insets = useSafeAreaInsets();
   const [text, setText] = useState('');
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -59,7 +61,7 @@ export default function EssayFeedbackScreen({ route, navigation }) {
   }
 
   return (
-    <ScrollView style={s.page} contentContainerStyle={s.content}>
+    <ScrollView style={s.page} contentContainerStyle={[s.content, { paddingTop: 20 + insets.top }]}>
       <View style={s.header}>
         <Text style={s.title}>✍️ Проверка эссе</Text>
         <TouchableOpacity onPress={() => navigation.goBack()}><Text style={s.back}>← Назад</Text></TouchableOpacity>
@@ -115,7 +117,7 @@ export default function EssayFeedbackScreen({ route, navigation }) {
 
 const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: C.bg },
-  content: { padding: 20, paddingTop: 50, paddingBottom: 60 },
+  content: { padding: 20, paddingBottom: 60 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
   title: { color: C.text, fontSize: 20, fontWeight: '900' },
   back: { color: C.muted, fontSize: 13, fontWeight: '600' },

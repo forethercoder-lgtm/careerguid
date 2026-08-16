@@ -1,5 +1,7 @@
+import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -39,18 +41,20 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName={initial.route} screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Welcome" component={WelcomeScreen} initialParams={initial.route === 'Welcome' ? initial.params : undefined} />
-          <Stack.Screen name="Auth" component={AuthScreen} initialParams={initial.route === 'Auth' ? initial.params : undefined} />
-          <Stack.Screen name="Onboarding" component={OnboardingScreen} initialParams={initial.route === 'Onboarding' ? initial.params : undefined} />
-          <Stack.Screen name="Plan" component={PlanScreen} initialParams={initial.route === 'Plan' ? initial.params : undefined} />
-          <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
-          <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
-          <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName={initial.route} screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Welcome" component={WelcomeScreen} initialParams={initial.route === 'Welcome' ? initial.params : undefined} />
+            <Stack.Screen name="Auth" component={AuthScreen} initialParams={initial.route === 'Auth' ? initial.params : undefined} />
+            <Stack.Screen name="Onboarding" component={OnboardingScreen} initialParams={initial.route === 'Onboarding' ? initial.params : undefined} />
+            <Stack.Screen name="Plan" component={PlanScreen} initialParams={initial.route === 'Plan' ? initial.params : undefined} />
+            <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
+            <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
+            <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }

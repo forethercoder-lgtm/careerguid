@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { apiDailyTasks, apiSuggestLocal, apiParseDocument, apiSuggestScholarships } from '../api';
 import { saveDocument, readFileAsDataUrl, MAX_DOC_SIZE } from '../docStorage';
+import { pickDailyDueDates } from '../taskPacing';
 import BadgesRow from './BadgesRow';
 import './PlanBuilder.css';
 
@@ -44,15 +45,17 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
       if (data.tasks?.length > 0) {
         const today = getToday();
         setTasks(existing => {
+          const existingDueDates = existing.filter(t => t.origin === 'ai-daily' && !t.done).map(t => t.due);
+          const dueDates = pickDailyDueDates(data.tasks.length, existingDueDates);
           const newTasks = data.tasks.map((t, i) => ({
             id: Date.now() + i, title: t.title, cat: t.category || 'other',
-            due: today, type: 'daily', note: t.note || '', origin: 'ai-daily',
+            due: dueDates[i], type: 'daily', note: t.note || '', origin: 'ai-daily',
             done: false, createdAt: today,
           }));
           const merged = [...existing, ...newTasks.filter(nt => !existing.some(e => e.title === nt.title))];
           return merged;
         });
-        showNotif?.(`✅ ${data.tasks.length} ежедневных задач добавлено! Смотри вкладку "Задачи"`);
+        showNotif?.(`✅ ${data.tasks.length} ежедневных задач добавлено — распределены по дням, смотри вкладку "Задачи"`);
       }
     } catch (e) {
       showNotif?.('⚠️ Не удалось разбить план: ' + e.message);

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 import { getJSON, setJSON } from '../storage';
 
 export default function OrientationResultsScreen({ route, navigation }) {
   const { token, user, onboarding, lastMessage } = route.params;
+  const insets = useSafeAreaInsets();
   const [step, setStep] = useState('specialties'); // specialties | universities
   const [loading, setLoading] = useState(true);
   const [specialties, setSpecialties] = useState([]);
@@ -88,7 +90,7 @@ export default function OrientationResultsScreen({ route, navigation }) {
   if (step === 'specialties') {
     return (
       <View style={s.page}>
-        <View style={s.header}>
+        <View style={[s.header, { paddingTop: 20 + insets.top }]}>
           <Text style={s.title}>Твои специальности</Text>
           <Text style={s.sub}>Выбери одну чтобы продолжить</Text>
         </View>
@@ -151,7 +153,7 @@ const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: C.bg },
   center: { flex: 1, backgroundColor: C.bg, alignItems: 'center', justifyContent: 'center', gap: 16 },
   loadText: { color: C.muted, fontSize: 15 },
-  header: { padding: 20, paddingTop: 50, borderBottomWidth: 1, borderBottomColor: C.border },
+  header: { padding: 20, borderBottomWidth: 1, borderBottomColor: C.border },
   title: { color: C.text, fontSize: 22, fontWeight: '800' },
   sub: { color: C.muted, fontSize: 13, marginTop: 4 },
   list: { padding: 16, gap: 14, paddingBottom: 40 },
