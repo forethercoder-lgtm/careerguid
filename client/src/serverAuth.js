@@ -1,5 +1,7 @@
 // Bridges Firebase Google sign-in to the server's JWT auth, so the web client
 // can call the shared-key AI endpoints without asking the user for anything extra.
+import { API_BASE } from './api';
+
 async function derivePassword(uid) {
   const data = new TextEncoder().encode(uid + ':careerguid-bridge-v1');
   const hashBuffer = await crypto.subtle.digest('SHA-256', data);
@@ -11,14 +13,14 @@ export async function ensureBackendSession(fbUser) {
   const name = fbUser.displayName || 'Студент';
   const password = await derivePassword(fbUser.uid);
 
-  let res = await fetch('/api/auth/login', {
+  let res = await fetch(API_BASE + '/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
   });
 
   if (!res.ok) {
-    res = await fetch('/api/auth/register', {
+    res = await fetch(API_BASE + '/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password }),

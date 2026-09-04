@@ -5,18 +5,18 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #2F6FED, #7C5CFC);
   border: none;
   font-size: 28px;
   cursor: pointer;
-  box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+  box-shadow: 0 8px 30px rgba(47,111,237,0.5);
   z-index: 1000;
   transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ai-fab:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(99,102,241,0.6); }
+.ai-fab:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(47,111,237,0.6); }
 .ai-fab.active { background: linear-gradient(135deg, #374151, #1f2937); font-size: 20px; }
 
 .ai-badge {
@@ -24,7 +24,7 @@
   top: -4px; right: -4px;
   width: 20px; height: 20px;
   border-radius: 50%;
-  background: #ef4444;
+  background: #F5484B;
   color: white;
   font-size: 11px;
   font-weight: 700;
@@ -49,7 +49,7 @@
   width: 380px;
   height: 600px;
   max-height: 85vh;
-  background: #111128;
+  background: #131B37;
   border: 1px solid var(--border);
   border-radius: 20px 20px 0 0;
   z-index: 999;
@@ -68,14 +68,14 @@
   justify-content: space-between;
   padding: 16px 20px;
   border-bottom: 1px solid var(--border);
-  background: rgba(99,102,241,0.08);
+  background: rgba(47,111,237,0.08);
   flex-shrink: 0;
 }
 .ai-panel-title { display: flex; align-items: center; gap: 12px; }
 .ai-avatar {
   width: 40px; height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #2F6FED, #7C5CFC);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,7 +152,7 @@
 .msg-avatar {
   width: 30px; height: 30px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #2F6FED, #7C5CFC);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +172,7 @@
   border-bottom-left-radius: 4px;
 }
 .user .msg-bubble {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #2F6FED, #7C5CFC);
   color: white;
   border-bottom-right-radius: 4px;
 }
@@ -215,7 +215,7 @@
 .ai-send {
   width: 40px; height: 40px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #2F6FED, #7C5CFC);
   border: none;
   color: white;
   font-size: 18px;

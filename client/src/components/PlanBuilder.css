@@ -34,7 +34,7 @@
   flex-wrap: wrap;
 }
 .plan-tag {
-  background: rgba(99,102,241,0.15);
+  background: rgba(47,111,237,0.15);
   color: var(--primary);
   font-size: 12px;
   font-weight: 600;
@@ -88,7 +88,7 @@
   gap: 8px;
 }
 .plan-local-error {
-  color: #ef4444;
+  color: #F5484B;
   font-size: 13px;
 }
 .plan-local-result {
@@ -100,7 +100,7 @@
   transition: background 0.15s;
 }
 .plan-local-result:hover {
-  background: rgba(99,102,241,0.1);
+  background: rgba(47,111,237,0.1);
 }
 .plan-local-result-title {
   color: var(--text);
@@ -144,4 +144,36 @@
   font-size: 13px;
   line-height: 1.4;
   margin-top: 4px;
+}
+
+.activities-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.activities-search-row {
+  display: flex;
+  gap: 8px;
+}
+.plan-tips-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.plan-tip-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(47,111,237,0.08);
+  border: 1px solid rgba(47,111,237,0.25);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+.plan-tip-text {
+  font-size: 13px;
+  line-height: 1.4;
 }

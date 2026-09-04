@@ -140,14 +140,14 @@
   border-color: var(--primary);
 }
 .orient-card.best {
-  border-color: var(--accent, #f59e0b);
+  border-color: var(--accent, #FF8A00);
   cursor: default;
 }
 .orient-best-badge {
   position: absolute;
   top: -10px;
   right: 14px;
-  background: var(--accent, #f59e0b);
+  background: var(--accent, #FF8A00);
   color: #000;
   font-size: 11px;
   font-weight: 700;

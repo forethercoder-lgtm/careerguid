@@ -1,5 +1,12 @@
+// Static hosts (Firebase, etc.) don't run the Node backend themselves, so
+// requests must go straight to the Render server. Same-origin deployments
+// (Render itself, local dev via the Vite proxy) keep using relative paths.
+export const API_BASE = /\.(web\.app|firebaseapp\.com)$/.test(window.location.hostname)
+  ? 'https://careerguid.onrender.com'
+  : '';
+
 async function callServer(path, token, body) {
-  const res = await fetch(path, {
+  const res = await fetch(API_BASE + path, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(body),
@@ -41,7 +48,7 @@ export async function apiGenerateStarterPlan(token, { specialty, university, goa
 async function callServerUpload(path, token, file) {
   const formData = new FormData();
   formData.append('document', file);
-  const res = await fetch(path, {
+  const res = await fetch(API_BASE + path, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
     body: formData,
@@ -65,4 +72,8 @@ export async function apiSuggestScholarships(token, { specialty, countries, educ
 
 export async function apiEssayFeedback(token, text) {
   return callServer('/api/essay-feedback', token, { text });
+}
+
+export async function apiSuggestActivities(token, { query, goal, interests, countries, existingTasks }) {
+  return callServer('/api/suggest-activities', token, { query, goal, interests, countries, existingTasks });
 }

@@ -26,20 +26,20 @@
 .bg-orb-1 {
   width: 600px; height: 600px;
   top: -200px; left: -200px;
-  background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(47,111,237,0.3) 0%, transparent 70%);
   animation-delay: 0s;
 }
 .bg-orb-2 {
   width: 500px; height: 500px;
   bottom: -100px; right: -100px;
-  background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124,92,252,0.25) 0%, transparent 70%);
   animation-delay: -3s;
 }
 .bg-orb-3 {
   width: 400px; height: 400px;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(34,197,94,0.1) 0%, transparent 70%);
   animation-delay: -6s;
 }
 
@@ -60,12 +60,12 @@
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
-  background: rgba(99,102,241,0.15);
-  border: 1px solid rgba(99,102,241,0.3);
+  background: rgba(47,111,237,0.15);
+  border: 1px solid rgba(47,111,237,0.3);
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
-  color: #a5b4fc;
+  color: #A8C6FF;
 }
 .badge-dot {
   width: 8px; height: 8px;

@@ -67,7 +67,7 @@ app.post('/api/assistant', requireAuth, async (req, res) => {
   if (!client) return;
   try {
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant',
       max_tokens: 800,
       messages: [{ role: 'system', content: ASSISTANT_SYSTEM }, ...messages]
     });
@@ -153,6 +153,20 @@ function extractJson(text, fallback) {
   catch { const m = cleaned.match(/\{[\s\S]*\}/); return m ? JSON.parse(m[0]) : fallback; }
 }
 
+// Small in-memory TTL cache for expensive Tavily+Groq lookups, so re-opening
+// the same search with unchanged inputs returns instantly instead of re-running it.
+const responseCache = new Map();
+function cacheGet(key) {
+  const hit = responseCache.get(key);
+  if (!hit) return null;
+  if (Date.now() > hit.expires) { responseCache.delete(key); return null; }
+  return hit.value;
+}
+function cacheSet(key, value, ttlMs = 15 * 60 * 1000) {
+  if (responseCache.size > 200) responseCache.delete(responseCache.keys().next().value);
+  responseCache.set(key, { value, expires: Date.now() + ttlMs });
+}
+
 app.post('/api/suggest-local', requireAuth, async (req, res) => {
   const { lat, lon, city, topic } = req.body;
   if (!topic) return res.status(400).json({ error: 'Не указана тема поиска' });
@@ -200,7 +214,7 @@ app.post('/api/orientation-chat', requireAuth, async (req, res) => {
   if (!client) return;
   try {
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant',
       max_tokens: 800,
       messages: [{ role: 'system', content: ORIENTATION_SYSTEM }, ...messages]
     });
@@ -214,6 +228,9 @@ app.post('/api/orientation-chat', requireAuth, async (req, res) => {
 
 app.post('/api/suggest-specialties', requireAuth, async (req, res) => {
   const { lastMessage } = req.body;
+  const cacheKey = 'specialties:' + JSON.stringify(req.body);
+  const cached = cacheGet(cacheKey);
+  if (cached) return res.json(cached);
   const client = requireGroq(res);
   if (!client) return;
   try {
@@ -244,7 +261,9 @@ ${LANG_RULE}
       max_tokens: 2048,
       messages: [{ role: 'user', content: prompt }]
     });
-    res.json(extractJson(response.choices[0].message.content, { specialties: [] }));
+    const result = extractJson(response.choices[0].message.content, { specialties: [] });
+    cacheSet(cacheKey, result);
+    res.json(result);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -253,6 +272,9 @@ ${LANG_RULE}
 app.post('/api/suggest-universities', requireAuth, async (req, res) => {
   const { specialty, strategy, countries, educationLevel } = req.body;
   if (!specialty) return res.status(400).json({ error: 'Не указана специальность' });
+  const cacheKey = 'universities:' + JSON.stringify(req.body);
+  const cached = cacheGet(cacheKey);
+  if (cached) return res.json(cached);
   const client = requireGroq(res);
   if (!client) return;
 
@@ -304,7 +326,9 @@ ${LANG_RULE} (названия университетов/городов/стр�
       max_tokens: 3000,
       messages: [{ role: 'user', content: prompt }]
     });
-    res.json(extractJson(response.choices[0].message.content, { universities: [] }));
+    const result = extractJson(response.choices[0].message.content, { universities: [] });
+    cacheSet(cacheKey, result);
+    res.json(result);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -312,6 +336,9 @@ ${LANG_RULE} (названия университетов/городов/стр�
 
 app.post('/api/suggest-scholarships', requireAuth, async (req, res) => {
   const { specialty, countries, educationLevel, budget } = req.body;
+  const cacheKey = 'scholarships:' + JSON.stringify(req.body);
+  const cached = cacheGet(cacheKey);
+  if (cached) return res.json(cached);
   const client = requireGroq(res);
   if (!client) return;
 
@@ -356,7 +383,63 @@ ${LANG_RULE} (названия стипендий/организаций/стр�
       max_tokens: 2500,
       messages: [{ role: 'user', content: prompt }]
     });
-    res.json(extractJson(response.choices[0].message.content, { scholarships: [] }));
+    const result = extractJson(response.choices[0].message.content, { scholarships: [] });
+    cacheSet(cacheKey, result);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/suggest-activities', requireAuth, async (req, res) => {
+  const { query, goal, interests, countries, existingTasks } = req.body;
+  const client = requireGroq(res);
+  if (!client) return;
+
+  try {
+    const interestList = (interests || []).join(', ') || goal || 'общее развитие';
+    const countryList = (countries || []).join(', ') || '';
+    const searchResults = await tavilySearch(
+      `extracurricular activities olympiads competitions volunteering internships hackathons for students interested in ${interestList} ${countryList} ${query || ''} 2026`, 8
+    );
+    const searchContext = searchResults.length
+      ? searchResults.map(r => `- ${r.title}: ${r.content}`).join('\n')
+      : 'Реальных данных из поиска нет — используй общеизвестные типы активностей (олимпиады, волонтёрство, стажировки, хакатоны), но честно отметь что ссылки нужно проверить.';
+
+    const tasksList = (existingTasks || []).join('; ') || 'пока нет задач';
+
+    const prompt = `Ты помогаешь школьнику подобрать активности для портфолио (для поступления в университет). На основе данных из веб-поиска подбери 5-7 конкретных активностей. Также, глядя на его текущий план, дай 1-3 коротких совета как план можно улучшить (если действительно есть что улучшить — иначе оставь пустой массив). Ответь ТОЛЬКО JSON.
+
+Данные из поиска:
+${searchContext}
+
+Интересы студента: ${interestList}
+${query ? `Запрос студента: ${query}` : ''}
+Текущие задачи в плане студента: ${tasksList}
+
+{
+  "activities": [
+    {
+      "title": "Название активности",
+      "category": "olympiad | volunteering | internship | competition | course | project | other",
+      "description": "Что это такое (1 предложение)",
+      "whyFit": "Почему подходит именно этому студенту (1 предложение)",
+      "effort": "Например: 2-4 недели"
+    }
+  ],
+  "planTips": ["Конкретный совет по улучшению плана, только если он реально полезен"]
+}
+
+Не выдумывай ссылки или названия конкретных организаций, которых нет в данных поиска — если данных мало, используй общеизвестные форматы (например "Международная олимпиада по информатике", "Волонтёрство в местном приюте для животных").
+${LANG_RULE}
+Ответь ТОЛЬКО JSON.`;
+
+    const response = await client.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 2000,
+      messages: [{ role: 'user', content: prompt }]
+    });
+    res.json(extractJson(response.choices[0].message.content, { activities: [], planTips: [] }));
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

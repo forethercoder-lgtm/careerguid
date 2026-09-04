@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './PortfolioTab.css';
 
 const STATUS_LABELS = {
-  done: { label: 'Готово', color: '#10b981', emoji: '✅' },
-  in_progress: { label: 'В процессе', color: '#f59e0b', emoji: '🔄' },
+  done: { label: 'Готово', color: '#22C55E', emoji: '✅' },
+  in_progress: { label: 'В процессе', color: '#FF8A00', emoji: '🔄' },
   not_started: { label: 'Не начато', color: '#475569', emoji: '⬜' },
   not_asked: { label: 'Не запросил', color: '#475569', emoji: '⬜' },
   pending: { label: 'Нужно', color: '#475569', emoji: '⬜' },
@@ -107,8 +107,8 @@ export default function PortfolioTab({ userEmail }) {
                 strokeLinecap="round" transform="rotate(-90 50 50)" />
               <defs>
                 <linearGradient id="pg" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#6366f1" />
-                  <stop offset="100%" stopColor="#10b981" />
+                  <stop offset="0%" stopColor="#2F6FED" />
+                  <stop offset="100%" stopColor="#22C55E" />
                 </linearGradient>
               </defs>
             </svg>
@@ -136,7 +136,7 @@ export default function PortfolioTab({ userEmail }) {
           <button key={t.id} className={`ptab ${tab === t.id ? 'active' : ''}`} onClick={() => setTab(t.id)}>
             {t.label}
             {t.total !== null
-              ? <span className="ptab-count" style={{ background: t.count === t.total && t.total > 0 ? 'rgba(16,185,129,0.3)' : '' }}>{t.count}/{t.total}</span>
+              ? <span className="ptab-count" style={{ background: t.count === t.total && t.total > 0 ? 'rgba(34,197,94,0.3)' : '' }}>{t.count}/{t.total}</span>
               : <span className="ptab-count">{t.count}</span>
             }
           </button>

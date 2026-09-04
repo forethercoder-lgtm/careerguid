@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { apiDailyTasks, apiSuggestLocal, apiParseDocument, apiSuggestScholarships } from '../api';
+import { apiDailyTasks, apiSuggestLocal, apiParseDocument, apiSuggestScholarships, apiSuggestActivities } from '../api';
 import { saveDocument, readFileAsDataUrl, MAX_DOC_SIZE } from '../docStorage';
 import { pickDailyDueDates } from '../taskPacing';
 import BadgesRow from './BadgesRow';
@@ -16,6 +16,9 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
   const [uploading, setUploading] = useState(false);
   const [localResults, setLocalResults] = useState(null); // { taskId, city, results } | { taskId, loading: true }
   const [scholarships, setScholarships] = useState(null); // { loading } | { results } | { error }
+  const [activities, setActivities] = useState(null); // { loading } | { results, tips } | { error }
+  const [activityQuery, setActivityQuery] = useState('');
+  const [showActivities, setShowActivities] = useState(false);
   const fileInputRef = useRef(null);
 
   const planItems = tasks.filter(t => t.origin === 'plan');
@@ -128,6 +131,37 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
     showNotif?.('✅ Стипендия добавлена в план');
   }
 
+  async function findActivities(useOwnGoal) {
+    setActivities({ loading: true });
+    try {
+      const data = await apiSuggestActivities(token, {
+        query: useOwnGoal ? '' : activityQuery.trim(),
+        goal: prefs?.goal,
+        interests: prefs?.interests,
+        countries: prefs?.countries,
+        existingTasks: planItems.map(t => t.title),
+      });
+      setActivities({ results: data.activities || [], tips: data.planTips || [] });
+    } catch (e) {
+      setActivities({ error: e.message });
+    }
+  }
+
+  function addActivityToPlan(act) {
+    const item = {
+      id: Date.now(), title: act.title, cat: '🔖 Другое',
+      note: [act.description, act.whyFit].filter(Boolean).join(' — '), origin: 'plan', done: false, createdAt: getToday(),
+    };
+    setTasks(t => [item, ...t]);
+    showNotif?.('✅ Активность добавлена в план');
+  }
+
+  function addTipToPlan(tip) {
+    const item = { id: Date.now(), title: tip, cat: '🔖 Другое', note: '', origin: 'plan', done: false, createdAt: getToday() };
+    setTasks(t => [item, ...t]);
+    showNotif?.('✅ Добавлено в план');
+  }
+
   return (
     <div className="plan-page">
       <div className="plan-header">
@@ -157,6 +191,7 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
           {scholarships?.loading ? 'Ищу...' : '💰 Стипендии'}
         </button>
         <button className="btn btn-ghost" onClick={onEssayFeedback}>✍️ Проверить эссе</button>
+        <button className="btn btn-ghost" onClick={() => setShowActivities(s => !s)}>🎯 Активности для портфолио</button>
         <input
           ref={fileInputRef}
           type="file"
@@ -179,6 +214,55 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
               <button className="btn btn-ghost" style={{ marginTop: 8 }} onClick={() => addScholarshipToPlan(sch)}>+ В план</button>
             </div>
           ))}
+        </div>
+      )}
+
+      {showActivities && (
+        <div className="activities-panel">
+          <div className="activities-search-row">
+            <input
+              className="task-input"
+              placeholder="Например: активности по IT для портфолио"
+              value={activityQuery}
+              onChange={e => setActivityQuery(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && activityQuery.trim() && findActivities(false)}
+            />
+            <button className="btn btn-primary" onClick={() => findActivities(false)} disabled={activities?.loading || !activityQuery.trim()}>
+              🔍 Найти
+            </button>
+          </div>
+          <button className="btn btn-ghost" style={{ marginTop: 8 }} onClick={() => findActivities(true)} disabled={activities?.loading}>
+            {activities?.loading ? 'Анализирую...' : '✨ Подобрать по моей цели'}
+          </button>
+
+          {activities && !activities.loading && (
+            <div className="scholarships-panel" style={{ marginTop: 14 }}>
+              {activities.error && <div className="plan-local-error">⚠️ {activities.error}</div>}
+
+              {activities.tips?.length > 0 && (
+                <div className="plan-tips-block">
+                  <div className="section-tip">💡 ИИ предлагает улучшить план — принять можно по желанию:</div>
+                  {activities.tips.map((tip, i) => (
+                    <div key={i} className="plan-tip-card">
+                      <span className="plan-tip-text">{tip}</span>
+                      <button className="btn btn-ghost" onClick={() => addTipToPlan(tip)}>+ В план</button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activities.results?.length === 0 && <div className="prefs-hint">Ничего не найдено</div>}
+              {activities.results?.map((act, i) => (
+                <div key={i} className="scholarship-card">
+                  <div className="scholarship-title">{act.title}</div>
+                  <div className="scholarship-meta">{act.category}{act.effort ? ` · ⏱ ${act.effort}` : ''}</div>
+                  {act.description && <div className="scholarship-desc">{act.description}</div>}
+                  {act.whyFit && <div className="scholarship-desc">💡 {act.whyFit}</div>}
+                  <button className="btn btn-ghost" style={{ marginTop: 8 }} onClick={() => addActivityToPlan(act)}>+ В план</button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
