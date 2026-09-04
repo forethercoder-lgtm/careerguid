@@ -67,7 +67,8 @@ app.post('/api/assistant', requireAuth, async (req, res) => {
   if (!client) return;
   try {
     const response = await client.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'openai/gpt-oss-20b',
+      reasoning_effort: 'low',
       max_tokens: 800,
       messages: [{ role: 'system', content: ASSISTANT_SYSTEM }, ...messages]
     });
@@ -106,7 +107,8 @@ ${LANG_RULE}
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 1500,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -214,7 +216,8 @@ app.post('/api/orientation-chat', requireAuth, async (req, res) => {
   if (!client) return;
   try {
     const response = await client.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'openai/gpt-oss-20b',
+      reasoning_effort: 'low',
       max_tokens: 800,
       messages: [{ role: 'system', content: ORIENTATION_SYSTEM }, ...messages]
     });
@@ -257,7 +260,8 @@ ${LANG_RULE}
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 2048,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -322,7 +326,8 @@ ${LANG_RULE} (названия университетов/городов/стр�
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 3000,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -379,7 +384,8 @@ ${LANG_RULE} (названия стипендий/организаций/стр�
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 2500,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -435,7 +441,8 @@ ${LANG_RULE}
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 2000,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -470,7 +477,8 @@ ${truncated}
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 1500,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -507,7 +515,8 @@ ${LANG_RULE}
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 2000,
       messages: [{ role: 'user', content: prompt }]
     });
@@ -586,7 +595,8 @@ ${LANG_RULE} (даже если сам документ был на другом
 Ответь ТОЛЬКО JSON.`;
 
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
+      reasoning_effort: 'low',
       max_tokens: 2000,
       messages: [{ role: 'user', content: prompt }]
     });
