@@ -1,0 +1,106 @@
+{
+  "_source": "Составлено по открытым материалам British Council / IDP / Cambridge (band descriptors — публичная версия) и takeielts.britishcouncil.org. Тексты дескрипторов пересказаны своими словами.",
+  "_updated": "2026-09",
+  "overview": {
+    "sections": ["Listening 30 мин", "Reading 60 мин", "Writing 60 мин", "Speaking 11–14 мин"],
+    "types": {
+      "Academic": "для поступления в вузы (бакалавр/магистр/PhD)",
+      "General Training": "для миграции, работы, средней школы"
+    },
+    "scoring": "Каждая секция — балл 1–9 (шаг 0.5). Overall = среднее четырёх, округляется до ближайших 0.5.",
+    "validity": "2 года",
+    "bandMeaning": {
+      "9": "Эксперт — полное владение",
+      "8": "Очень хорошее — редкие несистемные ошибки",
+      "7": "Хорошее — владеет языком, отдельные неточности",
+      "6": "Компетентное — в целом эффективно, есть ошибки",
+      "5": "Скромное — частичное владение, много ошибок",
+      "4": "Ограниченное — базовое в знакомых ситуациях"
+    }
+  },
+  "typicalUniversityRequirements": {
+    "bachelor": "обычно 6.0–6.5 overall, не ниже 5.5–6.0 за секцию",
+    "master": "обычно 6.5–7.0 overall, не ниже 6.0–6.5 за секцию",
+    "phd": "часто 7.0+ , письмо 6.5–7.0",
+    "note": "Точный порог всегда смотреть на странице программы. Топовые вузы и гуманитарные/юридические программы требуют 7.0–7.5."
+  },
+  "writingTask2": {
+    "weight": "две трети балла за Writing",
+    "criteria": {
+      "Task Response": "Полностью ответить на ВСЕ части вопроса, ясная позиция на протяжении всего эссе, идеи развиты и подкреплены примерами. Мин. 250 слов.",
+      "Coherence & Cohesion": "Логика абзацев, один абзац — одна мысль, связки (however, moreover, as a result) уместны, есть вступление и вывод.",
+      "Lexical Resource": "Разнообразная лексика, точная сочетаемость слов, синонимы вместо повторов, менее частотные слова к месту, минимум ошибок в написании.",
+      "Grammatical Range & Accuracy": "Разные конструкции (сложноподчинённые, условные, пассив), большинство предложений без ошибок, верная пунктуация."
+    },
+    "bandGuide": {
+      "5": "Отвечает на задание частично, позиция размытая; абзацы есть, но связки механические; лексики хватает лишь на базовые идеи, заметные ошибки; простые предложения преобладают, ошибки мешают.",
+      "6": "Отвечает на все части, но неравномерно; позиция есть, вывод бывает нечёткий; связки местами избыточны/недостаточны; лексика адекватная, есть ошибки в словах; смесь простых и сложных предложений, ошибки не мешают пониманию.",
+      "7": "Чётко отвечает на все части, ясная позиция всюду, идеи развёрнуты (иногда переобобщение); логичное развитие, хорошие связки; неплохой запас лексики, чувство стиля, редкие ошибки; много сложных предложений, большинство без ошибок.",
+      "8": "Полный и точный ответ, идеи хорошо раскрыты; текст читается без усилий, абзацы выстроены; широкая и точная лексика, редкие оговорки; разнообразная грамматика, ошибки единичны."
+    },
+    "questionTypes": [
+      "Opinion (Agree/Disagree) — 'To what extent do you agree or disagree?'",
+      "Discussion (Both views) — 'Discuss both views and give your opinion.'",
+      "Advantages/Disadvantages — 'Do the advantages outweigh the disadvantages?'",
+      "Problem/Solution (Cause/Solution) — 'What are the problems and how can they be solved?'",
+      "Two-part question — два прямых вопроса в задании"
+    ],
+    "essayStructure": "Вступление (перефразировать тему + тезис) → Тело 1 (главная мысль + развитие + пример) → Тело 2 (вторая мысль + развитие + пример) → Вывод (повторить позицию). 4 абзаца, 260–290 слов.",
+    "practicePrompts": [
+      "Some people think university education should be free for everyone. To what extent do you agree or disagree?",
+      "Many young people today leave their home country to work abroad. Discuss the advantages and disadvantages of this trend.",
+      "Online learning is becoming more common. Do the benefits of studying online outweigh the drawbacks?",
+      "In many cities, traffic and pollution are serious problems. What causes this and what solutions can you suggest?",
+      "Some believe schools should teach practical skills like cooking and budgeting. Others think academic subjects matter more. Discuss both views and give your opinion.",
+      "International tourism brings money but can harm local culture. Do you think it is a positive or negative development?",
+      "Governments should invest more in public transport than in new roads. To what extent do you agree?",
+      "Children spend too much time on smartphones. What problems does this cause and how can parents address them?"
+    ]
+  },
+  "writingTask1Academic": {
+    "task": "Описать график/таблицу/диаграмму/процесс/карту — 150+ слов, 20 мин.",
+    "structure": "Вступление (перефразировать) → Overview (2–3 главных тренда, без цифр) → Детали 1 → Детали 2.",
+    "keyLanguage": ["rise/increase/climb", "fall/decline/drop", "peak at", "level off / plateau", "fluctuate", "roughly / approximately", "a sharp/gradual/steady + noun"]
+  },
+  "speaking": {
+    "parts": {
+      "Part 1": "4–5 мин. Знакомые темы: дом, работа/учёба, хобби, еда, погода.",
+      "Part 2": "Cue card — говорить 1–2 мин после 1 мин подготовки.",
+      "Part 3": "Обсуждение абстрактных вопросов по теме Part 2, 4–5 мин."
+    },
+    "criteria": {
+      "Fluency & Coherence": "Говорить без долгих пауз и постоянных самоисправлений, связно развивать мысль.",
+      "Lexical Resource": "Разнообразная лексика, парафраз, идиомы к месту.",
+      "Grammatical Range & Accuracy": "Разные времена и конструкции, точность.",
+      "Pronunciation": "Понятность, интонация, ударения; акцент допустим."
+    },
+    "part2Topics": [
+      "Describe a skill you would like to learn.",
+      "Describe a person who influenced your choice of career.",
+      "Describe a place where you like to study.",
+      "Describe a difficult decision you once made.",
+      "Describe a book that helped you.",
+      "Describe a goal you hope to achieve in the next five years."
+    ]
+  },
+  "studyPlan8Weeks": [
+    { "week": "1", "focus": "Диагностика: пройти 1 полный бесплатный mock. Разобрать формат всех 4 секций. Завести словарь." },
+    { "week": "2", "focus": "Listening: типы заданий, потренировать section 1–2. Reading: skimming/scanning, True/False/Not Given." },
+    { "week": "3", "focus": "Writing Task 1 (Academic): язык описания трендов, 4 эссе по образцу. Speaking Part 1: записывать ответы на диктофон." },
+    { "week": "4", "focus": "Writing Task 2: структура, 3 типа вопросов, 3 эссе + самопроверка по дескрипторам. Learn 50 topic-collocations." },
+    { "week": "5", "focus": "Listening section 3–4 (лекции). Reading: matching headings, gap-fill. Mid-check mock (Listening+Reading)." },
+    { "week": "6", "focus": "Writing Task 2: оставшиеся типы вопросов, 4 эссе, работа над Coherence. Speaking Part 2: 10 cue cards, таймер." },
+    { "week": "7", "focus": "Полный mock под таймер. Speaking Part 3: развёрнутые ответы. Точечно закрыть слабую секцию." },
+    { "week": "8", "focus": "2 полных mock с проверкой. Повторить словарь и связки. За 2 дня до экзамена — только лёгкое повторение." }
+  ],
+  "freeResources": [
+    { "name": "British Council — IELTS Ready (Free)", "url": "https://takeielts.britishcouncil.org/prepare/ielts-ready", "what": "Реальные вопросы прошлых лет, тренажёр, вебинары" },
+    { "name": "British Council — Free practice & mock tests", "url": "https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests", "what": "Скачиваемые тесты, бланки ответов, транскрипты, ключи" },
+    { "name": "IELTS Writing Band Descriptors (public version, Cambridge)", "url": "https://takeielts.britishcouncil.org/sites/default/files/ielts_writing_band_descriptors.pdf", "what": "Официальная таблица критериев 1–9" },
+    { "name": "IELTS Speaking Band Descriptors (public version)", "url": "https://takeielts.britishcouncil.org/sites/default/files/ielts_speaking_band_descriptors.pdf", "what": "Официальная таблица критериев 1–9" },
+    { "name": "IDP — IELTS preparation", "url": "https://ielts.org/take-a-test/preparation-resources", "what": "Бесплатные материалы и подготовительные курсы" },
+    { "name": "IELTS Online Tests (community)", "url": "https://ieltsonlinetests.com/", "what": "Большой банк бесплатных практик по всем секциям" },
+    { "name": "ielts-ai-dataset (GitHub, MIT)", "url": "https://github.com/LuchoBazz/ielts-ai-dataset", "what": "Практические тесты в JSON/Markdown для интеграции в приложение" },
+    { "name": "Kaggle — IELTS Writing scored essays", "url": "https://www.kaggle.com/datasets/mazlumi/ielts-writing-scored-essays-dataset", "what": "~1400 эссе с реальными баллами — калибровка авто-оценки" }
+  ]
+}
