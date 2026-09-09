@@ -75,7 +75,7 @@ export default function OrientationResultsScreen({ route, navigation }) {
       const existing = await getJSON(key) || [];
       const merged = [...existing, ...newItems.filter(nt => !existing.some(e => e.title === nt.title))];
       await setJSON(key, merged);
-      navigation.replace('Plan', { token, user, onboarding });
+      navigation.replace('Main', { token, user, onboarding });
     } catch { }
     setAdding(false);
   }
@@ -153,7 +153,7 @@ const s = StyleSheet.create({
   page: { flex: 1, backgroundColor: C.bg },
   center: { flex: 1, backgroundColor: C.bg, alignItems: 'center', justifyContent: 'center', gap: 16 },
   loadText: { color: C.muted, fontSize: 15 },
-  header: { padding: 20, borderBottomWidth: 1, borderBottomColor: C.border },
+  header: { padding: 20, backgroundColor: C.bg2, borderBottomWidth: 1, borderBottomColor: C.border },
   title: { color: C.text, fontSize: 22, fontWeight: '800' },
   sub: { color: C.muted, fontSize: 13, marginTop: 4 },
   list: { padding: 16, gap: 14, paddingBottom: 40 },

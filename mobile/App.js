@@ -9,12 +9,15 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import AuthScreen from './src/screens/AuthScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
-import PlanScreen from './src/screens/PlanScreen';
+import MainTabs from './src/screens/MainTabs';
 import OrientationChatScreen from './src/screens/OrientationChatScreen';
 import OrientationResultsScreen from './src/screens/OrientationResultsScreen';
 import EssayFeedbackScreen from './src/screens/EssayFeedbackScreen';
+import PreferencesSurveyScreen from './src/screens/PreferencesSurveyScreen';
+import IeltsScreen from './src/screens/IeltsScreen';
 import { getItem, getJSON } from './src/storage';
 import { C } from './src/theme';
+import { configureNotifications } from './src/notifications';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,12 +25,13 @@ export default function App() {
   const [initial, setInitial] = useState(null); // { route, params } | null while loading
 
   useEffect(() => {
+    configureNotifications();
     (async () => {
       const token = await getItem('token');
       const user = await getJSON('user');
       if (!token || !user) { setInitial({ route: 'Welcome', params: undefined }); return; }
       const onboarding = await getJSON(`onboarding_${user.email}`);
-      if (onboarding) setInitial({ route: 'Plan', params: { token, user, onboarding } });
+      if (onboarding) setInitial({ route: 'Main', params: { token, user, onboarding } });
       else setInitial({ route: 'Onboarding', params: { token, user } });
     })();
   }, []);
@@ -48,10 +52,12 @@ export default function App() {
             <Stack.Screen name="Welcome" component={WelcomeScreen} initialParams={initial.route === 'Welcome' ? initial.params : undefined} />
             <Stack.Screen name="Auth" component={AuthScreen} initialParams={initial.route === 'Auth' ? initial.params : undefined} />
             <Stack.Screen name="Onboarding" component={OnboardingScreen} initialParams={initial.route === 'Onboarding' ? initial.params : undefined} />
-            <Stack.Screen name="Plan" component={PlanScreen} initialParams={initial.route === 'Plan' ? initial.params : undefined} />
+            <Stack.Screen name="Main" component={MainTabs} initialParams={initial.route === 'Main' ? initial.params : undefined} />
             <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
             <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
             <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
+            <Stack.Screen name="PreferencesSurvey" component={PreferencesSurveyScreen} />
+            <Stack.Screen name="Ielts" component={IeltsScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

@@ -91,4 +91,17 @@ async function updateUser(id, updates) {
   return db.users[i];
 }
 
-module.exports = { connectDB, findByEmail, findById, createUser, updateUser };
+async function deleteUser(id) {
+  if (USE_MONGO) {
+    const res = await UserModel.findByIdAndDelete(id);
+    return !!res;
+  }
+  const db = readDB();
+  const i = db.users.findIndex(u => String(u.id) === String(id));
+  if (i === -1) return false;
+  db.users.splice(i, 1);
+  writeDB(db);
+  return true;
+}
+
+module.exports = { connectDB, findByEmail, findById, createUser, updateUser, deleteUser };

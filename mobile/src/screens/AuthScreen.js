@@ -30,7 +30,7 @@ export default function AuthScreen({ navigation, route }) {
       await setItem('token', data.token);
       await setJSON('user', data.user);
       const onboarding = await getJSON(`onboarding_${data.user?.email}`);
-      if (onboarding) navigation.replace('Plan', { token: data.token, user: data.user, onboarding });
+      if (onboarding) navigation.replace('Main', { token: data.token, user: data.user, onboarding });
       else navigation.replace('Onboarding', { token: data.token, user: data.user });
     } catch (e) {
       Alert.alert('Ошибка', 'Сервер недоступен. Проверь подключение.');

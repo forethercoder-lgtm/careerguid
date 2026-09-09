@@ -1,17 +1,25 @@
 export const C = {
-  bg:       '#0a0a1a',
-  bg2:      '#111128',
-  surface:  'rgba(255,255,255,0.06)',
-  border:   'rgba(255,255,255,0.1)',
-  primary:  '#6366f1',
-  secondary:'#8b5cf6',
-  accent:   '#f59e0b',
-  success:  '#10b981',
-  danger:   '#ef4444',
-  text:     '#f1f5f9',
-  muted:    '#94a3b8',
-  faint:    '#475569',
+  bg:       '#0b141a',
+  bg2:      '#202c33',
+  surface:  '#1f2c34',
+  border:   'rgba(255,255,255,0.08)',
+  primary:  '#00a884',
+  secondary:'#005c4b',
+  accent:   '#00a884',
+  success:  '#25d366',
+  danger:   '#f15c6d',
+  text:     '#e9edef',
+  muted:    '#8696a0',
+  faint:    '#667781',
 };
+
+export function withOpacity(hex, alpha) {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 
 export const S = {
   card: {

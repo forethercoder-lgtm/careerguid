@@ -71,7 +71,7 @@ export default function OrientationChatScreen({ route, navigation }) {
           <Text style={s.headerName}>Помощь с выбором</Text>
           <Text style={s.headerStatus}>онлайн · ИИ-консультант</Text>
         </View>
-        <TouchableOpacity onPress={() => navigation.replace('Plan', { token, user, onboarding })}>
+        <TouchableOpacity onPress={() => navigation.replace('Main', { token, user, onboarding })}>
           <Text style={s.skipText}>Пропустить</Text>
         </TouchableOpacity>
       </View>
@@ -111,31 +111,28 @@ export default function OrientationChatScreen({ route, navigation }) {
   );
 }
 
-// WhatsApp-inspired dark chat palette
-const WA = { bg: '#0b141a', header: '#202c33', outgoing: '#005c4b', incoming: '#202c33', text: '#e9edef', muted: '#8696a0', accent: '#00a884', input: '#2a3942' };
-
 const s = StyleSheet.create({
-  page: { flex: 1, backgroundColor: WA.bg },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 16, backgroundColor: WA.header },
+  page: { flex: 1, backgroundColor: C.bg },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 16, backgroundColor: C.bg2 },
   headerIcon: { fontSize: 36 },
-  headerName: { color: WA.text, fontWeight: '800', fontSize: 16 },
-  headerStatus: { color: WA.muted, fontSize: 12, marginTop: 2 },
-  skipText: { color: WA.muted, fontSize: 13, fontWeight: '600' },
+  headerName: { color: C.text, fontWeight: '800', fontSize: 16 },
+  headerStatus: { color: C.muted, fontSize: 12, marginTop: 2 },
+  skipText: { color: C.muted, fontSize: 13, fontWeight: '600' },
   list: { padding: 16, gap: 12 },
   msgRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 8 },
   botRow: { justifyContent: 'flex-start' },
   userRow: { justifyContent: 'flex-end' },
   avatar: { fontSize: 24 },
   bubble: { maxWidth: '75%', borderRadius: 12, padding: 10 },
-  botBubble: { backgroundColor: WA.incoming, borderBottomLeftRadius: 3 },
-  userBubble: { backgroundColor: WA.outgoing, borderBottomRightRadius: 3 },
+  botBubble: { backgroundColor: C.bg2, borderBottomLeftRadius: 3 },
+  userBubble: { backgroundColor: C.secondary, borderBottomRightRadius: 3 },
   bubbleText: { fontSize: 14, lineHeight: 20 },
-  botText: { color: WA.text },
-  userText: { color: WA.text },
+  botText: { color: C.text },
+  userText: { color: C.text },
   typing: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingVertical: 10 },
-  typingText: { color: WA.muted, fontSize: 13 },
-  inputRow: { flexDirection: 'row', gap: 8, padding: 12, paddingBottom: 24, backgroundColor: WA.header, alignItems: 'flex-end' },
-  input: { flex: 1, backgroundColor: WA.input, borderRadius: 20, paddingHorizontal: 16, paddingVertical: 10, color: WA.text, fontSize: 15, maxHeight: 100 },
-  sendBtn: { width: 44, height: 44, borderRadius: 22, backgroundColor: WA.accent, alignItems: 'center', justifyContent: 'center' },
+  typingText: { color: C.muted, fontSize: 13 },
+  inputRow: { flexDirection: 'row', gap: 8, padding: 12, paddingBottom: 24, backgroundColor: C.bg2, alignItems: 'flex-end' },
+  input: { flex: 1, backgroundColor: C.surface, borderRadius: 20, paddingHorizontal: 16, paddingVertical: 10, color: C.text, fontSize: 15, maxHeight: 100 },
+  sendBtn: { width: 44, height: 44, borderRadius: 22, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center' },
   sendIcon: { color: '#fff', fontSize: 20, fontWeight: '700' },
 });

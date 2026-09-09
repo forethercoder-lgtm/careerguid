@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator, Alert } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { C, S } from '../theme';
+import { C, S, withOpacity } from '../theme';
 import { API_URL } from '../config';
 
 export default function EssayFeedbackScreen({ route, navigation }) {
@@ -127,7 +127,7 @@ const s = StyleSheet.create({
   secondaryBtnText: { color: C.text, fontWeight: '700', fontSize: 13 },
   result: { marginTop: 20, backgroundColor: C.surface, borderRadius: 16, borderWidth: 1, borderColor: C.border, padding: 18 },
   error: { color: C.danger, fontSize: 13 },
-  score: { alignSelf: 'flex-start', backgroundColor: 'rgba(16,185,129,0.15)', color: C.success, fontWeight: '700', fontSize: 13, paddingHorizontal: 14, paddingVertical: 5, borderRadius: 999, marginBottom: 12, overflow: 'hidden' },
+  score: { alignSelf: 'flex-start', backgroundColor: withOpacity(C.success, 0.15), color: C.success, fontWeight: '700', fontSize: 13, paddingHorizontal: 14, paddingVertical: 5, borderRadius: 999, marginBottom: 12, overflow: 'hidden' },
   summary: { color: C.muted, fontSize: 14, lineHeight: 20, marginBottom: 14 },
   section: { marginBottom: 12 },
   sectionTitle: { color: C.text, fontWeight: '700', fontSize: 14, marginBottom: 6 },

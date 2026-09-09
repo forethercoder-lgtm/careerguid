@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { findByEmail, findById, createUser, updateUser } = require('./db');
+const { findByEmail, findById, createUser, updateUser, deleteUser } = require('./db');
 
 const router = express.Router();
 const SECRET = process.env.JWT_SECRET;
@@ -71,6 +71,52 @@ router.put('/preferences', async (req, res) => {
     const { userId } = jwt.verify(header.replace('Bearer ', ''), SECRET);
     const user = await updateUser(userId, { preferences: req.body.preferences });
     res.json({ user: safeUser(user) });
+  } catch {
+    res.status(401).json({ error: 'Токен недействителен' });
+  }
+});
+
+router.put('/profile', async (req, res) => {
+  const header = req.headers.authorization;
+  if (!header) return res.status(401).json({ error: 'Нет токена' });
+  try {
+    const { userId } = jwt.verify(header.replace('Bearer ', ''), SECRET);
+    const { name } = req.body;
+    if (!name || !name.trim()) return res.status(400).json({ error: 'Введи имя' });
+    const user = await updateUser(userId, { name: name.trim() });
+    res.json({ user: safeUser(user) });
+  } catch {
+    res.status(401).json({ error: 'Токен недействителен' });
+  }
+});
+
+router.put('/password', async (req, res) => {
+  const header = req.headers.authorization;
+  if (!header) return res.status(401).json({ error: 'Нет токена' });
+  try {
+    const { userId } = jwt.verify(header.replace('Bearer ', ''), SECRET);
+    const { currentPassword, newPassword } = req.body;
+    if (!currentPassword || !newPassword) return res.status(400).json({ error: 'Заполни оба поля' });
+    if (newPassword.length < 6) return res.status(400).json({ error: 'Новый пароль минимум 6 символов' });
+    const user = await findById(userId);
+    if (!user) return res.status(401).json({ error: 'Пользователь не найден' });
+    const valid = await bcrypt.compare(currentPassword, user.passwordHash);
+    if (!valid) return res.status(401).json({ error: 'Неверный текущий пароль' });
+    const passwordHash = await bcrypt.hash(newPassword, 12);
+    await updateUser(userId, { passwordHash });
+    res.json({ ok: true });
+  } catch {
+    res.status(401).json({ error: 'Токен недействителен' });
+  }
+});
+
+router.delete('/account', async (req, res) => {
+  const header = req.headers.authorization;
+  if (!header) return res.status(401).json({ error: 'Нет токена' });
+  try {
+    const { userId } = jwt.verify(header.replace('Bearer ', ''), SECRET);
+    await deleteUser(userId);
+    res.json({ ok: true });
   } catch {
     res.status(401).json({ error: 'Токен недействителен' });
   }

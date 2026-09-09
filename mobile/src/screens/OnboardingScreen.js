@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as Location from 'expo-location';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { C, S } from '../theme';
+import { C, S, withOpacity } from '../theme';
 import { setJSON, getJSON } from '../storage';
 
 const LEVELS = [
@@ -53,7 +53,7 @@ export default function OnboardingScreen({ navigation, route }) {
     const existingTasks = await getJSON(`tasks_${user?.email}`) || [];
     const hasPlan = existingTasks.some(t => t.origin === 'plan');
     setSaving(false);
-    if (hasPlan) navigation.replace('Plan', { token, user, onboarding });
+    if (hasPlan) navigation.replace('Main', { token, user, onboarding });
     else navigation.replace('OrientationChat', { token, user, onboarding });
   }
 
@@ -130,7 +130,7 @@ const s = StyleSheet.create({
   textarea: { minHeight: 90, textAlignVertical: 'top' },
   row: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
   choice: { paddingVertical: 10, paddingHorizontal: 16, borderRadius: 12, backgroundColor: C.surface, borderWidth: 1, borderColor: C.border },
-  choiceActive: { borderColor: C.primary, backgroundColor: 'rgba(99,102,241,0.15)' },
+  choiceActive: { borderColor: C.primary, backgroundColor: withOpacity(C.primary, 0.15) },
   choiceText: { color: C.muted, fontWeight: '600', fontSize: 13 },
   choiceTextActive: { color: C.text },
 });
