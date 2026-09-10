@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S, withOpacity } from '../../theme';
 import { API_URL } from '../../config';
 import { useApp } from '../../AppContext';
+import { useEntitlements } from '../../entitlements';
 import { useTasks, todayStr } from '../../useTasks';
 import TaskRow from '../../components/TaskRow';
 import Toast from '../../components/Toast';
@@ -21,6 +22,7 @@ const CATS = { documents: '📄', languages: '🗣', universities: '🏫', essay
 
 export default function PlanTab({ navigation }) {
   const { token, user, onboarding } = useApp();
+  const { canUseAi, recordAiUse } = useEntitlements();
   const insets = useSafeAreaInsets();
   const { tasks, ref, load, addMany, toggle, remove } = useTasks(user?.email);
 
@@ -71,6 +73,7 @@ export default function PlanTab({ navigation }) {
 
   async function breakIntoDays() {
     if (planItems.length === 0) return;
+    if (!canUseAi) { navigation.navigate('Premium'); return; }
     setBreaking(true);
     try {
       const res = await fetch(`${API_URL}/api/generate-daily-tasks`, {
@@ -86,6 +89,7 @@ export default function PlanTab({ navigation }) {
           id: Date.now() + i, title: t.title, category: t.category || 'other',
           type: 'daily', dueDate: dueDates[i], note: t.note || '', origin: 'ai-daily', done: false,
         })));
+        await recordAiUse();
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
         showToast(`${added} задач добавлено — распределены по дням. Открой «Сегодня».`);
       } else {

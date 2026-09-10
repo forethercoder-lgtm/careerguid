@@ -15,9 +15,11 @@ import OrientationResultsScreen from './src/screens/OrientationResultsScreen';
 import EssayFeedbackScreen from './src/screens/EssayFeedbackScreen';
 import PreferencesSurveyScreen from './src/screens/PreferencesSurveyScreen';
 import IeltsScreen from './src/screens/IeltsScreen';
+import PremiumScreen from './src/screens/PremiumScreen';
 import { getItem, getJSON } from './src/storage';
 import { C } from './src/theme';
 import { configureNotifications } from './src/notifications';
+import { EntitlementsProvider } from './src/entitlements';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,19 +49,22 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName={initial.route} screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Welcome" component={WelcomeScreen} initialParams={initial.route === 'Welcome' ? initial.params : undefined} />
-            <Stack.Screen name="Auth" component={AuthScreen} initialParams={initial.route === 'Auth' ? initial.params : undefined} />
-            <Stack.Screen name="Onboarding" component={OnboardingScreen} initialParams={initial.route === 'Onboarding' ? initial.params : undefined} />
-            <Stack.Screen name="Main" component={MainTabs} initialParams={initial.route === 'Main' ? initial.params : undefined} />
-            <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
-            <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
-            <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
-            <Stack.Screen name="PreferencesSurvey" component={PreferencesSurveyScreen} />
-            <Stack.Screen name="Ielts" component={IeltsScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <EntitlementsProvider>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName={initial.route} screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="Welcome" component={WelcomeScreen} initialParams={initial.route === 'Welcome' ? initial.params : undefined} />
+              <Stack.Screen name="Auth" component={AuthScreen} initialParams={initial.route === 'Auth' ? initial.params : undefined} />
+              <Stack.Screen name="Onboarding" component={OnboardingScreen} initialParams={initial.route === 'Onboarding' ? initial.params : undefined} />
+              <Stack.Screen name="Main" component={MainTabs} initialParams={initial.route === 'Main' ? initial.params : undefined} />
+              <Stack.Screen name="OrientationChat" component={OrientationChatScreen} />
+              <Stack.Screen name="OrientationResults" component={OrientationResultsScreen} />
+              <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
+              <Stack.Screen name="PreferencesSurvey" component={PreferencesSurveyScreen} />
+              <Stack.Screen name="Ielts" component={IeltsScreen} />
+              <Stack.Screen name="Premium" component={PremiumScreen} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </EntitlementsProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

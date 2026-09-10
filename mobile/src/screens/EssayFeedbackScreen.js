@@ -4,9 +4,11 @@ import * as DocumentPicker from 'expo-document-picker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S, withOpacity } from '../theme';
 import { API_URL } from '../config';
+import { useEntitlements } from '../entitlements';
 
 export default function EssayFeedbackScreen({ route, navigation }) {
   const { token } = route.params;
+  const { canUseAi, recordAiUse } = useEntitlements();
   const insets = useSafeAreaInsets();
   const [text, setText] = useState('');
   const [uploading, setUploading] = useState(false);
@@ -43,6 +45,7 @@ export default function EssayFeedbackScreen({ route, navigation }) {
 
   async function getFeedback() {
     if (!text.trim()) return;
+    if (!canUseAi) { navigation.navigate('Premium'); return; }
     setLoading(true);
     setResult(null);
     try {
@@ -53,6 +56,7 @@ export default function EssayFeedbackScreen({ route, navigation }) {
       });
       const data = await res.json();
       if (!res.ok) { setResult({ error: data.error || 'Ошибка' }); setLoading(false); return; }
+      await recordAiUse();
       setResult(data);
     } catch {
       setResult({ error: 'Сервер недоступен' });

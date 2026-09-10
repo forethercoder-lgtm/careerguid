@@ -6,6 +6,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { C, S, withOpacity } from '../../theme';
 import { API_URL } from '../../config';
 import { useApp } from '../../AppContext';
+import { useEntitlements } from '../../entitlements';
 import { useTasks, todayStr } from '../../useTasks';
 import Skeleton from '../../components/Skeleton';
 import Toast from '../../components/Toast';
@@ -13,6 +14,7 @@ import * as docStorage from '../../docStorage';
 
 export default function MoreTab({ navigation }) {
   const { token, user, onboarding } = useApp();
+  const { canUseAi, recordAiUse } = useEntitlements();
   const insets = useSafeAreaInsets();
   const { addMany } = useTasks(user?.email);
 
@@ -26,6 +28,7 @@ export default function MoreTab({ navigation }) {
   }, [user?.email]));
 
   async function findScholarships() {
+    if (!canUseAi) { navigation.navigate('Premium'); return; }
     if (!schOpen) setSchOpen(true);
     setSch({ loading: true });
     try {
@@ -36,6 +39,7 @@ export default function MoreTab({ navigation }) {
       });
       const data = await res.json();
       if (!res.ok) { setSch({ error: data.error || 'Ошибка' }); return; }
+      await recordAiUse();
       setSch({ results: data.scholarships || [] });
     } catch {
       setSch({ error: 'Сервер недоступен' });
@@ -91,10 +95,13 @@ export default function MoreTab({ navigation }) {
           </View>
         )}
 
-        <TouchableOpacity style={s.tile} onPress={() => navigation.navigate('EssayFeedback', { token })}>
+        <TouchableOpacity
+          style={s.tile}
+          onPress={() => navigation.navigate(canUseAi ? 'EssayFeedback' : 'Premium', canUseAi ? { token } : undefined)}
+        >
           <Text style={s.tileIcon}>✍️</Text>
           <View style={{ flex: 1 }}>
-            <Text style={s.tileTitle}>Проверка эссе</Text>
+            <Text style={s.tileTitle}>Проверка эссе {!canUseAi && <Text style={s.lock}>🔒</Text>}</Text>
             <Text style={s.tileText}>ИИ разберёт мотивационное письмо и даст оценку</Text>
           </View>
         </TouchableOpacity>
@@ -135,6 +142,7 @@ const s = StyleSheet.create({
   tile: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 14, padding: 14, marginBottom: 10 },
   tileIcon: { fontSize: 24 },
   tileTitle: { color: C.text, fontSize: 15, fontWeight: '700' },
+  lock: { fontSize: 12 },
   tileText: { color: C.muted, fontSize: 12, marginTop: 2, lineHeight: 16 },
   panel: { backgroundColor: withOpacity('#ffffff', 0.04), borderRadius: 12, padding: 10, gap: 8, marginBottom: 10 },
   err: { color: C.danger, fontSize: 13 },

@@ -3,24 +3,27 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-nati
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S, withOpacity } from '../../theme';
 import { useApp } from '../../AppContext';
+import { useEntitlements } from '../../entitlements';
 
 const LEVELS = { bachelor: 'Бакалавр', master: 'Магистр', phd: 'PhD' };
 const STRATEGIES = { reach: '🚀 Амбициозная', balanced: '⚖️ Сбалансированная', safe: '🛡 Надёжная' };
 
 export default function DiscoverTab({ navigation }) {
   const { token, user, onboarding } = useApp();
+  const { canUseAi } = useEntitlements();
   const insets = useSafeAreaInsets();
 
   const go = (screen, params) => navigation.navigate(screen, { token, user, onboarding, ...params });
+  const goOrientation = () => (canUseAi ? go('OrientationChat') : navigation.navigate('Premium'));
 
   return (
     <ScrollView style={s.page} contentContainerStyle={{ padding: 20, paddingTop: 16 + insets.top, paddingBottom: 40 + insets.bottom }}>
       <Text style={s.title}>Подбор</Text>
       <Text style={s.sub}>Определись со специальностью и университетом с помощью ИИ</Text>
 
-      <TouchableOpacity style={s.hero} onPress={() => go('OrientationChat')}>
+      <TouchableOpacity style={s.hero} onPress={goOrientation}>
         <Text style={s.heroIcon}>🎓</Text>
-        <Text style={s.heroTitle}>Карьерная ориентация</Text>
+        <Text style={s.heroTitle}>Карьерная ориентация {!canUseAi && <Text style={{ fontSize: 13 }}>🔒</Text>}</Text>
         <Text style={s.heroText}>Короткий диалог с ИИ-консультантом → 3 специальности под тебя и список университетов</Text>
         <View style={s.heroBtn}><Text style={s.heroBtnText}>Начать беседу →</Text></View>
       </TouchableOpacity>

@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Alert, Switch } from 'react-native';
+import Constants from 'expo-constants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S, withOpacity } from '../theme';
 import { API_URL } from '../config';
 import { getJSON, setJSON, removeItem } from '../storage';
 import { requestPermission, scheduleReminder, cancelReminder } from '../notifications';
 import { useApp } from '../AppContext';
+import { useEntitlements } from '../entitlements';
+
+const APP_VERSION = Constants.expoConfig?.version || '—';
 
 const PRESET_TIMES = [[9, 0], [13, 0], [18, 0], [21, 0]];
 
 export default function AccountScreen({ navigation }) {
   const { token, user } = useApp();
+  const { isPremium, usesLeft } = useEntitlements();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState(user?.name || '');
   const [savingName, setSavingName] = useState(false);
@@ -150,6 +155,19 @@ export default function AccountScreen({ navigation }) {
         <View style={s.avatar}><Text style={s.avatarText}>{(user?.name || '?')[0]?.toUpperCase()}</Text></View>
       </View>
 
+      <TouchableOpacity style={[s.premiumCard, isPremium && s.premiumCardActive]} onPress={() => navigation.navigate('Premium')}>
+        <Text style={s.premiumIcon}>👑</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={s.premiumTitle}>{isPremium ? 'КарьерГид Premium' : 'Перейти на Premium'}</Text>
+          <Text style={s.premiumText}>
+            {isPremium
+              ? 'Активен — все функции без ограничений'
+              : `Бесплатно осталось ИИ-запросов сегодня: ${usesLeft === Infinity ? '∞' : usesLeft}`}
+          </Text>
+        </View>
+        <Text style={s.premiumChevron}>›</Text>
+      </TouchableOpacity>
+
       <View style={S.card}>
         <Text style={S.label}>Имя</Text>
         <TextInput style={S.input} value={name} onChangeText={setName} placeholderTextColor={C.faint} />
@@ -214,6 +232,8 @@ export default function AccountScreen({ navigation }) {
           <Text style={[s.dangerRowText, { color: C.danger }]}>{deleting ? 'Удаляю...' : 'Удалить аккаунт'}</Text>
         </TouchableOpacity>
       </View>
+
+      <Text style={s.version}>КарьерГид · версия {APP_VERSION}</Text>
     </ScrollView>
   );
 }
@@ -239,4 +259,11 @@ const s = StyleSheet.create({
   dangerRow: { paddingVertical: 12 },
   dangerRowText: { color: C.text, fontSize: 15, fontWeight: '600' },
   hairline: { height: 1, backgroundColor: C.border },
+  premiumCard: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 16, borderRadius: 16, backgroundColor: withOpacity(C.primary, 0.12), borderWidth: 1, borderColor: withOpacity(C.primary, 0.4), marginBottom: 8 },
+  premiumCardActive: { backgroundColor: withOpacity(C.success, 0.12), borderColor: withOpacity(C.success, 0.4) },
+  premiumIcon: { fontSize: 24 },
+  premiumTitle: { color: C.text, fontSize: 15, fontWeight: '800' },
+  premiumText: { color: C.muted, fontSize: 12, marginTop: 2, lineHeight: 16 },
+  premiumChevron: { color: C.muted, fontSize: 22, fontWeight: '700' },
+  version: { color: C.faint, fontSize: 12, textAlign: 'center', marginTop: 28 },
 });

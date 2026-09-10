@@ -4,9 +4,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 import { getJSON, setJSON } from '../storage';
+import { useEntitlements } from '../entitlements';
 
 export default function OrientationResultsScreen({ route, navigation }) {
   const { token, user, onboarding, lastMessage } = route.params;
+  const { recordAiUse } = useEntitlements();
   const insets = useSafeAreaInsets();
   const [step, setStep] = useState('specialties'); // specialties | universities
   const [loading, setLoading] = useState(true);
@@ -26,6 +28,7 @@ export default function OrientationResultsScreen({ route, navigation }) {
       });
       const data = await res.json();
       setSpecialties(data.specialties || []);
+      if (data.specialties?.length) recordAiUse();
     } catch { }
     setLoading(false);
   }
