@@ -6,10 +6,14 @@ const SKILL_LABELS = {
   listening: '🎧 Listening',
   reading: '📖 Reading',
   writingTask1: '✍️ Writing Task 1',
-  writingTask2: '✍️ Writing Task 2',
+  writingTask2: '✍️ Writing Task 2 и прогресс по band',
   speaking: '🗣 Speaking',
+  vocabulary: '📚 Лексика по темам',
+  grammar: '🔤 Грамматика',
 };
-const SKILL_ORDER = ['listening', 'reading', 'writingTask1', 'writingTask2', 'speaking'];
+const SKILL_ORDER = ['listening', 'reading', 'writingTask1', 'writingTask2', 'speaking', 'vocabulary', 'grammar'];
+const GUIDE_TYPE_LABELS = { general: 'Общие гайды', topic: 'По процессу поступления', country: 'По странам' };
+const GUIDE_TYPE_ORDER = ['general', 'topic', 'country'];
 const TABS = [
   { id: 'lessons', label: 'Уроки' },
   { id: 'practice', label: 'Практика' },
@@ -74,7 +78,7 @@ export default function Learn({ token, onCancel }) {
                   Эссе ({Object.values(data.practiceBank).flat().length})
                 </button>
                 <button className={`learn-subtab ${practiceSub === 'speaking' ? 'active' : ''}`} onClick={() => setPracticeSub('speaking')}>
-                  Speaking ({data.part2Topics.length})
+                  Speaking ({Object.values(data.part2Categories).flat().length})
                 </button>
               </div>
 
@@ -85,12 +89,12 @@ export default function Learn({ token, onCancel }) {
                 </div>
               ))}
 
-              {practiceSub === 'speaking' && (
-                <div className="learn-group">
-                  <h3 className="learn-group-title">Cue cards (Part 2)</h3>
-                  {data.part2Topics.map((t, i) => {
+              {practiceSub === 'speaking' && Object.entries(data.part2Categories).map(([cat, topics]) => (
+                <div key={cat} className="learn-group">
+                  <h3 className="learn-group-title">{cat}</h3>
+                  {topics.map((t, i) => {
                     const set = data.part3Sets.find(ps => ps.part2Topic === t);
-                    const id = 'p2-' + i;
+                    const id = 'p2-' + cat + i;
                     return (
                       <div key={id} className="learn-card" onClick={() => set && toggle(id)} style={{ cursor: set ? 'pointer' : 'default' }}>
                         <div className="learn-card-title">{set ? (expanded[id] ? '▾ ' : '▸ ') : ''}{t}</div>
@@ -104,23 +108,28 @@ export default function Learn({ token, onCancel }) {
                     );
                   })}
                 </div>
-              )}
+              ))}
             </>
           )}
 
-          {tab === 'guides' && data.guides.map(g => (
-            <div key={g.id} className="learn-card" onClick={() => toggle(g.id)}>
-              <div className="learn-card-title">{expanded[g.id] ? '▾' : '▸'} {g.title}</div>
-              {expanded[g.id] && (
-                <div className="learn-card-body">
-                  {g.sections.map((sec, i) => (
-                    <div key={i} className="learn-guide-section">
-                      <div className="learn-section-heading">{sec.heading}</div>
-                      <div className="learn-section-body">{sec.body}</div>
+          {tab === 'guides' && GUIDE_TYPE_ORDER.map(type => (
+            <div key={type} className="learn-group">
+              <h3 className="learn-group-title">{GUIDE_TYPE_LABELS[type]} ({data.guides.filter(g => g.type === type).length})</h3>
+              {data.guides.filter(g => g.type === type).map(g => (
+                <div key={g.id} className="learn-card" onClick={() => toggle(g.id)}>
+                  <div className="learn-card-title">{expanded[g.id] ? '▾' : '▸'} {g.title}</div>
+                  {expanded[g.id] && (
+                    <div className="learn-card-body">
+                      {g.sections.map((sec, i) => (
+                        <div key={i} className="learn-guide-section">
+                          <div className="learn-section-heading">{sec.heading}</div>
+                          <div className="learn-section-body">{sec.body}</div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              )}
+              ))}
             </div>
           ))}
         </div>

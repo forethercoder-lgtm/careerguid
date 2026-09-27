@@ -8,10 +8,14 @@ const SKILL_LABELS = {
   listening: '🎧 Listening',
   reading: '📖 Reading',
   writingTask1: '✍️ Writing Task 1',
-  writingTask2: '✍️ Writing Task 2',
+  writingTask2: '✍️ Writing Task 2 и прогресс по band',
   speaking: '🗣 Speaking',
+  vocabulary: '📚 Лексика по темам',
+  grammar: '🔤 Грамматика',
 };
-const SKILL_ORDER = ['listening', 'reading', 'writingTask1', 'writingTask2', 'speaking'];
+const SKILL_ORDER = ['listening', 'reading', 'writingTask1', 'writingTask2', 'speaking', 'vocabulary', 'grammar'];
+const GUIDE_TYPE_LABELS = { general: 'Общие гайды', topic: 'По процессу поступления', country: 'По странам' };
+const GUIDE_TYPE_ORDER = ['general', 'topic', 'country'];
 const TABS = [
   { id: 'lessons', label: 'Уроки' },
   { id: 'practice', label: 'Практика' },
@@ -86,7 +90,7 @@ export default function LearnScreen({ navigation, route }) {
                   <Text style={[s.subTabText, practiceSub === 'essays' && s.subTabTextActive]}>Эссе ({Object.values(data.practiceBank).flat().length})</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[s.subTab, practiceSub === 'speaking' && s.subTabActive]} onPress={() => setPracticeSub('speaking')}>
-                  <Text style={[s.subTabText, practiceSub === 'speaking' && s.subTabTextActive]}>Speaking ({data.part2Topics.length})</Text>
+                  <Text style={[s.subTabText, practiceSub === 'speaking' && s.subTabTextActive]}>Speaking ({Object.values(data.part2Categories).flat().length})</Text>
                 </TouchableOpacity>
               </View>
 
@@ -97,12 +101,12 @@ export default function LearnScreen({ navigation, route }) {
                 </View>
               ))}
 
-              {practiceSub === 'speaking' && (
-                <>
-                  <Text style={s.skillTitle}>Cue cards (Part 2)</Text>
-                  {data.part2Topics.map((t, i) => {
+              {practiceSub === 'speaking' && Object.entries(data.part2Categories).map(([cat, topics]) => (
+                <View key={cat} style={{ marginBottom: 16 }}>
+                  <Text style={s.skillTitle}>{cat}</Text>
+                  {topics.map((t, i) => {
                     const set = data.part3Sets.find(ps => ps.part2Topic === t);
-                    const id = 'p2-' + i;
+                    const id = 'p2-' + cat + i;
                     return (
                       <TouchableOpacity key={id} style={s.card} onPress={() => set && toggle(id)} activeOpacity={set ? 0.8 : 1}>
                         <Text style={s.cardTitle}>{set ? (expanded[id] ? '▾ ' : '▸ ') : ''}{t}</Text>
@@ -115,25 +119,30 @@ export default function LearnScreen({ navigation, route }) {
                       </TouchableOpacity>
                     );
                   })}
-                </>
-              )}
+                </View>
+              ))}
             </>
           )}
 
-          {tab === 'guides' && data.guides.map(g => (
-            <TouchableOpacity key={g.id} style={s.card} onPress={() => toggle(g.id)} activeOpacity={0.8}>
-              <Text style={s.cardTitle}>{expanded[g.id] ? '▾ ' : '▸ '}{g.title}</Text>
-              {expanded[g.id] && (
-                <View style={{ marginTop: 8 }}>
-                  {g.sections.map((sec, i) => (
-                    <View key={i} style={{ marginBottom: 10 }}>
-                      <Text style={s.sectionHeading}>{sec.heading}</Text>
-                      <Text style={s.sectionBody}>{sec.body}</Text>
+          {tab === 'guides' && GUIDE_TYPE_ORDER.map(type => (
+            <View key={type} style={{ marginBottom: 18 }}>
+              <Text style={s.skillTitle}>{GUIDE_TYPE_LABELS[type]} ({data.guides.filter(g => g.type === type).length})</Text>
+              {data.guides.filter(g => g.type === type).map(g => (
+                <TouchableOpacity key={g.id} style={s.card} onPress={() => toggle(g.id)} activeOpacity={0.8}>
+                  <Text style={s.cardTitle}>{expanded[g.id] ? '▾ ' : '▸ '}{g.title}</Text>
+                  {expanded[g.id] && (
+                    <View style={{ marginTop: 8 }}>
+                      {g.sections.map((sec, i) => (
+                        <View key={i} style={{ marginBottom: 10 }}>
+                          <Text style={s.sectionHeading}>{sec.heading}</Text>
+                          <Text style={s.sectionBody}>{sec.body}</Text>
+                        </View>
+                      ))}
                     </View>
-                  ))}
-                </View>
-              )}
-            </TouchableOpacity>
+                  )}
+                </TouchableOpacity>
+              ))}
+            </View>
           ))}
         </ScrollView>
       )}

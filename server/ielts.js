@@ -6,13 +6,19 @@ const pretestBank = require('./data/ieltsPretest.json');
 const ieltsInfo = require('./data/ielts.json');
 const lessonsData = require('./data/ieltsLessons.json');
 const guidesData = require('./data/studyAbroadGuides.json');
+const countryGuidesData = require('./data/countryGuides.json');
+const topicGuidesData = require('./data/topicGuides.json');
+const vocabLessonsData = require('./data/ieltsVocabLessons.json');
 
 function learningContent() {
+  const generalGuides = guidesData.guides.map(g => ({ ...g, type: 'general' }));
+  const countryGuides = countryGuidesData.countryGuides.map(g => ({ ...g, type: 'country', title: `Как поступить в ${g.country}` }));
+  const topicGuides = topicGuidesData.topicGuides.map(g => ({ ...g, type: 'topic' }));
   return {
-    lessons: lessonsData.lessons,
-    guides: guidesData.guides,
+    lessons: [...lessonsData.lessons, ...vocabLessonsData.lessons],
+    guides: [...generalGuides, ...topicGuides, ...countryGuides],
     practiceBank: ieltsInfo.writingTask2.practiceBank,
-    part2Topics: ieltsInfo.speaking.part2Topics,
+    part2Categories: ieltsInfo.speaking.part2Categories,
     part3Sets: ieltsInfo.speaking.part3Sets,
   };
 }

@@ -61,37 +61,221 @@
         "Some people believe that studying abroad broadens students' outlook, while others think it is better to study at home. Discuss both views and give your opinion.",
         "Many universities now offer courses entirely online. To what extent do you agree that online degrees are as valuable as traditional ones?",
         "Some argue that grades and exams put too much pressure on students. To what extent do you agree or disagree?",
-        "Should students be required to study a foreign language, or should it remain optional? Discuss both views and give your opinion."
+        "Should students be required to study a foreign language, or should it remain optional? Discuss both views and give your opinion.",
+        "Some people think children should start formal schooling as early as possible, while others believe they should start later. Discuss both views and give your opinion.",
+        "University tuition fees have risen sharply in many countries. What are the causes of this and what solutions can you suggest?",
+        "Some believe that private tutoring gives wealthier students an unfair advantage. To what extent do you agree?",
+        "Many students choose their degree based on future salary rather than personal interest. Is this a positive or negative development?",
+        "Some think that all students should study the same core subjects, while others believe schools should offer more choice. Discuss both views and give your opinion.",
+        "In some countries, higher education is completely free. Do the advantages of this policy outweigh the disadvantages?",
+        "Some people believe that homework does more harm than good. To what extent do you agree or disagree?",
+        "Boarding schools are becoming more popular in some countries. What are the advantages and disadvantages of sending children to boarding school?",
+        "Some argue that universities should focus more on preparing students for jobs, while others believe they should focus on broad knowledge. Discuss both views and give your opinion.",
+        "Class sizes in many schools are growing larger. What problems does this cause and how can they be solved?",
+        "Some people think competition between students improves the quality of education, while others think it does more harm than good. Discuss both views and give your opinion.",
+        "Gap years before university are increasingly common. Do the benefits of taking a gap year outweigh the drawbacks?",
+        "Some believe that failing an exam should not be seen as a bad thing. To what extent do you agree or disagree?",
+        "Many argue that arts subjects such as music and drama are less important than science subjects and should receive less funding in schools. To what extent do you agree?",
+        "Some people think teachers should be paid according to their students' performance. To what extent do you agree or disagree?",
+        "In many countries, university degrees are seen as essential for a good career. What are the causes of this, and is it a positive or negative development?"
       ],
       "Technology": [
         "Artificial intelligence is increasingly used to make decisions that used to be made by humans. Do the advantages of this outweigh the disadvantages?",
         "Some people think social media has made people less social in real life. To what extent do you agree or disagree?",
         "As technology develops, more people work from home instead of an office. Discuss the advantages and disadvantages of this trend.",
-        "Some believe that children should not be allowed to use smartphones until a certain age. To what extent do you agree?"
+        "Some believe that children should not be allowed to use smartphones until a certain age. To what extent do you agree?",
+        "Many people now rely on GPS navigation instead of reading maps. Is this a positive or negative development?",
+        "Some argue that the internet has made people less able to concentrate for long periods. What are the causes of this and what solutions can you propose?",
+        "Online shopping is replacing traditional shops in many countries. Do the advantages of this outweigh the disadvantages?",
+        "Some believe that robots will eventually replace most human jobs. To what extent do you agree or disagree?",
+        "Video games are becoming more realistic and popular among all age groups. Discuss the advantages and disadvantages of this trend.",
+        "Some think that governments should have the right to monitor people's internet activity for security reasons. To what extent do you agree?",
+        "Many people now prefer to communicate through text messages rather than face-to-face conversations. What problems does this cause and how can they be solved?",
+        "Some believe that technology has made children less creative and imaginative. To what extent do you agree or disagree?",
+        "Self-driving cars are being tested in many cities. Do the advantages of this technology outweigh the disadvantages?",
+        "Some argue that people should be allowed to work from home permanently, while others think workplaces are essential. Discuss both views and give your opinion.",
+        "The use of facial recognition technology is increasing in public spaces. What are the benefits and drawbacks of this?",
+        "Some believe that reading news online has replaced reading printed newspapers entirely. Is this a positive or negative development?",
+        "Many people are concerned about the amount of personal data collected by technology companies. What problems does this cause and what solutions can be suggested?",
+        "Some think virtual reality will soon replace traditional classroom teaching. To what extent do you agree or disagree?",
+        "E-books have become more popular than printed books in recent years. Discuss the advantages and disadvantages of this trend.",
+        "Some argue that developing countries should focus on developing their own technology rather than importing it from richer nations. To what extent do you agree?"
       ],
       "Environment": [
         "Some people think individuals can do little to solve environmental problems, and only governments and large companies can make a difference. To what extent do you agree?",
         "Many countries are shifting to renewable energy sources. What are the advantages and disadvantages of this change?",
         "Some believe that a rise in the standard of living in a country results in a rise in environmental pollution. What are the causes and possible solutions?",
-        "Plastic packaging is a major cause of pollution. What problems does this cause and what solutions can you suggest?"
+        "Plastic packaging is a major cause of pollution. What problems does this cause and what solutions can you suggest?",
+        "Some argue that zoos are cruel and should be banned, while others believe they play an important role in conservation. Discuss both views and give your opinion.",
+        "Deforestation is increasing rapidly in many parts of the world. What are the causes of this, and what measures can be taken to address it?",
+        "Some people think that a global tax on carbon emissions is the best way to fight climate change. To what extent do you agree?",
+        "Many species of animals are becoming endangered due to human activity. What can be done to protect them?",
+        "Some believe that individuals should be fined for not recycling, while others think this is too extreme. Discuss both views and give your opinion.",
+        "Water shortages are becoming a serious problem in many countries. What are the causes of this and what solutions can be proposed?",
+        "Some argue that governments should ban cars in city centres to reduce pollution. Do the advantages of this outweigh the disadvantages?",
+        "Fast fashion has a significant negative impact on the environment. What are the causes of this problem and how can it be solved?",
+        "Some think that environmental problems are too big to be solved by individual countries acting alone. To what extent do you agree or disagree?",
+        "Many cities are experiencing rising temperatures due to climate change. What problems does this cause and what solutions can be suggested?",
+        "Some believe that businesses should be responsible for the environmental damage they cause, rather than governments. To what extent do you agree?",
+        "The demand for meat is increasing worldwide, despite its environmental impact. Discuss the causes of this and possible solutions.",
+        "Some argue that eco-tourism helps protect the environment, while others think it does more harm than good. Discuss both views and give your opinion.",
+        "Air pollution in large cities is reaching dangerous levels. What are the main causes and what can be done to reduce it?",
+        "Some believe that it is unfair to ask developing countries to reduce carbon emissions at the same rate as developed countries. To what extent do you agree?",
+        "Single-use products such as plastic bags and bottles are still widely used despite their environmental cost. What causes this and what solutions can you suggest?"
       ],
       "Government & Society": [
         "Some people think the government should reduce spending on the arts and put more money into public services. To what extent do you agree or disagree?",
         "In many countries, the gap between rich and poor is increasing. What are the causes of this and what measures can be taken to reduce it?",
         "Some believe that unpaid community service should be a compulsory part of high school programmes. To what extent do you agree?",
-        "Crime rates are rising in many big cities. What do you think are the causes, and what solutions can be suggested?"
+        "Crime rates are rising in many big cities. What do you think are the causes, and what solutions can be suggested?",
+        "Some argue that voting in national elections should be made compulsory. To what extent do you agree or disagree?",
+        "Many governments are increasing surveillance in public areas to prevent crime. Do the advantages of this outweigh the disadvantages?",
+        "Some believe that prisons should focus on rehabilitating criminals rather than punishing them. Discuss both views and give your opinion.",
+        "In some countries, the population is ageing rapidly. What problems does this cause for society and what solutions can be proposed?",
+        "Some think that governments should provide a guaranteed basic income for all citizens. To what extent do you agree or disagree?",
+        "Corruption remains a serious problem in many countries. What are the causes of this and what can be done to reduce it?",
+        "Some believe that the media has too much influence over public opinion. To what extent do you agree?",
+        "Many cities are becoming overcrowded due to rapid urbanisation. What problems does this cause and how can they be solved?",
+        "Some argue that wealthy countries have a duty to help poorer countries develop. To what extent do you agree or disagree?",
+        "Gender inequality persists in many workplaces around the world. What are the causes of this and what measures can be taken to address it?",
+        "Some think that the legal age for voting should be lowered to sixteen. Discuss both views and give your opinion.",
+        "Immigration levels are rising in many developed countries. Do the advantages of this outweigh the disadvantages?",
+        "Some believe that governments should limit the number of children a family can have to control population growth. To what extent do you agree?",
+        "Homelessness remains a significant problem in many major cities. What are the causes of this and what solutions can be suggested?",
+        "Some argue that traditional customs and values are being lost as societies become more modern. To what extent do you agree or disagree?",
+        "Public trust in politicians has declined in many countries. What are the causes of this, and what can be done to restore it?"
       ],
       "Health": [
         "Fast food consumption is increasing worldwide. What are the causes and effects of this trend, and what solutions can you propose?",
         "Some believe that people should exercise on their own, while others think joining a gym or team sport is more effective. Discuss both views and give your opinion.",
         "The number of people suffering from stress-related illnesses is increasing. What do you think are the causes and possible solutions?",
-        "Some argue that governments should be responsible for people's health, while others believe individuals should take full responsibility. Discuss both views and give your opinion."
+        "Some argue that governments should be responsible for people's health, while others believe individuals should take full responsibility. Discuss both views and give your opinion.",
+        "Obesity rates are rising rapidly in many countries. What are the main causes of this problem and what solutions can be suggested?",
+        "Some believe that unhealthy foods such as sugary drinks should be taxed more heavily. To what extent do you agree?",
+        "Mental health problems among young people are increasing. What are the causes of this, and what can be done to address it?",
+        "Some think that healthcare should be free for everyone, regardless of income. To what extent do you agree or disagree?",
+        "Many people are turning to alternative medicine instead of conventional treatments. Do the advantages of this outweigh the disadvantages?",
+        "Some argue that advertising unhealthy food to children should be banned. To what extent do you agree?",
+        "The rise of sedentary lifestyles is a growing concern in modern society. What are the causes of this, and what solutions can be proposed?",
+        "Some believe that ageing populations will put unsustainable pressure on healthcare systems. To what extent do you agree or disagree?",
+        "Many countries are experiencing a shortage of doctors and nurses. What are the causes of this problem and how can it be solved?",
+        "Some think that people should be legally required to have regular health check-ups. To what extent do you agree?",
+        "Smoking rates have declined in many countries due to government campaigns. What further measures could help reduce smoking even more?",
+        "Some argue that social media has a negative effect on young people's mental health. To what extent do you agree or disagree?",
+        "Sleep deprivation is becoming increasingly common in modern society. What are the causes of this, and what solutions can be suggested?",
+        "Some believe that vaccination should be made compulsory for all children. Discuss both views and give your opinion.",
+        "Many workplaces now offer wellness programmes to support employee health. Do the benefits of this outweigh the costs?",
+        "Some think that food companies bear the most responsibility for rising obesity rates, while others blame individual choices. Discuss both views and give your opinion."
       ],
       "Work & Economy": [
         "Automation is replacing many jobs previously done by humans. Do the advantages of this outweigh the disadvantages?",
         "Some believe employees should have a fixed daily working schedule, while others prefer flexible hours. Discuss both views and give your opinion.",
         "In many countries, young people change jobs more frequently than in the past. What are the reasons, and is this a positive or negative development?",
-        "Some think success in a career is mainly the result of hard work, while others believe it is mostly luck. Discuss both views and give your opinion."
+        "Some think success in a career is mainly the result of hard work, while others believe it is mostly luck. Discuss both views and give your opinion.",
+        "Many companies now allow employees to work remotely full-time. What are the advantages and disadvantages of this trend?",
+        "Some argue that a four-day working week would benefit both employees and employers. To what extent do you agree?",
+        "The gap between the salaries of top executives and average workers is growing. What are the causes of this, and what should be done about it?",
+        "Some believe that job security is more important than a high salary. To what extent do you agree or disagree?",
+        "Unemployment among young graduates is rising in many countries. What are the causes of this problem and what solutions can be suggested?",
+        "Some think that large companies should be required to hire a certain percentage of local workers. To what extent do you agree?",
+        "Many people retire earlier than in the past due to better pensions. Do the advantages of early retirement outweigh the disadvantages?",
+        "Some argue that businesses should prioritise profit above all else, while others believe social responsibility is equally important. Discuss both views and give your opinion.",
+        "The gig economy, where people work short-term freelance jobs, is growing rapidly. What are the advantages and disadvantages of this trend?",
+        "Some believe that governments should raise the minimum wage significantly. To what extent do you agree or disagree?",
+        "Many young people today prefer to start their own businesses rather than work for established companies. What are the causes of this, and is it a positive development?",
+        "Some think that workplace diversity should be a legal requirement for large companies. To what extent do you agree?",
+        "Globalisation has led to many jobs moving to countries with lower labour costs. What problems does this cause and what solutions can be proposed?",
+        "Some argue that employees should be allowed to negotiate their own working conditions, rather than following fixed company rules. Discuss both views and give your opinion.",
+        "The traditional idea of a lifelong career with one company is disappearing. What are the causes of this change, and is it a positive or negative development?",
+        "Some believe that experience is more valuable than formal qualifications when hiring employees. To what extent do you agree or disagree?"
+      ],
+      "Crime & Law": [
+        "Some people believe that harsher punishments are the most effective way to reduce crime. To what extent do you agree or disagree?",
+        "CCTV cameras are increasingly common in public places. Do the advantages of this outweigh the disadvantages?",
+        "Some argue that young offenders should be treated differently from adult criminals. Discuss both views and give your opinion.",
+        "Cybercrime is becoming a growing problem worldwide. What are the causes of this, and what solutions can be suggested?",
+        "Some believe that the death penalty should be abolished in all countries. To what extent do you agree or disagree?",
+        "Many countries are experiencing a rise in white-collar crime such as fraud. What are the causes of this and how can it be prevented?",
+        "Some think that community-based punishments are more effective than prison sentences for minor crimes. Discuss both views and give your opinion.",
+        "The use of DNA evidence has transformed criminal investigations. What are the benefits and potential drawbacks of this technology?",
+        "Some argue that police forces should be given more power to prevent crime, even if it reduces civil liberties. To what extent do you agree?",
+        "Domestic violence remains a widespread problem in many societies. What are the causes of this and what measures can be taken to address it?",
+        "Some believe that rehabilitation programmes for prisoners are a waste of taxpayer money. To what extent do you agree or disagree?",
+        "Drug-related crime is a serious issue in many cities. What are the causes of this and what solutions can be proposed?",
+        "Some think that private companies should not be allowed to run prisons. Discuss both views and give your opinion.",
+        "Identity theft has increased significantly with the growth of online services. What problems does this cause and how can individuals protect themselves?",
+        "Some argue that witnesses should always be required to testify in court, even if it puts them at risk. To what extent do you agree?",
+        "Many countries are debating whether to legalise certain drugs. Do the advantages of legalisation outweigh the disadvantages?",
+        "Some believe that media coverage of crime creates unnecessary fear in society. To what extent do you agree or disagree?",
+        "Gang-related violence among young people is a growing concern. What are the causes of this and what solutions can be suggested?",
+        "Some think that first-time offenders should always be given a second chance rather than jail time. Discuss both views and give your opinion.",
+        "Corporate crime often goes unpunished compared to crimes committed by individuals. What are the causes of this and how can it be addressed?"
+      ],
+      "Media & Advertising": [
+        "Some people believe that advertising encourages unnecessary spending. To what extent do you agree or disagree?",
+        "Advertisements aimed at children are becoming more common. Do the advantages of this outweigh the disadvantages?",
+        "Some argue that celebrities should not be allowed to endorse products they do not genuinely use. Discuss both views and give your opinion.",
+        "The rise of social media influencers has changed how products are advertised. What problems does this cause and what solutions can be suggested?",
+        "Some believe that news media should be completely free from government influence. To what extent do you agree?",
+        "Many people get their news exclusively from social media rather than traditional outlets. Is this a positive or negative development?",
+        "Some think that misleading advertisements should be banned entirely, even if it limits businesses. To what extent do you agree or disagree?",
+        "Reality television shows have become extremely popular worldwide. What are the causes of this, and is it a positive or negative trend?",
+        "Some argue that the internet has made it too easy to spread false information. What are the causes of this, and what solutions can be proposed?",
+        "Many companies use personal data to create targeted advertisements. Do the benefits of this outweigh the privacy concerns?",
+        "Some believe that children's exposure to advertising should be strictly regulated by law. To what extent do you agree?",
+        "The line between entertainment and advertising has become increasingly blurred. What problems does this cause and how can it be addressed?",
+        "Some think that journalists have a responsibility to remain completely neutral, while others believe personal opinion adds value. Discuss both views and give your opinion.",
+        "Product placement in films and TV shows is becoming more common. Do the advantages of this outweigh the disadvantages?",
+        "Some argue that streaming services have destroyed the traditional television and film industry. To what extent do you agree or disagree?",
+        "Many believe that the pressure to appear perfect on social media harms young people's self-esteem. What are the causes of this and what solutions can be suggested?",
+        "Some think that advertising should be banned in schools completely. To what extent do you agree?",
+        "The 24-hour news cycle has changed how people consume information. Is this a positive or negative development?",
+        "Some argue that anonymous online comments should not be allowed, as they encourage harmful behaviour. To what extent do you agree or disagree?",
+        "Many companies now rely heavily on online reviews to build their reputation. Do the advantages of this outweigh the disadvantages?"
+      ],
+      "Family & Relationships": [
+        "Some people believe that both parents should share childcare responsibilities equally. To what extent do you agree or disagree?",
+        "In many countries, more couples are choosing not to have children. What are the causes of this trend, and is it a positive or negative development?",
+        "Some argue that grandparents should play a bigger role in raising children. Discuss both views and give your opinion.",
+        "The number of people living alone is increasing in many societies. What are the causes of this, and what effects does it have?",
+        "Some believe that arranged marriages can be as successful as marriages based on romantic love. To what extent do you agree or disagree?",
+        "Divorce rates have risen significantly in many countries. What are the causes of this and what effects does it have on families?",
+        "Some think that children raised by working parents are less well-adjusted than those raised by a stay-at-home parent. To what extent do you agree?",
+        "Many young adults are choosing to live with their parents for longer than in the past. What are the causes of this trend?",
+        "Some argue that it is the government's responsibility to provide affordable childcare, not the family's. To what extent do you agree or disagree?",
+        "In many cultures, elderly parents are expected to live with their adult children. Discuss the advantages and disadvantages of this arrangement.",
+        "Some believe that children today have too much freedom compared to previous generations. To what extent do you agree?",
+        "The traditional extended family is becoming less common in modern society. What are the causes of this and what effects does it have?",
+        "Some think that couples should live together before marriage to test their compatibility. Discuss both views and give your opinion.",
+        "Many parents today are more focused on their careers than on raising their children. Is this a positive or negative development?",
+        "Some argue that birth order (being the oldest, middle, or youngest child) has a significant effect on personality. To what extent do you agree or disagree?",
+        "Long-distance relationships have become more common due to global mobility. What problems does this cause and how can they be managed?",
+        "Some believe that single parents can raise children just as successfully as two-parent families. To what extent do you agree?",
+        "In some cultures, family reputation is considered more important than individual happiness. Discuss both views and give your opinion.",
+        "Some think that social media has made it harder to maintain close family relationships. What are the causes of this, and what solutions can be suggested?",
+        "Many believe that spending quality time together is more important than money for a happy family. To what extent do you agree or disagree?"
+      ],
+      "Globalisation, Tourism & Culture": [
+        "International tourism brings money but can harm local culture. Do you think it is a positive or negative development?",
+        "Some people believe that globalisation is making cultures around the world too similar. To what extent do you agree or disagree?",
+        "Many traditional festivals and customs are disappearing due to modernisation. What are the causes of this and what can be done to preserve them?",
+        "Some argue that English has become too dominant as a global language, threatening smaller languages. To what extent do you agree?",
+        "Mass tourism is putting pressure on popular destinations around the world. What problems does this cause and what solutions can be suggested?",
+        "Some think that multinational companies have too much influence over local economies and cultures. To what extent do you agree or disagree?",
+        "Many people choose to live and work in a foreign country rather than their own. What are the causes of this, and what effects does it have on both countries?",
+        "Some believe that international trade benefits wealthy countries more than developing ones. To what extent do you agree?",
+        "Cultural exchange programmes for students are becoming more popular. Do the advantages of this outweigh the disadvantages?",
+        "Some argue that historic buildings and sites should be preserved even if it limits economic development. Discuss both views and give your opinion.",
+        "Many young people are losing interest in their own cultural traditions. What are the causes of this and what solutions can be proposed?",
+        "Some think that a single global currency would benefit international trade. To what extent do you agree or disagree?",
+        "The fashion industry often borrows elements from different cultures. Is this a positive form of appreciation or a negative form of exploitation?",
+        "Some argue that immigrants should be required to adopt the customs of their new country. To what extent do you agree?",
+        "International sporting events like the Olympics bring countries together. Do the benefits of hosting such events outweigh the costs?",
+        "Some believe that eating habits around the world are becoming too similar due to global fast-food chains. What are the causes of this, and is it a negative development?",
+        "Many countries rely heavily on tourism as a source of income. What are the risks of this dependence, and how can they be reduced?",
+        "Some think that historical monuments should be freely accessible to everyone, even if this risks damaging them. Discuss both views and give your opinion.",
+        "Global brands are increasingly replacing small local businesses. What problems does this cause and what solutions can be suggested?",
+        "Some argue that travelling is the best way to learn about other cultures, more so than reading or watching documentaries. To what extent do you agree or disagree?"
       ]
     }
   },
@@ -112,38 +296,303 @@
       "Grammatical Range & Accuracy": "Разные времена и конструкции, точность.",
       "Pronunciation": "Понятность, интонация, ударения; акцент допустим."
     },
-    "part2Topics": [
-      "Describe a skill you would like to learn.",
-      "Describe a person who influenced your choice of career.",
-      "Describe a place where you like to study.",
-      "Describe a difficult decision you once made.",
-      "Describe a book that helped you.",
-      "Describe a goal you hope to achieve in the next five years.",
-      "Describe a time when you helped someone.",
-      "Describe a piece of technology you find useful.",
-      "Describe a memorable trip you took.",
-      "Describe a teacher who had a big influence on you.",
-      "Describe an important decision you had to make quickly.",
-      "Describe a time you learned something new about yourself.",
-      "Describe a public place you like to spend time in.",
-      "Describe an achievement you are proud of.",
-      "Describe a change you would like to make in your life."
-    ],
+    "part2Categories": {
+      "People": [
+        "Describe a person who influenced your choice of career.",
+        "Describe a teacher who had a big influence on you.",
+        "Describe a family member you admire.",
+        "Describe a friend who is important to you.",
+        "Describe a person who has a job you would like to have.",
+        "Describe someone who is very organised.",
+        "Describe a famous person you would like to meet.",
+        "Describe a person who always makes you laugh.",
+        "Describe someone who has achieved something significant in life.",
+        "Describe a neighbour you know well.",
+        "Describe a person who helped you when you were in need.",
+        "Describe someone who speaks more than one language.",
+        "Describe a person who is good at their job.",
+        "Describe an old person you respect.",
+        "Describe a person who often gives you good advice.",
+        "Describe someone who works in a creative field.",
+        "Describe a leader you admire (in your country or elsewhere).",
+        "Describe a person you have known for a long time.",
+        "Describe someone who has a different personality from you.",
+        "Describe a classmate or colleague you enjoy working with.",
+        "Describe a person who is very confident.",
+        "Describe someone who has overcome a difficult situation.",
+        "Describe a member of your family who you spend a lot of time with.",
+        "Describe a person who is generous.",
+        "Describe someone who taught you an important life lesson."
+      ],
+      "Places": [
+        "Describe a place where you like to study.",
+        "Describe a public place you like to spend time in.",
+        "Describe a place you visited that you found relaxing.",
+        "Describe a city you would like to visit.",
+        "Describe a place in nature you enjoyed visiting.",
+        "Describe a café or restaurant you like.",
+        "Describe a room in your home that is important to you.",
+        "Describe a historical place you have visited or would like to visit.",
+        "Describe a place you go to spend time with friends.",
+        "Describe a quiet place you like to go to.",
+        "Describe a place you would like to live in the future.",
+        "Describe a place near your home that has changed recently.",
+        "Describe a museum or gallery you visited.",
+        "Describe a place that is important to your country's culture.",
+        "Describe a shopping area or market you like.",
+        "Describe a natural landscape that impressed you.",
+        "Describe a place you go to be creative.",
+        "Describe a building you find interesting.",
+        "Describe a park you like to visit.",
+        "Describe a place where you feel comfortable.",
+        "Describe a foreign country you would like to visit.",
+        "Describe an old place that has a lot of history.",
+        "Describe a place with a beautiful view.",
+        "Describe a place you often go to relax after work or study.",
+        "Describe a place in your city that tourists like to visit."
+      ],
+      "Objects": [
+        "Describe a piece of technology you find useful.",
+        "Describe a gift you received that you liked.",
+        "Describe an item of clothing you like to wear.",
+        "Describe something you own that is very important to you.",
+        "Describe a piece of furniture in your home.",
+        "Describe an object from your childhood that you still remember.",
+        "Describe something you bought that made you happy.",
+        "Describe a tool or device that makes your life easier.",
+        "Describe a photograph that means a lot to you.",
+        "Describe an old object that has been in your family for a long time.",
+        "Describe something you would like to buy in the future.",
+        "Describe an application (app) on your phone that you use often.",
+        "Describe a piece of jewellery or an accessory you like.",
+        "Describe a book that you own and often read again.",
+        "Describe an item you lost and later found (or never found).",
+        "Describe something handmade that you own or received.",
+        "Describe an invention you think is important.",
+        "Describe a work of art you like.",
+        "Describe a piece of equipment used in a sport or hobby you enjoy.",
+        "Describe something you borrowed from someone.",
+        "Describe an object that represents your country's culture.",
+        "Describe something you would take with you if you moved to a new home.",
+        "Describe a toy you had as a child.",
+        "Describe a machine you find fascinating.",
+        "Describe an item you use to relax."
+      ],
+      "Events": [
+        "Describe a memorable celebration or festival you attended.",
+        "Describe an event that made you feel proud.",
+        "Describe a wedding or celebration you went to.",
+        "Describe a public event you attended (concert, sports match, etc.).",
+        "Describe a surprising event that happened to you.",
+        "Describe an event from your country's history that interests you.",
+        "Describe a competition you took part in.",
+        "Describe an event that changed the way you think about something.",
+        "Describe a family gathering you enjoyed.",
+        "Describe an event you organised.",
+        "Describe a time when you celebrated an important achievement.",
+        "Describe a cultural event you attended.",
+        "Describe an unexpected event that disrupted your plans.",
+        "Describe a graduation or important ceremony you attended.",
+        "Describe an event that brought your community together.",
+        "Describe a time you attended an event alone.",
+        "Describe a sporting event you watched or took part in.",
+        "Describe an event that taught you something new.",
+        "Describe a birthday you remember well.",
+        "Describe an event you were nervous about beforehand.",
+        "Describe a reunion with old friends or family.",
+        "Describe a time you celebrated a national holiday.",
+        "Describe an event where you met someone new and interesting.",
+        "Describe a ceremony or tradition in your culture.",
+        "Describe an event you would like to attend in the future."
+      ],
+      "Experiences": [
+        "Describe a difficult decision you once made.",
+        "Describe a time when you helped someone.",
+        "Describe an important decision you had to make quickly.",
+        "Describe a time you learned something new about yourself.",
+        "Describe an achievement you are proud of.",
+        "Describe a time you felt very happy.",
+        "Describe a mistake you made and what you learned from it.",
+        "Describe a time you had to work with a difficult person.",
+        "Describe a childhood memory that you often think about.",
+        "Describe a time you tried something for the first time.",
+        "Describe a time you received unexpected good news.",
+        "Describe a challenge you overcame.",
+        "Describe a time you changed your opinion about something.",
+        "Describe a moment when you felt very relieved.",
+        "Describe a time you had to be patient.",
+        "Describe a time you disagreed with someone but stayed calm.",
+        "Describe an experience that made you more confident.",
+        "Describe a time you had to solve a problem quickly.",
+        "Describe a time you gave advice to someone.",
+        "Describe a moment you felt proud of your country.",
+        "Describe a time you had to adapt to a new situation.",
+        "Describe an experience that taught you patience.",
+        "Describe a time you worked as part of a team.",
+        "Describe a time you were treated with great kindness.",
+        "Describe a time you had to make a compromise."
+      ],
+      "Activities": [
+        "Describe a skill you would like to learn.",
+        "Describe a hobby you enjoy in your free time.",
+        "Describe a sport you like to watch or play.",
+        "Describe an outdoor activity you enjoy.",
+        "Describe a game you enjoyed playing as a child.",
+        "Describe a creative activity you like doing (art, music, writing, etc.).",
+        "Describe a physical activity that keeps you healthy.",
+        "Describe an activity you do to relax.",
+        "Describe a skill that is useful in everyday life.",
+        "Describe an activity you would like to try but have not yet.",
+        "Describe a group activity you enjoy doing with others.",
+        "Describe a hobby that costs little or no money.",
+        "Describe an activity you used to do but no longer have time for.",
+        "Describe a cooking or baking experience you had.",
+        "Describe an activity you do to stay in touch with friends.",
+        "Describe a musical instrument you play or would like to play.",
+        "Describe an activity you enjoy doing outdoors in nature.",
+        "Describe a form of exercise you would recommend to others.",
+        "Describe an activity that requires teamwork.",
+        "Describe a hobby that has become more popular recently.",
+        "Describe an activity that helps you concentrate or focus.",
+        "Describe something you enjoy doing on weekends.",
+        "Describe a traditional game from your country.",
+        "Describe an activity you do with your family.",
+        "Describe a new hobby you started recently."
+      ],
+      "Media & Books": [
+        "Describe a book that helped you.",
+        "Describe a film you enjoyed watching.",
+        "Describe a TV programme you like to watch.",
+        "Describe a podcast or radio programme you listen to.",
+        "Describe a piece of music that means a lot to you.",
+        "Describe a website you often use.",
+        "Describe a news story that interested you.",
+        "Describe a documentary you found interesting.",
+        "Describe a magazine or newspaper you enjoy reading.",
+        "Describe a piece of writing (story, poem, article) you liked.",
+        "Describe a social media platform you use often.",
+        "Describe an advertisement you remember well.",
+        "Describe a video you saw online that you found useful.",
+        "Describe a song that reminds you of a certain time in your life.",
+        "Describe a biography or autobiography you read or would like to read.",
+        "Describe a piece of technology news that interested you.",
+        "Describe a video game you enjoy or used to enjoy.",
+        "Describe a writer or author you admire.",
+        "Describe an online course you took or would like to take.",
+        "Describe a piece of art or a photograph that impressed you.",
+        "Describe a TV series you have watched completely.",
+        "Describe an interview you watched or read that you found interesting.",
+        "Describe an app or piece of software you find useful for studying or work.",
+        "Describe a story your parents or grandparents told you.",
+        "Describe a piece of online content that went viral that you remember."
+      ],
+      "Plans & Achievements": [
+        "Describe a goal you hope to achieve in the next five years.",
+        "Describe a change you would like to make in your life.",
+        "Describe a skill you plan to develop in the future.",
+        "Describe a place you plan to visit in the future.",
+        "Describe something you hope to buy in the future.",
+        "Describe a career goal you have.",
+        "Describe a habit you would like to develop.",
+        "Describe an ambition you have had since childhood.",
+        "Describe something you would like to improve about yourself.",
+        "Describe a course or qualification you would like to complete.",
+        "Describe a project you would like to start.",
+        "Describe a habit you would like to give up.",
+        "Describe a language you would like to learn.",
+        "Describe an event you are looking forward to.",
+        "Describe a person you would like to become more like.",
+        "Describe a goal your family has for you.",
+        "Describe a change you have noticed in yourself over the years.",
+        "Describe something you would like to achieve before turning 30 (or another age).",
+        "Describe a plan you have for improving your health.",
+        "Describe a business idea you have or would like to have.",
+        "Describe a way you would like to help your community in future.",
+        "Describe a skill your parents want you to develop.",
+        "Describe a short-term goal you are currently working towards.",
+        "Describe how you would like your life to be different in ten years.",
+        "Describe an achievement you hope to be remembered for."
+      ]
+    },
     "part3Sets": [
-      {
-        "part2Topic": "Describe a skill you would like to learn.",
-        "questions": [
-          "Why do some people find it hard to learn new skills as adults?",
-          "Should schools focus more on practical skills than academic subjects?",
-          "How has technology changed the way people learn new skills?"
-        ]
-      },
       {
         "part2Topic": "Describe a person who influenced your choice of career.",
         "questions": [
           "Do you think parents should choose careers for their children?",
           "Why do some people change careers later in life?",
           "Is job satisfaction more important than salary? Why?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a teacher who had a big influence on you.",
+        "questions": [
+          "Why are some teachers more memorable than others?",
+          "Should teachers be strict or friendly with students?",
+          "How has the role of teachers changed with technology?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a famous person you would like to meet.",
+        "questions": [
+          "Why are people so interested in the lives of celebrities?",
+          "Does fame bring more advantages or disadvantages to a person?",
+          "Should famous people feel obliged to be role models?"
+        ]
+      },
+      {
+        "part2Topic": "Describe someone who has achieved something significant in life.",
+        "questions": [
+          "What does society usually consider to be a 'successful' person?",
+          "Do you think success is mostly about talent or hard work?",
+          "Should personal achievements always be recognised publicly?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a leader you admire (in your country or elsewhere).",
+        "questions": [
+          "What qualities make someone a good leader?",
+          "Are leaders born with certain qualities, or can leadership be learned?",
+          "Is it harder to be a leader today than in the past?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a place you visited that you found relaxing.",
+        "questions": [
+          "Why do you think people enjoy travelling to new places?",
+          "Is it better to travel alone or with other people?",
+          "How has tourism changed in your country over the last decade?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a city you would like to visit.",
+        "questions": [
+          "What makes a city attractive to tourists?",
+          "Do you think cities around the world are becoming too similar to each other?",
+          "Is life in a big city better than life in the countryside?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a historical place you have visited or would like to visit.",
+        "questions": [
+          "Why is it important to preserve historical places?",
+          "Should governments spend more money protecting historical sites?",
+          "How do historical places affect a country's sense of national identity?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a public place you like to spend time in.",
+        "questions": [
+          "Why are public spaces important in a city?",
+          "Should governments invest more in parks and other public areas?",
+          "How have public spaces changed in your country in recent years?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a natural landscape that impressed you.",
+        "questions": [
+          "Why do people often feel a strong connection to nature?",
+          "Should popular natural areas be protected from tourism?",
+          "How has urbanisation affected the natural environment in your country?"
         ]
       },
       {
@@ -155,11 +604,91 @@
         ]
       },
       {
-        "part2Topic": "Describe a memorable trip you took.",
+        "part2Topic": "Describe a gift you received that you liked.",
         "questions": [
-          "Why do you think people enjoy travelling to new places?",
-          "Is it better to travel alone or with other people? Why?",
-          "How has tourism changed in your country over the last decade?"
+          "Why do people give gifts to each other?",
+          "Is it better to give a practical gift or a sentimental one?",
+          "Has online shopping changed the way people choose gifts?"
+        ]
+      },
+      {
+        "part2Topic": "Describe an invention you think is important.",
+        "questions": [
+          "Which inventions do you think have changed daily life the most?",
+          "Are all new inventions ultimately beneficial to society?",
+          "Should inventors receive more support and reward from governments?"
+        ]
+      },
+      {
+        "part2Topic": "Describe an old object that has been in your family for a long time.",
+        "questions": [
+          "Why do people like to keep old family items?",
+          "Is it important for families to preserve their history in this way?",
+          "How do young people's attitudes to tradition differ from older generations?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a work of art you like.",
+        "questions": [
+          "Why is art considered important in society?",
+          "Should governments fund art galleries and museums?",
+          "Has technology changed the way people experience art?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a memorable celebration or festival you attended.",
+        "questions": [
+          "Why are festivals important to a culture?",
+          "Are traditional festivals becoming less popular nowadays?",
+          "Should governments financially support traditional festivals?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a sporting event you watched or took part in.",
+        "questions": [
+          "Why do so many people enjoy watching sports?",
+          "Do international sporting events genuinely benefit the countries that host them?",
+          "Should schools place more emphasis on sports?"
+        ]
+      },
+      {
+        "part2Topic": "Describe an event that brought your community together.",
+        "questions": [
+          "Why is community involvement important?",
+          "Are communities less connected today than they were in the past?",
+          "What can governments do to strengthen local communities?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a graduation or important ceremony you attended.",
+        "questions": [
+          "Why are ceremonies important in a culture?",
+          "Are traditional ceremonies becoming less important to young people?",
+          "Should schools organise more ceremonies to celebrate student achievement?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a cultural event you attended.",
+        "questions": [
+          "How do cultural events help preserve local traditions?",
+          "Should cultural events always be free for the public to attend?",
+          "Do you think globalisation is reducing cultural diversity?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a difficult decision you once made.",
+        "questions": [
+          "What kinds of decisions do people usually find hardest to make?",
+          "Do you think people become better decision-makers as they get older?",
+          "Should parents help their children make important decisions?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a time when you helped someone.",
+        "questions": [
+          "Why do some people enjoy helping others more than others do?",
+          "Should schools teach children the importance of helping others?",
+          "Is volunteering more common now than it was in the past?"
         ]
       },
       {
@@ -168,6 +697,142 @@
           "Do you think success is mostly about talent or hard work?",
           "How important is it for children to experience failure?",
           "Should achievements always be recognised publicly?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a time you had to work with a difficult person.",
+        "questions": [
+          "What kinds of behaviour make someone difficult to work with?",
+          "Is conflict in the workplace always a negative thing?",
+          "How can companies reduce conflict between employees?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a time you had to adapt to a new situation.",
+        "questions": [
+          "Why do some people adapt to change more easily than others?",
+          "Is change happening faster in modern society than in the past?",
+          "How can people prepare themselves for unexpected change?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a skill you would like to learn.",
+        "questions": [
+          "Why do some people find it hard to learn new skills as adults?",
+          "Should schools focus more on practical skills than academic subjects?",
+          "How has technology changed the way people learn new skills?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a sport you like to watch or play.",
+        "questions": [
+          "Why are certain sports more popular in some countries than others?",
+          "Should professional athletes be paid as much as they currently are?",
+          "Do you think e-sports should be considered real sports?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a creative activity you like doing (art, music, writing, etc.).",
+        "questions": [
+          "Why is creativity considered important in life?",
+          "Should schools spend more time on creative subjects?",
+          "Has technology made people more or less creative overall?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a physical activity that keeps you healthy.",
+        "questions": [
+          "Why do many people struggle to exercise regularly?",
+          "Should governments do more to encourage physical activity?",
+          "Is staying healthy a personal responsibility or a public one?"
+        ]
+      },
+      {
+        "part2Topic": "Describe an activity that requires teamwork.",
+        "questions": [
+          "What skills are needed to work well as part of a team?",
+          "Is teamwork more important in today's workplaces than in the past?",
+          "Can teamwork be taught, or is it a natural ability?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a book that helped you.",
+        "questions": [
+          "Why do some people prefer reading books to watching films?",
+          "Do you think physical books will eventually disappear?",
+          "Should reading for pleasure be encouraged more in schools?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a film you enjoyed watching.",
+        "questions": [
+          "Why do people enjoy watching films so much?",
+          "Are streaming services changing the film industry for better or worse?",
+          "Should films be used more often as a teaching tool in education?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a news story that interested you.",
+        "questions": [
+          "How has the way people consume news changed in recent years?",
+          "Can social media be trusted as a reliable source of news?",
+          "Should there be stricter regulations for news published online?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a piece of music that means a lot to you.",
+        "questions": [
+          "Why does music have such a strong effect on people's emotions?",
+          "Has music streaming changed how people discover new music?",
+          "Should music education be compulsory in schools?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a social media platform you use often.",
+        "questions": [
+          "How has social media changed the way people communicate?",
+          "Do the benefits of social media for young people outweigh the drawbacks?",
+          "Should there be a minimum age requirement for using social media?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a goal you hope to achieve in the next five years.",
+        "questions": [
+          "Why is it important for people to set goals?",
+          "Do you think most people actually achieve the goals they set?",
+          "Should schools teach students how to set and plan goals?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a change you would like to make in your life.",
+        "questions": [
+          "Why do people often find it difficult to change their habits?",
+          "Is it easier to make changes when you are young?",
+          "What role does support from other people play in personal change?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a career goal you have.",
+        "questions": [
+          "How do most people go about choosing their career path?",
+          "Is career success more important than personal happiness?",
+          "Should career guidance be offered as part of school education?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a language you would like to learn.",
+        "questions": [
+          "Why do people choose to learn a foreign language?",
+          "Is learning other languages becoming less necessary because of translation technology?",
+          "Should all students be required to learn at least one foreign language?"
+        ]
+      },
+      {
+        "part2Topic": "Describe an achievement you hope to be remembered for.",
+        "questions": [
+          "What do most people want to be remembered for after they are gone?",
+          "Is public recognition important for living a meaningful life?",
+          "Do you think future generations will define success differently than we do now?"
         ]
       }
     ]

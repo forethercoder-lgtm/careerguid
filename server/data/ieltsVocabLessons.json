@@ -1,0 +1,251 @@
+{
+  "_note": "Лексика по темам эссе Task 2 (collocations) и грамматические конструкции, повышающие band за Grammatical Range.",
+  "lessons": [
+    { "id": "v-education", "skill": "vocabulary", "title": "Лексика: Education", "points": [
+      "higher education — высшее образование; compulsory education — обязательное образование",
+      "academic performance — успеваемость; to drop out (of school) — бросить учёбу",
+      "tuition fees — плата за обучение; a student loan — студенческий кредит",
+      "vocational training — профессионально-техническое обучение (в противовес академическому)",
+      "to acquire knowledge / skills — получать знания/навыки",
+      "a well-rounded education — разностороннее образование",
+      "rote learning — механическое заучивание (обычно с негативной коннотацией)",
+      "curriculum — учебная программа; extracurricular activities — внеучебная деятельность"
+    ], "tip": "Не используй 'study' и 'learn' в каждом предложении — чередуй с 'acquire knowledge', 'gain skills', 'pursue an education'." },
+
+    { "id": "v-technology", "skill": "vocabulary", "title": "Лексика: Technology", "points": [
+      "cutting-edge technology — передовая технология; to revolutionise — произвести революцию (в чём-то)",
+      "artificial intelligence (AI) — искусственный интеллект; automation — автоматизация",
+      "to become obsolete — устаревать, выходить из употребления",
+      "data privacy — конфиденциальность данных; a breach of privacy — нарушение конфиденциальности",
+      "labour-intensive → capital-intensive — трудоёмкий → капиталоёмкий",
+      "to streamline a process — оптимизировать/упростить процесс",
+      "digital divide — цифровое неравенство (доступ к технологиям)",
+      "a double-edged sword — палка о двух концах (полезная метафора для technology-эссе)"
+    ], "tip": "'A double-edged sword' — отличная фраза для введения к любому эссе о плюсах и минусах технологий." },
+
+    { "id": "v-environment", "skill": "vocabulary", "title": "Лексика: Environment", "points": [
+      "carbon footprint — углеродный след; greenhouse gas emissions — выбросы парниковых газов",
+      "renewable energy — возобновляемая энергия; fossil fuels — ископаemое топливо",
+      "to mitigate climate change — смягчать последствия изменения климата",
+      "biodiversity — биоразнообразие; an endangered species — вымирающий вид",
+      "unsustainable practices — неустойчивые практики (наносящие долгосрочный вред)",
+      "to deplete natural resources — истощать природные ресурсы",
+      "eco-friendly / environmentally friendly — экологичный",
+      "a global consensus — глобальный консенсус (полезно для Government-эссе тоже)"
+    ], "tip": "'Mitigate' звучит гораздо весомее, чем 'reduce' или 'stop' — используй его вместо базовых глаголов в Environment-эссе." },
+
+    { "id": "v-government", "skill": "vocabulary", "title": "Лексика: Government & Society", "points": [
+      "to allocate funding/resources — выделять финансирование/ресурсы",
+      "socioeconomic inequality — социально-экономическое неравенство",
+      "a welfare state — государство всеобщего благосостояния",
+      "to enforce a law/policy — обеспечивать соблюдение закона/политики",
+      "civil liberties — гражданские свободы; surveillance — слежка/наблюдение",
+      "a marginalised group — маргинализированная группа (людей)",
+      "grassroots movement — низовое (гражданское) движение",
+      "to hold someone accountable — привлекать кого-то к ответственности"
+    ], "tip": "'Marginalised group' звучит академичнее и точнее, чем 'poor people' или 'weak people' в Society-эссе." },
+
+    { "id": "v-health", "skill": "vocabulary", "title": "Лексика: Health", "points": [
+      "a sedentary lifestyle — малоподвижный образ жизни",
+      "to be at risk of (an illness) — быть в группе риска (заболевания)",
+      "preventive care — профилактическая медицина",
+      "life expectancy — ожидаемая продолжительность жизни",
+      "a public health crisis — кризис общественного здравоохранения",
+      "to alleviate symptoms — облегчать симптомы",
+      "mental well-being — психологическое благополучие",
+      "a balanced diet — сбалансированное питание"
+    ], "tip": "'Sedentary lifestyle' — ключевая фраза почти для любого эссе про ожирение/малоподвижность, запомни её сразу." },
+
+    { "id": "v-work", "skill": "vocabulary", "title": "Лексика: Work & Economy", "points": [
+      "job security — гарантия занятости; redundancy — сокращение (штата)",
+      "to outsource — передавать на аутсорс; the gig economy — гиг-экономика",
+      "a competitive job market — конкурентный рынок труда",
+      "work-life balance — баланс между работой и личной жизнью",
+      "to boost productivity — повышать продуктивность",
+      "income inequality — неравенство доходов",
+      "entrepreneurship — предпринимательство; a start-up — стартап",
+      "to be made redundant — быть уволенным по сокращению"
+    ], "tip": "Для Work-эссе почти всегда пригодится 'work-life balance' — базовая, но точная фраза, которую экзаменатор ожидает увидеть." },
+
+    { "id": "v-crime", "skill": "vocabulary", "title": "Лексика: Crime & Law", "points": [
+      "to commit a crime / an offence — совершить преступление",
+      "a deterrent — сдерживающий фактор (то, что отпугивает от преступления)",
+      "rehabilitation vs punishment — реабилитация против наказания",
+      "law-abiding citizens — законопослушные граждане",
+      "to tackle crime — бороться с преступностью",
+      "juvenile delinquency — подростковая преступность",
+      "a repeat offender — рецидивист",
+      "to violate someone's rights — нарушать чьи-то права"
+    ], "tip": "'Deterrent' — ключевое слово почти в любой дискуссии о наказаниях и их эффективности." },
+
+    { "id": "v-media", "skill": "vocabulary", "title": "Лексика: Media & Advertising", "points": [
+      "to manipulate public opinion — манипулировать общественным мнением",
+      "misleading advertising — вводящая в заблуждение реклама",
+      "media literacy — медиаграмотность",
+      "to go viral — стать вирусным (о контенте)",
+      "sensationalism — сенсационность (в подаче новостей)",
+      "a credible source — надёжный источник",
+      "targeted advertising — таргетированная реклама",
+      "to shape someone's perception — формировать чьё-то восприятие"
+    ], "tip": "'Media literacy' — полезная фраза для эссе о фейковых новостях: показывает, что решение проблемы — не только запреты, но и образование." },
+
+    { "id": "v-family", "skill": "vocabulary", "title": "Лексика: Family & Relationships", "points": [
+      "the nuclear family — нуклеарная (малая) семья; the extended family — расширенная семья",
+      "to raise a child — растить ребёнка; upbringing — воспитание",
+      "a strong bond — крепкая связь (между людьми)",
+      "to strike a balance (between work and family) — находить баланс",
+      "a breadwinner — кормилец семьи",
+      "generational gap — разрыв поколений",
+      "to instil values — прививать ценности",
+      "a supportive environment — поддерживающая среда"
+    ], "tip": "'Instil values' звучит гораздо профессиональнее, чем 'teach children to be good' — используй в Family-эссе про воспитание." },
+
+    { "id": "v-culture", "skill": "vocabulary", "title": "Лексика: Globalisation & Culture", "points": [
+      "cultural heritage — культурное наследие; to preserve traditions — сохранять традиции",
+      "cultural homogenisation — культурная гомогенизация (унификация культур)",
+      "to assimilate into a culture — ассимилироваться в культуру",
+      "an interconnected world — взаимосвязанный мир",
+      "cultural exchange — культурный обмен",
+      "indigenous communities — коренные сообщества",
+      "a melting pot — плавильный котёл (смешение культур)",
+      "to erode traditions — размывать традиции (постепенно ослаблять)"
+    ], "tip": "'Cultural homogenisation' — продвинутый термин, который сразу поднимает впечатление от Lexical Resource в Globalisation-эссе." },
+
+    { "id": "g-conditionals", "skill": "grammar", "title": "Грамматика: условные предложения (Conditionals)", "points": [
+      "Zero conditional (общие истины): 'If governments invest in education, literacy rates improve.'",
+      "First conditional (реальное будущее): 'If this trend continues, unemployment will rise.'",
+      "Second conditional (гипотетическое настоящее/будущее): 'If people recycled more, pollution would decrease significantly.' — отлично подходит для Opinion-эссе.",
+      "Third conditional (нереальное прошлое): 'If the government had acted sooner, the crisis would not have escalated.'",
+      "Mixed conditionals показывают продвинутый уровень: 'If more funding had been allocated, the situation would be different today.'"
+    ], "tip": "Second conditional — самый недоиспользуемый тип в эссе студентов band 5-6, добавь хотя бы одно предложение с ним в Task 2." },
+
+    { "id": "g-relative-clauses", "skill": "grammar", "title": "Грамматика: относительные придаточные (Relative Clauses)", "points": [
+      "Defining (без запятой, сужает смысл): 'Students who study abroad often develop stronger independence.'",
+      "Non-defining (с запятыми, доп. информация): 'Renewable energy, which is becoming cheaper every year, is key to reducing emissions.'",
+      "'Whose' для принадлежности: 'Countries whose economies rely on tourism are vulnerable to global crises.'",
+      "Сокращённые относительные придаточные (participle clause) звучат более естественно: 'Policies aimed at reducing inequality...' вместо 'Policies that are aimed at...'"
+    ], "tip": "Non-defining relative clause с 'which' — простой способ добавить сложное предложение без риска грамматической ошибки." },
+
+    { "id": "g-passive", "skill": "grammar", "title": "Грамматика: пассивный залог в академическом письме", "points": [
+      "Используй пассив, когда важнее действие, а не тот, кто его совершает: 'Plastic waste is often dumped into rivers.'",
+      "Пассив хорош для обобщений: 'It is widely believed that...', 'It has been argued that...'",
+      "Не злоупотребляй — эссе, написанное полностью в пассиве, звучит неестественно и монотонно.",
+      "В Task 1 (описание процессов) пассив почти обязателен: 'The raw material is heated, then transported to the factory.'"
+    ], "tip": "Одно-два пассивных предложения в эссе показывают грамматический диапазон — не больше 20-30% текста." },
+
+    { "id": "g-concession", "skill": "grammar", "title": "Грамматика: уступительные конструкции (although/despite/even though)", "points": [
+      "'Although' + подлежащее + сказуемое: 'Although the policy was well-intentioned, it failed to achieve its goals.'",
+      "'Despite' / 'In spite of' + существительное/герундий: 'Despite the rising costs, demand remains high.'",
+      "'Even though' используется как 'although', но чуть более разговорно — подходит и для Speaking.",
+      "Частая ошибка: 'Despite of' — неверно, 'despite' никогда не идёт с 'of'."
+    ], "tip": "Начни хотя бы одно предложение в каждом body-абзаце с 'Although' или 'Despite' — это сразу показывает владение uступительными конструкциями." },
+
+    { "id": "g-modals-speculation", "skill": "grammar", "title": "Грамматика: модальные глаголы для предположений", "points": [
+      "'may/might/could' — возможность в настоящем/будущем: 'This trend might continue for several more years.'",
+      "'must have' — уверенное предположение о прошлом: 'The company must have anticipated this problem.'",
+      "'can't have' — уверенность в обратном: 'They can't have expected such a strong reaction.'",
+      "Полезно в Speaking Part 3 при обсуждении абстрактных, неоднозначных вопросов, где нет единственного правильного ответа."
+    ], "tip": "В Part 3 фраза 'It could be argued that...' звучит естественнее и увереннее, чем прямое 'I think'." },
+
+    { "id": "g-participle-clauses", "skill": "grammar", "title": "Грамматика: причастные обороты (Participle Clauses)", "points": [
+      "-ing clause для одновременных/причинных действий: 'Realising the risks, the government introduced new regulations.'",
+      "-ed clause вместо пассивного придаточного: 'Faced with rising costs, many businesses cut jobs.' вместо 'Businesses that were faced with...'",
+      "Сокращает предложение и делает его более 'академическим' по звучанию.",
+      "Частая ошибка: неверный субъект (dangling participle) — убедись, что подлежащее главного предложения совпадает с тем, кто совершает действие в обороте."
+    ], "tip": "Participle clause в начале предложения — один из самых заметных признаков band 7+ в Coherence & Grammar." },
+
+    { "id": "g-inversion", "skill": "grammar", "title": "Грамматика: инверсия для акцента (band 7.5+)", "points": [
+      "'Not only... but also': 'Not only does this policy reduce costs, but it also improves efficiency.'",
+      "'Rarely/Seldom + вспомогательный глагол + подлежащее': 'Rarely has a policy received such widespread criticism.'",
+      "'Only then': 'Only then did the government realise the scale of the problem.'",
+      "Используй инверсию точечно — 1 раз на эссе, злоупотребление звучит неестественно и рискованно с точки зрения ошибок."
+    ], "tip": "Инверсия — это 'специя', а не 'основное блюдо': одно уместное предложение впечатляет больше, чем три с ошибками." },
+
+    { "id": "g-cleft-sentences", "skill": "grammar", "title": "Грамматика: cleft-предложения для акцента", "points": [
+      "'It is... that' конструкция: 'It is education, not wealth, that determines long-term social mobility.'",
+      "'What... is' конструкция: 'What concerns many economists is the growing gap between rich and poor.'",
+      "Полезно для чёткого выделения тезиса во введении или заключении эссе.",
+      "Работает и в Speaking для выделения главной мысли ответа в Part 3."
+    ], "tip": "Начни заключение эссе с 'What is clear is that...' — это готовая, естественно звучащая cleft-конструкция." },
+
+    { "id": "g-articles", "skill": "grammar", "title": "Грамматика: частые ошибки с артиклями (a/an/the)", "points": [
+      "Общие понятия/абстракции без артикля: 'Education is important.' (не 'The education')",
+      "Конкретный, ранее упомянутый предмет — с 'the': 'A new policy was introduced. The policy aims to reduce emissions.'",
+      "Уникальные объекты — с 'the': 'the government', 'the internet', 'the environment' (в значении окружающей среды).",
+      "Множественное число в общем смысле — без артикля: 'Governments should invest in renewable energy.'"
+    ], "tip": "Если сомневаешься — не используй артикль вообще для абстрактных существительных в общем смысле, это чаще правильно, чем добавление 'the'." },
+
+    { "id": "g-prepositions", "skill": "grammar", "title": "Грамматика: частые ошибки в предлогах", "points": [
+      "'depend ON' (не 'depend of'), 'responsible FOR' (не 'responsible of')",
+      "'in the future' / 'in the past' (не 'at the future')",
+      "'increase IN' что-то, но 'increase OF' используется реже — 'an increase in unemployment'",
+      "'according TO' (не 'according with')",
+      "'consist OF' (не 'consist FROM' или 'consist IN')"
+    ], "tip": "Составь личный список из 5 предлогов, которые путаешь чаще всего, и проверяй именно их перед сдачей эссе." },
+
+    { "id": "r-multiple-choice", "skill": "reading", "title": "Reading: техника Multiple Choice", "points": [
+      "Сначала прочитай вопрос и все варианты, выдели ключевые слова в каждом варианте — они помогут искать в тексте.",
+      "Дистракторы часто содержат слова прямо ИЗ текста, но искажают смысл — не выбирай ответ только потому, что видел эти слова в абзаце.",
+      "Ищи квалификаторы в тексте (usually, some, most, always) — они меняют, какой вариант точно соответствует смыслу.",
+      "Если два варианта кажутся близкими — вернись к тексту и сравни их дословно с конкретным предложением, а не по памяти."
+    ], "tip": "В Multiple Choice правильный ответ почти всегда — перефраз, а не точное копирование слов из текста." },
+
+    { "id": "r-completion", "skill": "reading", "title": "Reading: Sentence/Summary Completion", "points": [
+      "Определи тип нужного слова ДО поиска в тексте (существительное, глагол, число, имя) — это сузит область поиска.",
+      "Строго соблюдай лимит слов ('NO MORE THAN THREE WORDS') — даже верный по смыслу, но слишком длинный ответ не засчитывается.",
+      "В Summary Completion сначала пойми общую структуру резюме — это обычно пересказ всего текста или его части в сжатом виде.",
+      "Ищи синонимы: слово в пропуске редко совпадает дословно со словом в тексте."
+    ], "tip": "Всегда проверяй грамматическую согласованность вписанного слова с остальным предложением — число, часть речи, время." },
+
+    { "id": "r-diagram-labelling", "skill": "reading", "title": "Reading: Diagram/Table/Flow-chart Labelling", "points": [
+      "Сначала пойми общую логику схемы/таблицы — что с чем связано, какая последовательность.",
+      "Ищи в тексте абзац, который явно описывает именно эту схему (часто это конкретный, отдельно выделенный раздел текста).",
+      "Числа и технические термины — самые частые ответы в этом типе заданий, обращай на них особое внимание при skim-чтении.",
+      "Работай последовательно по схеме сверху вниз/слева направо — так же обычно идёт и текст с описанием."
+    ], "tip": "Если в схеме есть стрелки — они почти всегда соответствуют словам-связкам последовательности в тексте (then, next, after this)." },
+
+    { "id": "l-multiple-choice", "skill": "listening", "title": "Listening: ловушки Multiple Choice", "points": [
+      "Часто называют все варианты подряд в аудио, а затем через уточнение выбирают/исключают часть из них — слушай до конца, не отвечай на первое совпадение.",
+      "Числа-варианты (даты, суммы) особенно любят менять в последний момент: 'It costs $50... actually, with the new discount, it's $40.'",
+      "Если в вопросе есть 'mainly' или 'primarily' — ищи главную причину, а не любую упомянутую."
+    ], "tip": "Отмечай карандашом предварительный вариант сразу, но будь готов изменить его, если услышишь исправление дальше по записи." },
+
+    { "id": "l-form-completion", "skill": "listening", "title": "Listening: Form/Table/Note Completion", "points": [
+      "Это чаще всего Section 1 — бытовая ситуация (запись, бронь, регистрация) с именами, числами, адресами.",
+      "Слушай орфографию по буквам внимательно — говорящий часто произносит имя/адрес по буквам специально для этого задания.",
+      "Обрати внимание на единицы измерения и формат (£, $, дата в формате день/месяц) — это частая причина технической ошибки в ответе.",
+      "Table completion требует понимать, в какую именно колонку/строку попадает услышанная информация — читай заголовки таблицы заранее."
+    ], "tip": "Потренируй отдельно написание чисел и имён на слух — это самый механический, но самый частый источник потери баллов в Section 1." },
+
+    { "id": "l-map-labelling", "skill": "listening", "title": "Listening: Map/Plan Labelling", "points": [
+      "Перед началом аудио быстро изучи карту — определи, где, скорее всего, находится 'вход' или 'точка отсчёта' (entrance, starting point).",
+      "Слова направления критически важны: 'turn left', 'opposite', 'next to', 'across from', 'between' — выучи их все заранее.",
+      "Следи за движением говорящего по карте пальцем/взглядом в реальном времени, не пытайся запомнить весь маршрут разом.",
+      "Если потерялся — не паникуй, попробуй поймать следующий явный ориентир (a landmark) и продолжить оттуда."
+    ], "tip": "Ошибка в одном пункте маршрута часто не мешает ответить на следующие — не зацикливайся на пропущенном ответе." },
+
+    { "id": "b-band5to6", "skill": "writingTask2", "title": "Путь band 5 → 6: на что смотреть в первую очередь", "points": [
+      "Главный барьер обычно — неполный ответ на все части задания (Task Response), а не грамматика.",
+      "Добавь чёткий тезис в первом абзаце и повторяй свою позицию явно в каждом body-абзаце.",
+      "Проверь длину — многие band 5 эссе короче 250 слов, что автоматически ограничивает балл сверху."
+    ], "tip": "Перечитай задание ПОСЛЕ написания эссе и проверь: ответил ли ты явно на КАЖДУЮ его часть." },
+
+    { "id": "b-band6to65", "skill": "writingTask2", "title": "Путь band 6 → 6.5: типичный барьер", "points": [
+      "На этом уровне часто мешает механическая cohesion — связки в начале каждого предложения без разнообразия.",
+      "Развивай идеи глубже: добавляй конкретный пример или объяснение 'почему' после каждой заявленной мысли.",
+      "Проверь согласование времён и подлежащего/сказуемого — на этом уровне такие ошибки ещё частые и заметные."
+    ], "tip": "Правило 'Point → Explain → Example' для каждого body-абзаца — самый быстрый способ пробить потолок 6.0." },
+
+    { "id": "b-band65to7", "skill": "writingTask2", "title": "Путь band 6.5 → 7: что оценивают строже", "points": [
+      "Экзаменатор ищет более широкий диапазон грамматики — добавь хотя бы одно условное предложение и одно с относительным придаточным.",
+      "Лексика должна включать менее частотные, но точные слова (collocations) — избегай базовых 'good/bad/big problem'.",
+      "Идеи не должны быть переобобщены — избегай абсолютных утверждений вроде 'everyone thinks' или 'this always happens'."
+    ], "tip": "На этом уровне решает не 'больше сложных слов', а точность их использования — неправильно использованное сложное слово вредит больше, чем помогает." },
+
+    { "id": "b-band7to75", "skill": "writingTask2", "title": "Путь band 7 → 7.5+: финальная полировка", "points": [
+      "Ошибки должны быть единичными и не мешающими пониманию — перечитывай эссе специально на грамматику, отдельно от содержания.",
+      "Добавь 1-2 продвинутые конструкции (инверсия, cleft-предложение) уместно и без форсирования.",
+      "Работай над естественностью cohesion — местоимения и синонимы должны связывать текст так же часто, как явные связки."
+    ], "tip": "На этом уровне лучше написать одно by-heart отточенное сложное предложение, чем пять рискованных новых конструкций подряд." }
+  ]
+}
