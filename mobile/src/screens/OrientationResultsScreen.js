@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S } from '../theme';
 import { API_URL } from '../config';
 import { getJSON, setJSON } from '../storage';
 import { useEntitlements } from '../entitlements';
+import { mergeSuggested, updateNote } from '../savedUniversities';
 
 export default function OrientationResultsScreen({ route, navigation }) {
   const { token, user, onboarding, lastMessage } = route.params;
@@ -48,10 +49,25 @@ export default function OrientationResultsScreen({ route, navigation }) {
         }),
       });
       const data = await res.json();
-      setUniversities(data.universities || []);
+      const suggested = data.universities || [];
+      const saved = await mergeSuggested(user?.email, suggested);
+      // Показываем ИИ-подборку в исходном порядке (с рекомендацией), но подтягиваем id/заметку из сохранённого списка.
+      const withNotes = suggested.map(u => {
+        const match = saved.find(s => s.name?.toLowerCase() === u.name?.toLowerCase() && s.country === u.country);
+        return { ...u, id: match?.id, notes: match?.notes || '' };
+      });
+      setUniversities(withNotes);
       setStep('universities');
     } catch { }
     setLoading(false);
+  }
+
+  function onNoteChange(id, text) {
+    setUniversities(list => list.map(u => (u.id === id ? { ...u, notes: text } : u)));
+  }
+
+  function onNoteBlur(id, text) {
+    updateNote(user?.email, id, text);
   }
 
   async function addToPlan() {
@@ -140,12 +156,24 @@ export default function OrientationResultsScreen({ route, navigation }) {
             {item.ranking && <Text style={s.uniMeta}>{item.ranking}</Text>}
             {item.tuition && <Text style={s.uniMeta}>💰 {item.tuition}</Text>}
             <Text style={s.why}>{item.whyFit}</Text>
+            <TextInput
+              style={s.noteInput}
+              value={item.notes}
+              onChangeText={t => onNoteChange(item.id, t)}
+              onBlur={() => onNoteBlur(item.id, item.notes)}
+              placeholder="Своя заметка про этот вуз..."
+              placeholderTextColor={C.faint}
+              multiline
+            />
           </View>
         )}
         ListFooterComponent={
-          <TouchableOpacity style={[S.btn, S.btnPrimary, { marginTop: 12 }]} onPress={addToPlan} disabled={adding}>
-            <Text style={S.btnText}>{adding ? 'Строю план...' : `Добавить план для «${selected?.title}» →`}</Text>
-          </TouchableOpacity>
+          <>
+            <Text style={s.savedHint}>💾 Вузы и заметки сохранены — посмотреть их снова можно во вкладке «Подбор» → «Мои университеты».</Text>
+            <TouchableOpacity style={[S.btn, S.btnPrimary, { marginTop: 4 }]} onPress={addToPlan} disabled={adding}>
+              <Text style={S.btnText}>{adding ? 'Строю план...' : `Добавить план для «${selected?.title}» →`}</Text>
+            </TouchableOpacity>
+          </>
         }
       />
     </View>
@@ -173,4 +201,6 @@ const s = StyleSheet.create({
   uniCardBest: { borderColor: C.accent, borderWidth: 2 },
   bestBadge: { color: C.accent, fontWeight: '700', fontSize: 12, marginBottom: 6 },
   uniMeta: { color: C.muted, fontSize: 12, marginTop: 2 },
+  noteInput: { marginTop: 10, backgroundColor: C.bg2, borderWidth: 1, borderColor: C.border, borderRadius: 10, padding: 10, color: C.text, fontSize: 13, minHeight: 40, textAlignVertical: 'top' },
+  savedHint: { color: C.faint, fontSize: 12, lineHeight: 17, marginBottom: 10, fontStyle: 'italic' },
 });

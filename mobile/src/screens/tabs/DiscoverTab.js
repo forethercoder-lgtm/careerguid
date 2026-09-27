@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import { C, S, withOpacity } from '../../theme';
 import { useApp } from '../../AppContext';
 import { useEntitlements } from '../../entitlements';
+import { getSavedUniversities } from '../../savedUniversities';
 
 const LEVELS = { bachelor: 'Бакалавр', master: 'Магистр', phd: 'PhD' };
 const STRATEGIES = { reach: '🚀 Амбициозная', balanced: '⚖️ Сбалансированная', safe: '🛡 Надёжная' };
@@ -12,6 +14,11 @@ export default function DiscoverTab({ navigation }) {
   const { token, user, onboarding } = useApp();
   const { canUseAi } = useEntitlements();
   const insets = useSafeAreaInsets();
+  const [savedCount, setSavedCount] = useState(0);
+
+  useFocusEffect(useCallback(() => {
+    (async () => setSavedCount((await getSavedUniversities(user?.email)).length))();
+  }, [user?.email]));
 
   const go = (screen, params) => navigation.navigate(screen, { token, user, onboarding, ...params });
   const goOrientation = () => (canUseAi ? go('OrientationChat') : navigation.navigate('Premium'));
@@ -31,6 +38,11 @@ export default function DiscoverTab({ navigation }) {
       <TouchableOpacity style={s.card} onPress={() => navigation.navigate('PreferencesSurvey', { user })}>
         <Text style={s.cardTitle}>📋 Опрос предпочтений</Text>
         <Text style={s.cardText}>Страны, интересы, бюджет, уровень программы — чтобы подбор был точнее</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={s.card} onPress={() => navigation.navigate('SavedUniversities', { user })}>
+        <Text style={s.cardTitle}>🏫 Мои университеты {savedCount > 0 ? `(${savedCount})` : ''}</Text>
+        <Text style={s.cardText}>Подобранные вузы и твои заметки к каждому — можно вернуться в любой момент</Text>
       </TouchableOpacity>
 
       <Text style={s.sectionTitle}>Твои настройки поступления</Text>

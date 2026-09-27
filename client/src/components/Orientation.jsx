@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { apiOrientationChat, apiSuggestSpecialties, apiSuggestUniversities, apiGenerateStarterPlan } from '../api';
+import { mergeSuggested, updateNote } from '../savedUniversities';
 import './Orientation.css';
 
-export default function Orientation({ token, prefs, tasks, setTasks, showNotif, onDone, onCancel }) {
+export default function Orientation({ token, userEmail, prefs, tasks, setTasks, showNotif, onDone, onCancel }) {
   const [step, setStep] = useState('chat'); // chat | specialties | universities
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -68,12 +69,26 @@ export default function Orientation({ token, prefs, tasks, setTasks, showNotif, 
         countries: prefs?.countries,
         educationLevel: prefs?.educationLevel,
       });
-      setUniversities(data.universities || []);
+      const suggested = data.universities || [];
+      const saved = mergeSuggested(userEmail, suggested);
+      const withNotes = suggested.map(u => {
+        const match = saved.find(s => s.name?.toLowerCase() === u.name?.toLowerCase() && s.country === u.country);
+        return { ...u, id: match?.id, notes: match?.notes || '' };
+      });
+      setUniversities(withNotes);
       setStep('universities');
     } catch (e) {
       showNotif?.('⚠️ Не удалось подобрать университеты: ' + e.message);
     }
     setLoading(false);
+  }
+
+  function onNoteChange(id, text) {
+    setUniversities(list => list.map(u => (u.id === id ? { ...u, notes: text } : u)));
+  }
+
+  function onNoteBlur(id, text) {
+    updateNote(userEmail, id, text);
   }
 
   async function addToPlan() {
@@ -165,9 +180,18 @@ export default function Orientation({ token, prefs, tasks, setTasks, showNotif, 
                     {u.ranking && <div className="orient-card-meta">{u.ranking}</div>}
                     {u.tuition && <div className="orient-card-meta">💰 {u.tuition}</div>}
                     <div className="orient-card-why">{u.whyFit}</div>
+                    <textarea
+                      className="orient-note"
+                      value={u.notes}
+                      onChange={e => onNoteChange(u.id, e.target.value)}
+                      onBlur={e => onNoteBlur(u.id, e.target.value)}
+                      placeholder="Своя заметка про этот вуз..."
+                      onClick={e => e.stopPropagation()}
+                    />
                   </div>
                 ))}
               </div>
+              <p className="orient-saved-hint">💾 Вузы и заметки сохранены — посмотреть их снова можно на главном экране, раздел «Мои университеты».</p>
               <button className="btn btn-primary" onClick={addToPlan} disabled={adding}>
                 {adding ? 'Строю план...' : `Добавить план для «${selectedSpecialty?.title}» →`}
               </button>

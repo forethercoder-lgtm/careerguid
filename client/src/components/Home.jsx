@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PlanBuilder from './PlanBuilder';
 import TaskManager from './TaskManager';
+import SavedUniversities from './SavedUniversities';
 import { getDocuments, deleteDocument } from '../docStorage';
 import './Home.css';
 
@@ -41,6 +42,7 @@ export default function Home({ token, userEmail, prefs, tasks, setTasks, showNot
 
       <div className="home-divider" />
       <TaskManager userEmail={userEmail} tasks={tasks} setTasks={setTasks} />
+      <SavedUniversities userEmail={userEmail} />
     </div>
   );
 }
