@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from './firebase';
-import { ensureBackendSession } from './serverAuth';
 import AuthScreen from './components/AuthScreen';
 import WelcomeScreen from './components/WelcomeScreen';
 import PreferencesSetup from './components/PreferencesSetup';
 import Home from './components/Home';
 import Orientation from './components/Orientation';
 import EssayFeedback from './components/EssayFeedback';
+import Ielts from './components/Ielts';
 import AIAssistant from './components/AIAssistant';
 import './App.css';
 
@@ -28,20 +26,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    let unsub = () => {};
-    try {
-      unsub = onAuthStateChanged(auth, (fbUser) => {
-        if (fbUser) enterApp(fbUser);
-        else setScreen('welcome');
-      }, (err) => {
-        console.error('Auth error:', err);
-        setScreen('welcome');
-      });
-    } catch (e) {
-      console.error('Firebase init error:', e);
-      setScreen('welcome');
-    }
-    return unsub;
+    const savedToken = localStorage.getItem('token');
+    const savedUser = JSON.parse(localStorage.getItem('user') || 'null');
+    if (savedToken && savedUser) enterApp({ token: savedToken, user: savedUser });
+    else setScreen('welcome');
   }, []);
 
   function loadTasks(uid) {
@@ -76,28 +64,22 @@ export default function App() {
     setTimeout(() => setNotif(null), 4000);
   }
 
-  async function enterApp(fbUser) {
-    setUser(fbUser);
-    const prefs = JSON.parse(localStorage.getItem(`prefs_${fbUser.uid}`) || 'null');
+  function enterApp({ token: t, user: u }) {
+    localStorage.setItem('token', t);
+    localStorage.setItem('user', JSON.stringify(u));
+    setToken(t);
+    setUser(u);
+    const prefs = JSON.parse(localStorage.getItem(`prefs_${u.id}`) || 'null');
     setUserPrefs(prefs);
-    setTasks(loadTasks(fbUser.uid));
-    loadStreak(fbUser.uid);
-
-    try {
-      const { token: t } = await ensureBackendSession(fbUser);
-      setToken(t);
-    } catch (e) {
-      console.error('Backend session error:', e);
-      showNotif('⚠️ Не удалось подключиться к серверу ИИ — попробуй обновить страницу');
-    }
-
+    setTasks(loadTasks(u.id));
+    loadStreak(u.id);
     if (!prefs) setScreen('preferences');
-    else setScreen(hasPlanItems(fbUser.uid) ? 'home' : 'orientation');
+    else setScreen(hasPlanItems(u.id) ? 'home' : 'orientation');
   }
 
   useEffect(() => {
-    if (user?.uid) localStorage.setItem(`tasks_${user.uid}`, JSON.stringify(tasks));
-  }, [tasks, user?.uid]);
+    if (user?.id) localStorage.setItem(`tasks_${user.id}`, JSON.stringify(tasks));
+  }, [tasks, user?.id]);
 
   async function installApp() {
     if (!installPrompt) return;
@@ -107,7 +89,8 @@ export default function App() {
   }
 
   function handleLogout() {
-    signOut(auth);
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setUser(null); setUserPrefs(null); setToken(''); setTasks([]);
     setScreen('welcome');
   }
@@ -139,8 +122,7 @@ export default function App() {
           )}
           {user && (
             <div className="header-user">
-              <img src={user.photoURL || ''} className="user-photo" onError={e => e.target.style.display='none'} />
-              <span className="user-name">{user.displayName || user.email}</span>
+              <span className="user-name">{user.name || user.email}</span>
               <button className="logout-btn" onClick={handleLogout} title="Выйти">⎋</button>
             </div>
           )}
@@ -152,14 +134,14 @@ export default function App() {
         {screen === 'auth' && <AuthScreen onAuth={enterApp} />}
         {screen === 'preferences' && (
           <PreferencesSetup user={user} onDone={(prefs) => {
-            localStorage.setItem(`prefs_${user.uid}`, JSON.stringify(prefs));
+            localStorage.setItem(`prefs_${user.id}`, JSON.stringify(prefs));
             setUserPrefs(prefs);
-            setScreen(hasPlanItems(user.uid) ? 'home' : 'orientation');
+            setScreen(hasPlanItems(user.id) ? 'home' : 'orientation');
           }} />
         )}
         {screen === 'home' && (
-          <Home token={token} userEmail={user?.uid} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
-            onOrientation={() => setScreen('orientation')} onEssayFeedback={() => setScreen('essay')} streak={streak} />
+          <Home token={token} userEmail={user?.id} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
+            onOrientation={() => setScreen('orientation')} onEssayFeedback={() => setScreen('essay')} onIelts={() => setScreen('ielts')} streak={streak} />
         )}
         {screen === 'orientation' && (
           <Orientation token={token} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
@@ -167,6 +149,9 @@ export default function App() {
         )}
         {screen === 'essay' && (
           <EssayFeedback token={token} onCancel={() => setScreen('home')} />
+        )}
+        {screen === 'ielts' && (
+          <Ielts token={token} userEmail={user?.id} tasks={tasks} setTasks={setTasks} showNotif={showNotif} onCancel={() => setScreen('home')} />
         )}
       </main>
 

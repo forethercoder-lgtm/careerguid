@@ -1,27 +1,35 @@
 import React, { useState } from 'react';
-import { signInWithPopup } from 'firebase/auth';
-import { auth, googleProvider } from '../firebase';
+import { API_BASE } from '../api';
 import './AuthScreen.css';
 
 export default function AuthScreen({ onAuth }) {
+  const [tab, setTab] = useState('login');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  async function signInWithGoogle() {
-    setLoading(true);
+  async function submit(e) {
+    e.preventDefault();
     setError('');
+    if (!email.trim() || !password) { setError('Заполни все поля'); return; }
+    if (tab === 'register' && !name.trim()) { setError('Введи своё имя'); return; }
+    if (password.length < 6) { setError('Пароль минимум 6 символов'); return; }
+
+    setLoading(true);
     try {
-      const cred = await signInWithPopup(auth, googleProvider);
-      onAuth(cred.user);
-    } catch (err) {
-      if (err.code === 'auth/popup-closed-by-user') {
-        setError('');
-      } else if (err.code === 'auth/popup-blocked') {
-        setError('Браузер заблокировал всплывающее окно. Разреши попапы для этого сайта.');
-      } else {
-        setError(`Ошибка: ${err.code || err.message}`);
-      }
-    } finally {
+      const res = await fetch(`${API_BASE}/api/auth/${tab}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name.trim(), email: email.trim().toLowerCase(), password }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setError(data.error || 'Ошибка входа'); setLoading(false); return; }
+      onAuth({ token: data.token, user: data.user });
+    } catch {
+      setError('Сервер недоступен. Проверь подключение.');
       setLoading(false);
     }
   }
@@ -39,34 +47,41 @@ export default function AuthScreen({ onAuth }) {
           <span className="auth-logo-text">КарьерГид</span>
         </div>
 
-        <h2 className="auth-title">Добро пожаловать!</h2>
-        <p className="auth-subtitle">Войди через Google и начни путь к мечте</p>
+        <h2 className="auth-title">{tab === 'login' ? 'Добро пожаловать!' : 'Создай аккаунт'}</h2>
+        <p className="auth-subtitle">{tab === 'login' ? 'Войди чтобы продолжить' : 'Зарегистрируйся бесплатно'}</p>
 
-        {error && <div className="auth-error">⚠️ {error}</div>}
-
-        <button
-          className="google-btn"
-          onClick={signInWithGoogle}
-          disabled={loading}
-        >
-          {loading ? (
-            <><span className="spinner" /> Входим...</>
-          ) : (
-            <>
-              <svg width="20" height="20" viewBox="0 0 48 48">
-                <path fill="#FFC107" d="M43.6 20H24v8h11.3C33.6 33.1 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 20-8 20-20 0-1.3-.1-2.7-.4-4z"/>
-                <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 15.1 18.9 12 24 12c3.1 0 5.8 1.1 7.9 3l5.7-5.7C34.1 6.5 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
-                <path fill="#4CAF50" d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.5 35.6 26.9 36 24 36c-5.2 0-9.6-3-11.3-7.4l-6.5 5C9.4 39.4 16.2 44 24 44z"/>
-                <path fill="#1976D2" d="M43.6 20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.2 5.2C40.8 35.5 44 30.2 44 24c0-1.3-.1-2.7-.4-4z"/>
-              </svg>
-              Войти через Google
-            </>
-          )}
-        </button>
-
-        <div className="auth-security">
-          🔒 Безопасный вход через аккаунт Google
+        <div className="auth-tabs">
+          <button type="button" className={`auth-tab ${tab === 'login' ? 'active' : ''}`} onClick={() => { setTab('login'); setError(''); }}>Войти</button>
+          <button type="button" className={`auth-tab ${tab === 'register' ? 'active' : ''}`} onClick={() => { setTab('register'); setError(''); }}>Регистрация</button>
         </div>
+
+        {error && <div className="auth-error" style={{ marginBottom: 16 }}>⚠️ {error}</div>}
+
+        <form className="auth-form" onSubmit={submit}>
+          {tab === 'register' && (
+            <div className="field">
+              <label>Твоё имя</label>
+              <input value={name} onChange={e => setName(e.target.value)} placeholder="Как тебя зовут?" />
+            </div>
+          )}
+          <div className="field">
+            <label>Email</label>
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="example@mail.com" autoCapitalize="none" />
+          </div>
+          <div className="field">
+            <label>Пароль</label>
+            <div className="pw-wrapper">
+              <input type={showPassword ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)} placeholder="Минимум 6 символов" />
+              <button type="button" className="pw-toggle" onClick={() => setShowPassword(s => !s)} tabIndex={-1}>{showPassword ? '🙈' : '👁'}</button>
+            </div>
+          </div>
+
+          <button type="submit" className="btn btn-primary auth-submit" disabled={loading}>
+            {loading ? <><span className="spinner" /> Загрузка...</> : (tab === 'login' ? 'Войти →' : 'Создать аккаунт →')}
+          </button>
+        </form>
+
+        <div className="auth-security">🔒 Пароль хранится в зашифрованном виде</div>
       </div>
     </div>
   );
