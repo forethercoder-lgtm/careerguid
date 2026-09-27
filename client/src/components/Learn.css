@@ -1,0 +1,114 @@
+.learn-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+.learn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.learn-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+}
+.learn-tabs {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 20px;
+  max-width: 420px;
+}
+.learn-tab {
+  flex: 1;
+  padding: 9px;
+  background: none;
+  border: none;
+  border-radius: 9px;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.learn-tab.active {
+  background: var(--primary);
+  color: #fff;
+}
+.learn-loading { color: var(--text-muted); padding: 30px 0; }
+.learn-subtabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.learn-subtab {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.learn-subtab.active {
+  background: rgba(47,111,237,0.18);
+  border-color: var(--primary);
+  color: var(--text);
+}
+.learn-group { margin-bottom: 22px; }
+.learn-group-title {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.learn-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.learn-card-static { cursor: default; font-size: 13px; line-height: 1.5; }
+.learn-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.learn-card-body { margin-top: 8px; }
+.learn-card-body ul {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.learn-card-body li {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.learn-tip {
+  color: var(--primary);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 8px;
+  font-style: italic;
+}
+.learn-guide-section { margin-bottom: 10px; }
+.learn-section-heading {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.learn-section-body {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}

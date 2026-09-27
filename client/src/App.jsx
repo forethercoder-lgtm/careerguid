@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Orientation from './components/Orientation';
 import EssayFeedback from './components/EssayFeedback';
 import Ielts from './components/Ielts';
+import Learn from './components/Learn';
 import AIAssistant from './components/AIAssistant';
 import './App.css';
 
@@ -151,7 +152,10 @@ export default function App() {
           <EssayFeedback token={token} onCancel={() => setScreen('home')} />
         )}
         {screen === 'ielts' && (
-          <Ielts token={token} userEmail={user?.id} tasks={tasks} setTasks={setTasks} showNotif={showNotif} onCancel={() => setScreen('home')} />
+          <Ielts token={token} userEmail={user?.id} tasks={tasks} setTasks={setTasks} showNotif={showNotif} onCancel={() => setScreen('home')} onLearn={() => setScreen('learn')} />
+        )}
+        {screen === 'learn' && (
+          <Learn token={token} onCancel={() => setScreen('ielts')} />
         )}
       </main>
 

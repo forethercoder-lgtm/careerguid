@@ -17,6 +17,7 @@ import PreferencesSurveyScreen from './src/screens/PreferencesSurveyScreen';
 import IeltsScreen from './src/screens/IeltsScreen';
 import IeltsPretestScreen from './src/screens/IeltsPretestScreen';
 import SavedUniversitiesScreen from './src/screens/SavedUniversitiesScreen';
+import LearnScreen from './src/screens/LearnScreen';
 import PremiumScreen from './src/screens/PremiumScreen';
 import { getItem, getJSON } from './src/storage';
 import { C } from './src/theme';
@@ -65,6 +66,7 @@ export default function App() {
               <Stack.Screen name="Ielts" component={IeltsScreen} />
               <Stack.Screen name="IeltsPretest" component={IeltsPretestScreen} />
               <Stack.Screen name="SavedUniversities" component={SavedUniversitiesScreen} />
+              <Stack.Screen name="Learn" component={LearnScreen} />
               <Stack.Screen name="Premium" component={PremiumScreen} />
             </Stack.Navigator>
           </NavigationContainer>

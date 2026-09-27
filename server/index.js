@@ -508,6 +508,10 @@ app.get('/api/ielts/pretest', requireAuth, (req, res) => {
   res.json({ questions: ielts.publicQuestions(), geminiEnabled: ielts.geminiEnabled });
 });
 
+app.get('/api/ielts/learn', requireAuth, (req, res) => {
+  res.json(ielts.learningContent());
+});
+
 app.post('/api/ielts/pretest/submit', requireAuth, async (req, res) => {
   const { answers, writingText, writingPrompt, targetBand, hoursPerWeek } = req.body;
   if (!Array.isArray(answers)) return res.status(400).json({ error: 'Не переданы ответы теста' });

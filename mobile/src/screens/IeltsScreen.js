@@ -83,6 +83,11 @@ export default function IeltsScreen({ navigation, route }) {
         </TouchableOpacity>
       </View>
 
+      <TouchableOpacity style={s.learnCard} onPress={() => navigation.navigate('Learn', { token })}>
+        <Text style={s.ctaTitle}>📚 Уроки и материалы</Text>
+        <Text style={s.p}>19 уроков по всем навыкам, банк из 24 эссе, cue cards для Speaking и гайды по поступлению за рубеж</Text>
+      </TouchableOpacity>
+
       <Section title="Формат">
         <Text style={s.p}>Listening 30 мин · Reading 60 мин · Writing 60 мин · Speaking 11–14 мин. Каждая секция 1–9, overall — среднее. Результат действует 2 года.</Text>
       </Section>
@@ -139,6 +144,7 @@ const s = StyleSheet.create({
   title: { color: C.text, fontSize: 17, fontWeight: '800' },
   ctaCard: { backgroundColor: withOpacity(C.primary, 0.1), borderWidth: 1, borderColor: C.primary, borderRadius: 14, padding: 16, marginBottom: 16 },
   ctaTitle: { color: C.text, fontSize: 15, fontWeight: '800', marginBottom: 4 },
+  learnCard: { backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 14, padding: 16, marginBottom: 16 },
   section: { backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 14, padding: 16, marginBottom: 12 },
   sectionTitle: { color: C.text, fontSize: 15, fontWeight: '800', marginBottom: 10 },
   p: { color: C.muted, fontSize: 13, lineHeight: 19 },

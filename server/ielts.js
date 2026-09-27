@@ -4,6 +4,18 @@ require('dotenv').config();
 
 const pretestBank = require('./data/ieltsPretest.json');
 const ieltsInfo = require('./data/ielts.json');
+const lessonsData = require('./data/ieltsLessons.json');
+const guidesData = require('./data/studyAbroadGuides.json');
+
+function learningContent() {
+  return {
+    lessons: lessonsData.lessons,
+    guides: guidesData.guides,
+    practiceBank: ieltsInfo.writingTask2.practiceBank,
+    part2Topics: ieltsInfo.speaking.part2Topics,
+    part3Sets: ieltsInfo.speaking.part3Sets,
+  };
+}
 
 // Доверенные домены для живого веб-поиска (Tavily) по вопросам IELTS — используются как
 // include_domains, чтобы ИИ-ассистент отвечал на основе реальных, проверенных источников,
@@ -140,4 +152,4 @@ function scaleStudyPlan(weeks) {
   return out;
 }
 
-module.exports = { publicQuestions, scoreObjective, evaluateWriting, estimateTimeline, scaleStudyPlan, ieltsRelated, IELTS_DOMAINS, geminiEnabled: !!process.env.GEMINI_API_KEY };
+module.exports = { publicQuestions, scoreObjective, evaluateWriting, estimateTimeline, scaleStudyPlan, ieltsRelated, IELTS_DOMAINS, learningContent, geminiEnabled: !!process.env.GEMINI_API_KEY };

@@ -55,7 +55,45 @@
       "International tourism brings money but can harm local culture. Do you think it is a positive or negative development?",
       "Governments should invest more in public transport than in new roads. To what extent do you agree?",
       "Children spend too much time on smartphones. What problems does this cause and how can parents address them?"
-    ]
+    ],
+    "practiceBank": {
+      "Education": [
+        "Some people believe that studying abroad broadens students' outlook, while others think it is better to study at home. Discuss both views and give your opinion.",
+        "Many universities now offer courses entirely online. To what extent do you agree that online degrees are as valuable as traditional ones?",
+        "Some argue that grades and exams put too much pressure on students. To what extent do you agree or disagree?",
+        "Should students be required to study a foreign language, or should it remain optional? Discuss both views and give your opinion."
+      ],
+      "Technology": [
+        "Artificial intelligence is increasingly used to make decisions that used to be made by humans. Do the advantages of this outweigh the disadvantages?",
+        "Some people think social media has made people less social in real life. To what extent do you agree or disagree?",
+        "As technology develops, more people work from home instead of an office. Discuss the advantages and disadvantages of this trend.",
+        "Some believe that children should not be allowed to use smartphones until a certain age. To what extent do you agree?"
+      ],
+      "Environment": [
+        "Some people think individuals can do little to solve environmental problems, and only governments and large companies can make a difference. To what extent do you agree?",
+        "Many countries are shifting to renewable energy sources. What are the advantages and disadvantages of this change?",
+        "Some believe that a rise in the standard of living in a country results in a rise in environmental pollution. What are the causes and possible solutions?",
+        "Plastic packaging is a major cause of pollution. What problems does this cause and what solutions can you suggest?"
+      ],
+      "Government & Society": [
+        "Some people think the government should reduce spending on the arts and put more money into public services. To what extent do you agree or disagree?",
+        "In many countries, the gap between rich and poor is increasing. What are the causes of this and what measures can be taken to reduce it?",
+        "Some believe that unpaid community service should be a compulsory part of high school programmes. To what extent do you agree?",
+        "Crime rates are rising in many big cities. What do you think are the causes, and what solutions can be suggested?"
+      ],
+      "Health": [
+        "Fast food consumption is increasing worldwide. What are the causes and effects of this trend, and what solutions can you propose?",
+        "Some believe that people should exercise on their own, while others think joining a gym or team sport is more effective. Discuss both views and give your opinion.",
+        "The number of people suffering from stress-related illnesses is increasing. What do you think are the causes and possible solutions?",
+        "Some argue that governments should be responsible for people's health, while others believe individuals should take full responsibility. Discuss both views and give your opinion."
+      ],
+      "Work & Economy": [
+        "Automation is replacing many jobs previously done by humans. Do the advantages of this outweigh the disadvantages?",
+        "Some believe employees should have a fixed daily working schedule, while others prefer flexible hours. Discuss both views and give your opinion.",
+        "In many countries, young people change jobs more frequently than in the past. What are the reasons, and is this a positive or negative development?",
+        "Some think success in a career is mainly the result of hard work, while others believe it is mostly luck. Discuss both views and give your opinion."
+      ]
+    }
   },
   "writingTask1Academic": {
     "task": "Описать график/таблицу/диаграмму/процесс/карту — 150+ слов, 20 мин.",
@@ -80,7 +118,58 @@
       "Describe a place where you like to study.",
       "Describe a difficult decision you once made.",
       "Describe a book that helped you.",
-      "Describe a goal you hope to achieve in the next five years."
+      "Describe a goal you hope to achieve in the next five years.",
+      "Describe a time when you helped someone.",
+      "Describe a piece of technology you find useful.",
+      "Describe a memorable trip you took.",
+      "Describe a teacher who had a big influence on you.",
+      "Describe an important decision you had to make quickly.",
+      "Describe a time you learned something new about yourself.",
+      "Describe a public place you like to spend time in.",
+      "Describe an achievement you are proud of.",
+      "Describe a change you would like to make in your life."
+    ],
+    "part3Sets": [
+      {
+        "part2Topic": "Describe a skill you would like to learn.",
+        "questions": [
+          "Why do some people find it hard to learn new skills as adults?",
+          "Should schools focus more on practical skills than academic subjects?",
+          "How has technology changed the way people learn new skills?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a person who influenced your choice of career.",
+        "questions": [
+          "Do you think parents should choose careers for their children?",
+          "Why do some people change careers later in life?",
+          "Is job satisfaction more important than salary? Why?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a piece of technology you find useful.",
+        "questions": [
+          "How has technology changed communication between family members?",
+          "Do you think people rely too much on technology nowadays?",
+          "What technology do you think will be common in 20 years?"
+        ]
+      },
+      {
+        "part2Topic": "Describe a memorable trip you took.",
+        "questions": [
+          "Why do you think people enjoy travelling to new places?",
+          "Is it better to travel alone or with other people? Why?",
+          "How has tourism changed in your country over the last decade?"
+        ]
+      },
+      {
+        "part2Topic": "Describe an achievement you are proud of.",
+        "questions": [
+          "Do you think success is mostly about talent or hard work?",
+          "How important is it for children to experience failure?",
+          "Should achievements always be recognised publicly?"
+        ]
+      }
     ]
   },
   "studyPlan8Weeks": [

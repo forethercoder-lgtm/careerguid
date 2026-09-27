@@ -34,7 +34,7 @@ const RESOURCES = [
   ['IELTS Online Tests (банк практик)', 'https://ieltsonlinetests.com/'],
 ];
 
-export default function Ielts({ token, userEmail, tasks, setTasks, showNotif, onCancel }) {
+export default function Ielts({ token, userEmail, tasks, setTasks, showNotif, onCancel, onLearn }) {
   const [mode, setMode] = useState('info'); // info | pretest
   const [lastResult, setLastResult] = useState(null);
 
@@ -81,6 +81,11 @@ export default function Ielts({ token, userEmail, tasks, setTasks, showNotif, on
         <button className="btn btn-primary" onClick={() => setMode('pretest')}>
           {lastResult ? 'Пройти тест заново →' : 'Пройти тест уровня →'}
         </button>
+      </div>
+
+      <div className="ielts-section card" style={{ cursor: 'pointer' }} onClick={onLearn}>
+        <div className="ielts-cta-title">📚 Уроки и материалы</div>
+        <p className="ielts-hint" style={{ marginBottom: 0 }}>19 уроков по всем навыкам, банк из 24 эссе, cue cards для Speaking и гайды по поступлению за рубеж →</p>
       </div>
 
       <Section title="Формат">

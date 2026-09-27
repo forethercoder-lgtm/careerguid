@@ -94,3 +94,7 @@ export async function apiIeltsPretest(token) {
 export async function apiIeltsSubmit(token, { answers, writingText, writingPrompt, targetBand, hoursPerWeek }) {
   return callServer('/api/ielts/pretest/submit', token, { answers, writingText, writingPrompt, targetBand, hoursPerWeek });
 }
+
+export async function apiIeltsLearn(token) {
+  return callServerGet('/api/ielts/learn', token);
+}
