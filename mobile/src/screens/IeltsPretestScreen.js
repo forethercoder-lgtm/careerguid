@@ -42,16 +42,23 @@ export default function IeltsPretestScreen({ navigation, route }) {
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
   const [added, setAdded] = useState(false);
+  const [slowWake, setSlowWake] = useState(false);
+  const [loadAttempt, setLoadAttempt] = useState(0);
 
   useEffect(() => {
     if (step !== 'quiz' || questions.length > 0) return;
     setLoadingQuestions(true);
+    setSlowWake(false);
+    setError(null);
+    // Бесплатный тариф Render "засыпает" после простоя — первый запрос может грузиться до минуты.
+    const wakeTimer = setTimeout(() => setSlowWake(true), 4000);
     fetch(`${API_URL}/api/ielts/pretest`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json())
       .then(data => setQuestions(data.questions || []))
       .catch(() => setError('Не удалось загрузить вопросы теста'))
-      .finally(() => setLoadingQuestions(false));
-  }, [step]);
+      .finally(() => { clearTimeout(wakeTimer); setLoadingQuestions(false); });
+    return () => clearTimeout(wakeTimer);
+  }, [step, loadAttempt]);
 
   function animateTo(nextStep) {
     Animated.sequence([
@@ -150,9 +157,18 @@ export default function IeltsPretestScreen({ navigation, route }) {
 
           {step === 'quiz' && (
             loadingQuestions ? (
-              <ActivityIndicator size="large" color={C.primary} style={{ marginTop: 40 }} />
+              <View style={{ marginTop: 40, alignItems: 'center' }}>
+                <ActivityIndicator size="large" color={C.primary} />
+                <Text style={[s.stepLabel, { marginTop: 14, textAlign: 'center' }]}>{slowWake ? 'Сервер просыпается...' : 'Загружаю вопросы...'}</Text>
+                {slowWake && <Text style={[s.note, { textAlign: 'center', marginTop: 6, paddingHorizontal: 20 }]}>Бесплатный сервер «засыпает» без активности — первая загрузка после паузы может занять до минуты.</Text>}
+              </View>
             ) : questions.length === 0 ? (
-              <Text style={s.errorText}>{error || 'Вопросы не загрузились'}</Text>
+              <View>
+                <Text style={s.errorText}>{error || 'Вопросы не загрузились'}</Text>
+                <TouchableOpacity style={[S.btn, { marginTop: 10, backgroundColor: C.surface, borderWidth: 1, borderColor: C.border }]} onPress={() => setLoadAttempt(n => n + 1)}>
+                  <Text style={{ color: C.text, fontWeight: '700' }}>Попробовать снова</Text>
+                </TouchableOpacity>
+              </View>
             ) : (
               <>
                 <Text style={s.stepLabel}>Вопрос {qIndex + 1} / {questions.length}</Text>

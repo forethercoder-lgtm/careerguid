@@ -79,12 +79,17 @@
 }
 .ielts-link:hover { text-decoration: underline; }
 
+.ielts-loading-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+}
 .ielts-loading {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--text-muted);
-  padding: 30px 0;
   justify-content: center;
 }
 .ielts-error {

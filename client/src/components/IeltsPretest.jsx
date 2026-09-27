@@ -31,19 +31,26 @@ export default function IeltsPretest({ token, userEmail, tasks, setTasks, showNo
   const [targetBand, setTargetBand] = useState(7.0);
   const [hoursPerWeek, setHoursPerWeek] = useState(5);
   const [loadingQuestions, setLoadingQuestions] = useState(false);
+  const [slowWake, setSlowWake] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
   const [added, setAdded] = useState(false);
+  const [loadAttempt, setLoadAttempt] = useState(0);
 
   useEffect(() => {
     if (step !== 'quiz' || questions.length > 0) return;
     setLoadingQuestions(true);
+    setSlowWake(false);
+    setError(null);
+    // Бесплатный тариф Render "засыпает" после простоя — первый запрос может грузиться до минуты.
+    const wakeTimer = setTimeout(() => setSlowWake(true), 4000);
     apiIeltsPretest(token)
       .then(data => setQuestions(data.questions || []))
       .catch(e => setError(e.message))
-      .finally(() => setLoadingQuestions(false));
-  }, [step]);
+      .finally(() => { clearTimeout(wakeTimer); setLoadingQuestions(false); });
+    return () => clearTimeout(wakeTimer);
+  }, [step, loadAttempt]);
 
   function pickAnswer(choiceIdx) {
     const q = questions[qIndex];
@@ -116,9 +123,15 @@ export default function IeltsPretest({ token, userEmail, tasks, setTasks, showNo
 
       {step === 'quiz' && (
         loadingQuestions ? (
-          <div className="ielts-loading"><span className="spinner" /> Загружаю вопросы...</div>
+          <div className="ielts-loading-wrap">
+            <div className="ielts-loading"><span className="spinner" /> {slowWake ? 'Сервер просыпается...' : 'Загружаю вопросы...'}</div>
+            {slowWake && <p className="ielts-note" style={{ textAlign: 'center' }}>Бесплатный сервер «засыпает» без активности — первая загрузка после паузы может занять до минуты. Обычно дальше всё быстро.</p>}
+          </div>
         ) : questions.length === 0 ? (
-          <p className="ielts-error">{error || 'Вопросы не загрузились'}</p>
+          <div>
+            <p className="ielts-error">{error || 'Вопросы не загрузились'}</p>
+            <button className="btn btn-ghost" style={{ marginTop: 10 }} onClick={() => setLoadAttempt(n => n + 1)}>Попробовать снова</button>
+          </div>
         ) : (
           <div className="card">
             <div className="ielts-step-label">Вопрос {qIndex + 1} / {questions.length}</div>
