@@ -9,6 +9,7 @@ const guidesData = require('./data/studyAbroadGuides.json');
 const countryGuidesData = require('./data/countryGuides.json');
 const topicGuidesData = require('./data/topicGuides.json');
 const vocabLessonsData = require('./data/ieltsVocabLessons.json');
+const vocabularyData = require('./data/ieltsVocabulary.json');
 
 function learningContent() {
   const generalGuides = guidesData.guides.map(g => ({ ...g, type: 'general' }));
@@ -20,6 +21,7 @@ function learningContent() {
     practiceBank: ieltsInfo.writingTask2.practiceBank,
     part2Categories: ieltsInfo.speaking.part2Categories,
     part3Sets: ieltsInfo.speaking.part3Sets,
+    vocabulary: vocabularyData.topics,
   };
 }
 

@@ -1,0 +1,8397 @@
+{
+  "_source": "Словарные списки адаптированы из github.com/hefengxian/ielts-vocabulary (MIT license). Китайский перевод убран (не нужен для русскоязычной аудитории), оставлены слово + часть речи + пример на английском.",
+  "topics": {
+    "Природа и география": [
+      {
+        "word": "atmosphere",
+        "pos": "n.",
+        "example": "The approaching examination created a tense atmosphere on the campus"
+      },
+      {
+        "word": "hydrosphere",
+        "pos": "n.",
+        "example": "All the water in the earth's surface is included in the hydrosphere"
+      },
+      {
+        "word": "lithosphere",
+        "pos": "n.",
+        "example": "The lithosphere and the hydrosphere together form the earth's surface"
+      },
+      {
+        "word": "oxygen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "oxide",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "carbon dioxied",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hydrogen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "core",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "crust",
+        "pos": "n.",
+        "example": "The crust on the snow was thick enough for to walk on it"
+      },
+      {
+        "word": "mantle",
+        "pos": "n./v.",
+        "example": "Parents often use mantles for their babies to keep warm"
+      },
+      {
+        "word": "longitude",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "latitude",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "horizon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "altitude",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "disaster",
+        "pos": "n.",
+        "example": "There was a great flood disaster in East China"
+      },
+      {
+        "word": "mishap",
+        "pos": "n.",
+        "example": "A mishap prevented him from attending the routine company meeting"
+      },
+      {
+        "word": "catastrophic",
+        "pos": "adj.",
+        "example": "If the forecast had been wrong, the consequences could have been catastrophic"
+      },
+      {
+        "word": "calamity",
+        "pos": "n.",
+        "example": "A hurricane would be a calamity for this low-lying coastal region"
+      },
+      {
+        "word": "endanger",
+        "pos": "v.",
+        "example": "If you are work hard without reset, you will endanger your health"
+      },
+      {
+        "word": "jeopardise",
+        "pos": "v.",
+        "example": "If you are rude to the boss, your chances of success may be jeopardised"
+      },
+      {
+        "word": "destructive",
+        "pos": "adj.",
+        "example": "Jealousy is an extremely destructive emotion"
+      },
+      {
+        "word": "El Nino",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "greenhouse",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "phenomenon",
+        "pos": "n.",
+        "example": "Snow is an almost unknown phenomenon in Egypt"
+      },
+      {
+        "word": "pebble",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "magnet",
+        "pos": "n.",
+        "example": "He picked all the pins up with a magnet"
+      },
+      {
+        "word": "ore",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mineral",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "marble",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "quartz",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "granite",
+        "pos": "n.",
+        "example": "bit on granite 白费力气；徒劳无功"
+      },
+      {
+        "word": "gust",
+        "pos": "n.",
+        "example": "A gust of wind blew the leaves off the trees"
+      },
+      {
+        "word": "breeze",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "monsoon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gale",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hurricane",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tornado",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "typhoon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "volcano",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "erupt",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "magma",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "thermodynamic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "smog",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fume",
+        "pos": "n./v.",
+        "example": "Petrol fumes from cars are poisoning the atmosphere"
+      },
+      {
+        "word": "mist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tsunami",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "drought",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "flooding",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "torrent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "earthquake",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "seismic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "avalanche",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "terrain",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "landscape",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "continent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cave",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cliff",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "glacier",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "swamp",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "delta",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plain",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "plateau",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "oasis",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "globe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hemisphere",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "equator",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "arctic",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "Antarctic",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "pole",
+        "pos": "n.",
+        "example": "English is spoken from pole to pole"
+      },
+      {
+        "word": "polar",
+        "pos": "adj.",
+        "example": "In these polar region, the balance of nature has already been disrupted"
+      },
+      {
+        "word": "axis",
+        "pos": "n.",
+        "example": "The earth's axis is the line between the North and South Poles"
+      },
+      {
+        "word": "deteriorate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "aggravate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "degrade",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "upgrade",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "erode",
+        "pos": "v.",
+        "example": "The waves erode the rocks on the shore"
+      },
+      {
+        "word": "Mediterranean",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "Atlantic",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pacific",
+        "pos": "adj./n.",
+        "example": "What a beautiful and pacific place this is"
+      },
+      {
+        "word": "ocean",
+        "pos": "n.",
+        "example": "These creatures live in the depth of the Pacific Ocean"
+      },
+      {
+        "word": "marine",
+        "pos": "adj./n.",
+        "example": "It is true that a lot of people like marine plants as their food"
+      },
+      {
+        "word": "navigation",
+        "pos": "n.",
+        "example": "Navigation is a game for brave people"
+      },
+      {
+        "word": "gulf",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "beach",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "coast",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shore",
+        "pos": "n.",
+        "example": "His ship pulled in to the shore at midnight"
+      },
+      {
+        "word": "tide",
+        "pos": "n.",
+        "example": "The gravitational attraction between the moon and the earth causes tides"
+      },
+      {
+        "word": "current",
+        "pos": "n.",
+        "example": "He was swept away by the current"
+      },
+      {
+        "word": "brook",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "stream",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "source",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shallow",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "superficial",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "flat",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "smooth",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "rough",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "sandy",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "stony",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "vertical",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "steep",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "parallel",
+        "pos": "n./adj./v.",
+        "example": "平行线；相似之处；平行的；与...相比；比得上"
+      },
+      {
+        "word": "narrow",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "Oceania",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mainland",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "peninsula",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "climate",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "weather",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "meteorology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mild",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "heating",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "moderate",
+        "pos": "adj./v.",
+        "example": "The wind was strong all day, but it moderated in the evening"
+      },
+      {
+        "word": "warm",
+        "pos": "adj./v.",
+        "example": null
+      },
+      {
+        "word": "thermal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "tropics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "arid",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "moist",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "damp",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "humid",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "snowy",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "frost",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hail",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "thaw",
+        "pos": "v./n.",
+        "example": "The sun thawed the ice and melted the snow"
+      },
+      {
+        "word": "chill",
+        "pos": "v./n.",
+        "example": "The bad news cast a chill over the whole family"
+      },
+      {
+        "word": "freeze",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "frigid",
+        "pos": "adj.",
+        "example": "Hohhot is a frigid city in the winter"
+      },
+      {
+        "word": "tremble",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "shiver",
+        "pos": "v.",
+        "example": "She was shivered because she was worried and afraid"
+      },
+      {
+        "word": "thunder",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "lightning",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "stormy",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "downpour",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rainfall",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sprinkle",
+        "pos": "v./n.",
+        "example": "We've only had a sprinkles of rain recently"
+      },
+      {
+        "word": "rainbow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shower",
+        "pos": "n.",
+        "example": "The weatherman predicts showers this afternoon"
+      },
+      {
+        "word": "Celsius",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "temperature",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "forecast",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "peak",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "mount",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "mountain",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "range",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ridge",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "slope",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "valley",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hillside",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "overlook",
+        "pos": "v.",
+        "example": "The house on the hill overlooks the village"
+      },
+      {
+        "word": "southern",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "southeast",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "southwest",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "northeast",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "northwest",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "eastern",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "oriental",
+        "pos": "adj.",
+        "example": "She has studied the cultures of oriental countries"
+      },
+      {
+        "word": "inevitable",
+        "pos": "adj.",
+        "example": "Such a diffcult operation may not succeed, but it's an inevitable gamble"
+      },
+      {
+        "word": "irreversible",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "irregularly",
+        "pos": "adv.",
+        "example": null
+      },
+      {
+        "word": "inappropriate",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "abnormal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "sediment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "silt",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "muddy",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "clay",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dirt",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rural",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "suburb",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "outskirts",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "remote",
+        "pos": "adj.",
+        "example": "She came from a remote village"
+      },
+      {
+        "word": "desolate",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "distant",
+        "pos": "adj.",
+        "example": "the distant past 遥远的过去"
+      },
+      {
+        "word": "adjacent",
+        "pos": "adj.",
+        "example": "We stayed in adjacent rooms"
+      },
+      {
+        "word": "toxic",
+        "pos": "adj.",
+        "example": "All medicines are toxic"
+      },
+      {
+        "word": "pollution",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pollutant",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "contaminate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "geology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "border",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "margin",
+        "pos": "n.",
+        "example": "There is no margin for error in our plan"
+      },
+      {
+        "word": "fringe",
+        "pos": "n./adj.",
+        "example": "We feel it's pretty good and we also offer some good fringe benefits"
+      },
+      {
+        "word": "plate",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "debris",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "crack",
+        "pos": "v./n.",
+        "example": "The door opened just a crack"
+      },
+      {
+        "word": "gap",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "splendid",
+        "pos": "adj.",
+        "example": "You're all doing a splendid job; keep up the good work"
+      },
+      {
+        "word": "grand",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "magnificent",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "super",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "interesting",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "dramatic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "wilderness",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "desert",
+        "pos": "n./v.",
+        "example": "The baby's mother deserted him soon after giving birth"
+      },
+      {
+        "word": "deforest",
+        "pos": "v.",
+        "example": "deforestation n. 毁林，滥伐深林"
+      },
+      {
+        "word": "barren",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "fertile",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "fertilise",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "solar",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "lunar",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "calendar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sunrise",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sunset",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "eclipse",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dusk",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "heaven",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "paradise",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sunshine",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shade",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "shadow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vapour",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "evaporate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "circulate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "precipitate",
+        "pos": "v.",
+        "example": "Clouds usually precipitate as rain or snow"
+      },
+      {
+        "word": "reservoir",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "waterfall",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fountain",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "spring",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dew",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pour",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "drain",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "drip",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "drown",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "blow",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "puff",
+        "pos": "v./n.",
+        "example": "Don't puff cigarette smoke in my face"
+      },
+      {
+        "word": "gush",
+        "pos": "v./n.",
+        "example": "gush out 涌出；喷出；gush from 从...喷出"
+      },
+      {
+        "word": "dense",
+        "pos": "adj.",
+        "example": "density n. 密度"
+      },
+      {
+        "word": "intensity",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "intensive",
+        "pos": "adj.",
+        "example": "intensive care unit ICU"
+      },
+      {
+        "word": "emerge",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "flash",
+        "pos": "v./n.",
+        "example": "flash through sb.'s mind 闪过某人脑海"
+      },
+      {
+        "word": "float",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "environment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "surrounding",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "condition",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "situation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "nature",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "natural",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "artificial",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "synthetic",
+        "pos": "adj.",
+        "example": "Nylon is a synthetic material; it is not from nature"
+      },
+      {
+        "word": "petrol",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gas",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gasoline",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "petroleum",
+        "pos": "n.",
+        "example": "Petroleum is an important natural resource"
+      }
+    ],
+    "Растения": [
+      {
+        "word": "photosynthesis",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "respire",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "dioxide",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vagetation",
+        "pos": "n.",
+        "example": "There is not much vagetation in deserts"
+      },
+      {
+        "word": "herb",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "perennial",
+        "pos": "n./adj.",
+        "example": "These perennials should be planted where they can naturalise"
+      },
+      {
+        "word": "botany",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ecology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ecosystem",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "eco-friendly",
+        "pos": "adj.",
+        "example": "Attention to eco-friendly packaging is increasing"
+      },
+      {
+        "word": "horticulture",
+        "pos": "n.",
+        "example": "Horticulture is the industry and science of plant cultivation"
+      },
+      {
+        "word": "organism",
+        "pos": "n.",
+        "example": "organ n. 器官"
+      },
+      {
+        "word": "genetics",
+        "pos": "n.",
+        "example": "In genetics, genes were formerly called factors"
+      },
+      {
+        "word": "mutation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "variation",
+        "pos": "n.",
+        "example": "vary v. 变化"
+      },
+      {
+        "word": "diversity",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hybridisation",
+        "pos": "n.",
+        "example": "hybridcar"
+      },
+      {
+        "word": "classify",
+        "pos": "v.",
+        "example": "Labrarians spend a lot of time classifying books"
+      },
+      {
+        "word": "reproduce",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "evolve",
+        "pos": "v.",
+        "example": "evolve from 从...进化而来"
+      },
+      {
+        "word": "fluctuate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "reclaim",
+        "pos": "v.",
+        "example": "This land was reclaimed from the sea"
+      },
+      {
+        "word": "cultivate",
+        "pos": "v.",
+        "example": "The farmer is cultivating his land"
+      },
+      {
+        "word": "sow",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "harvest",
+        "pos": "v./n.",
+        "example": "A good summer harvest is not easy to come by"
+      },
+      {
+        "word": "pluck",
+        "pos": "v.",
+        "example": "The pluck a rose for his lover"
+      },
+      {
+        "word": "pick",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "yield",
+        "pos": "v./n.",
+        "example": "This land yields well"
+      },
+      {
+        "word": "rear",
+        "pos": "v./n.",
+        "example": "Most farmer in this area rear sheep"
+      },
+      {
+        "word": "arable",
+        "pos": "adj.",
+        "example": "This area changed quickly from arable land to desert"
+      },
+      {
+        "word": "plough",
+        "pos": "n./v.",
+        "example": "The ground was ploughed and planted with corn"
+      },
+      {
+        "word": "spade",
+        "pos": "n.",
+        "example": "He bought a new spade"
+      },
+      {
+        "word": "rake",
+        "pos": "n./v.",
+        "example": "With an ancient rusty rake I went to work"
+      },
+      {
+        "word": "stack",
+        "pos": "n./v.",
+        "example": "I have a stack of homework to do"
+      },
+      {
+        "word": "heap",
+        "pos": "n.",
+        "example": "A heap of clothes was lying in the corner"
+      },
+      {
+        "word": "bundle",
+        "pos": "n.",
+        "example": "He collected a bundle of sticks"
+      },
+      {
+        "word": "bunch",
+        "pos": "n.",
+        "example": "I bought a bunch of lilacs 我买了一束丁香花"
+      },
+      {
+        "word": "vase",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sunlight",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "short-day",
+        "pos": "adj.",
+        "example": "Soybean is a typical short-day corp 大豆是典型的短日照作物"
+      },
+      {
+        "word": "shade-tolerant",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "fungus",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mould",
+        "pos": "n./v.",
+        "example": "The walls were black with mould"
+      },
+      {
+        "word": "pollen",
+        "pos": "n./v.",
+        "example": "Each spring, pollen from nearby plants is blown into the water"
+      },
+      {
+        "word": "germinate",
+        "pos": "v.",
+        "example": "Warmth is needed for the seeds to germinate"
+      },
+      {
+        "word": "seed",
+        "pos": "n.",
+        "example": "The farmers were scattering seeds over the fields"
+      },
+      {
+        "word": "burgeon",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "bud",
+        "pos": "n.",
+        "example": "The rose are in bud"
+      },
+      {
+        "word": "flower",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "blossom",
+        "pos": "v./n.",
+        "example": "The tree was covered with beautiful pink blossom"
+      },
+      {
+        "word": "bloom",
+        "pos": "n.",
+        "example": "The apple trees are out of bloom"
+      },
+      {
+        "word": "scent",
+        "pos": "n./v.",
+        "example": "The flower scents the air"
+      },
+      {
+        "word": "aromatic",
+        "pos": "adj.",
+        "example": "Aromatic plants are often used in cooking"
+      },
+      {
+        "word": "ripen",
+        "pos": "v.",
+        "example": "The sun ripens the corn"
+      },
+      {
+        "word": "fruit",
+        "pos": "v.",
+        "example": "The apple trees fruited early this year"
+      },
+      {
+        "word": "wither",
+        "pos": "v.",
+        "example": "The grapes withered on the vine"
+      },
+      {
+        "word": "decompose",
+        "pos": "v.",
+        "example": "You can apply heat to decompose organic compounds 你可以加热来分解有机化合物"
+      },
+      {
+        "word": "rot",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "decay",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "stale",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "rainforest",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "jungle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plantation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "field",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "terrace",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "timber",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "charcoal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "log",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "logo",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "forestry",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "branch",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "trunk",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bough",
+        "pos": "n.",
+        "example": "The window of his car was broken by a bough during last night's storm"
+      },
+      {
+        "word": "root",
+        "pos": "n./v.",
+        "example": "root cause 根本原因"
+      },
+      {
+        "word": "hay",
+        "pos": "n.",
+        "example": "Make hay with sun shines"
+      },
+      {
+        "word": "straw",
+        "pos": "n.",
+        "example": "This hat is made of straw"
+      },
+      {
+        "word": "reed",
+        "pos": "n.",
+        "example": "The roof is made of dried reed"
+      },
+      {
+        "word": "thorn",
+        "pos": "n.",
+        "example": "She got her finger pricked by a thorn"
+      },
+      {
+        "word": "weed",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "grass",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "meadow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lawn",
+        "pos": "n.",
+        "example": "My mother asked me to mow the lawn"
+      },
+      {
+        "word": "olive",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pine",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vine",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "violet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tulip",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mint",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "reef",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "alga",
+        "pos": "n.",
+        "example": "Some of the algea are edible"
+      },
+      {
+        "word": "enzyme",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "catalyst",
+        "pos": "n.",
+        "example": "A catalyst is a substance which speeds up a chemical reaction"
+      },
+      {
+        "word": "release",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "emission",
+        "pos": "n.",
+        "example": "This conference aims to reduce carbon emissions or greenhouse gas emissions around this world"
+      },
+      {
+        "word": "absorb",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "circulation",
+        "pos": "n.",
+        "example": "Sea surface temperature and atmosheric circulation are strongly coupled"
+      },
+      {
+        "word": "exceed",
+        "pos": "v.",
+        "example": "The driver exceeds the speed limit"
+      },
+      {
+        "word": "uptake",
+        "pos": "n.",
+        "example": "The doctor advised me to reduce the salt uptake"
+      },
+      {
+        "word": "nutrient",
+        "pos": "n.",
+        "example": "The nutrient in the soil acts as a stimulus to growth in plants"
+      },
+      {
+        "word": "energy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "surroundings",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mechanism",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "counterbalance",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "protect",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "preserve",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "conservation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bushfire",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "extinguish",
+        "pos": "v.",
+        "example": "They tried every means to extinguish the fire"
+      },
+      {
+        "word": "destruct",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "ruin",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "perish",
+        "pos": "v.",
+        "example": "Flowers perish when frost comes"
+      },
+      {
+        "word": "demolish",
+        "pos": "v.",
+        "example": "The fire demolished the town"
+      },
+      {
+        "word": "infringe",
+        "pos": "v.",
+        "example": "The press infringed a copyright agreement"
+      },
+      {
+        "word": "undermine",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "extinction",
+        "pos": "n.",
+        "example": "extinct adj. 已灭绝的"
+      },
+      {
+        "word": "pattern",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "outcome",
+        "pos": "n.",
+        "example": "We are anxiously awaiting the outcome of their discussion"
+      },
+      {
+        "word": "impact",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "seasonal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "experimental",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "favourable",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "productive",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "effective",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "efficient",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "considerable",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "massive",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "immense",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "maximal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "minimal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "optimal",
+        "pos": "adj.",
+        "example": null
+      }
+    ],
+    "Животные и охрана природы": [
+      {
+        "word": "biologist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "zoologist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ecologist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "botanist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mammal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "primate",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vertebrate",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pretail",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "amphibian",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "carnivore",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "herbivore",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "creature",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wildlife",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fauna",
+        "pos": "n.",
+        "example": "The park is also home to grizzly bears, and other Rocky Mountain faunas"
+      },
+      {
+        "word": "flora",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "species",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "flock",
+        "pos": "n./v.",
+        "example": "Sheep usually flock togather"
+      },
+      {
+        "word": "herd",
+        "pos": "n.",
+        "example": "The herdsman looks after a herd of animals"
+      },
+      {
+        "word": "swarm",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "throng",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "crowd",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "beast",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "brute",
+        "pos": "n.",
+        "example": "We all want punish the brute"
+      },
+      {
+        "word": "cruel",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "originate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "derive",
+        "pos": "v.",
+        "example": "I drived a lot of pleasure from meeting new people at college"
+      },
+      {
+        "word": "stem",
+        "pos": "v./n.",
+        "example": "Correct decisions stem from correct judgments"
+      },
+      {
+        "word": "ancestor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "descendant",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "offspring",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "subgroup",
+        "pos": "n.",
+        "example": "According to a subgroup analysis, violence produce more violence"
+      },
+      {
+        "word": "feed",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "breed",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "interbreed",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "hybridize",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "proliferate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "sterility",
+        "pos": "n.",
+        "example": "This disease causes sterility in both males and females"
+      },
+      {
+        "word": "mate",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "courtship",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lay",
+        "pos": "v.",
+        "example": "They lay eggs from the July to the middle of August"
+      },
+      {
+        "word": "hatch",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "brood",
+        "pos": "n./v.",
+        "example": "The bird was trying to find food for its brood"
+      },
+      {
+        "word": "spawn",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "mature",
+        "pos": "adj./v.",
+        "example": "You are a muture man now, you are no longer a boy"
+      },
+      {
+        "word": "skin",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "claw",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "paw",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "beak",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fin",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wing",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plume",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "feather",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fur",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bristle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "curl",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "insect",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "worm",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pest",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "parasite",
+        "pos": "n.",
+        "example": "The life of hte parasite is maintained by new blood-sucking mosquitoes"
+      },
+      {
+        "word": "spider",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "butterfly",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mosquito",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cricket",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "penguin",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "seal",
+        "pos": "n./v.",
+        "example": "Polar bears set off in search of their favorite meal-seals"
+      },
+      {
+        "word": "tortoise",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "turtle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "whale",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "kangaroo",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "camel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "panda",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "elephant",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "trunk",
+        "pos": "n.",
+        "example": "这个词和植物研究那个树干是一个词"
+      },
+      {
+        "word": "ivory",
+        "pos": "n.",
+        "example": "The professor lived in an ivory tower"
+      },
+      {
+        "word": "horn",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bear",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wolf",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dragon",
+        "pos": "n.",
+        "example": "Dragons are describes as monsters in most western countries"
+      },
+      {
+        "word": "fox",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cub",
+        "pos": "n.",
+        "example": "The cub licked the milk from its mother's breast"
+      },
+      {
+        "word": "calf",
+        "pos": "n.",
+        "example": "Did you see the cow with her calf"
+      },
+      {
+        "word": "pup",
+        "pos": "n.",
+        "example": "I'll get you an Alsatian pup for Christmas"
+      },
+      {
+        "word": "lamb",
+        "pos": "n.",
+        "example": "The little lamb was caught by the wolf"
+      },
+      {
+        "word": "cattle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ox",
+        "pos": "n.",
+        "example": "复数形式 oxen"
+      },
+      {
+        "word": "bull",
+        "pos": "n.",
+        "example": "He was a great bull of a man"
+      },
+      {
+        "word": "buffalo",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "horse",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "zebra",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "donkey",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "saddle",
+        "pos": "n.",
+        "example": "He was putting a saddle on the horse"
+      },
+      {
+        "word": "harness",
+        "pos": "n.",
+        "example": "You cannot judge a horse by harness"
+      },
+      {
+        "word": "falcon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hawk",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "eagle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "owl",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "swallow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sparrow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pigeon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "crow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "swan",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "goose",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cock",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mouse",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "squirrel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hare",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "frog",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "behaviour",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bite",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "sting",
+        "pos": "v./n.",
+        "example": "It is the nature of the scorpion to sting"
+      },
+      {
+        "word": "bark",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "roar",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "rub",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "creep",
+        "pos": "v.",
+        "example": "We take off our shoes and creep cautiously along the passage"
+      },
+      {
+        "word": "crawl",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "habitat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "nest",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hive",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "cell",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "stable",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "barn",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hedge",
+        "pos": "n.",
+        "example": "There is a opening in the hedge"
+      },
+      {
+        "word": "barrier",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "anatomy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "epidemic",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "gene",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "germ",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bacteria",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "virus",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "microbe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "metabolism",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "protein",
+        "pos": "n.",
+        "example": "You need more protein to build you up"
+      },
+      {
+        "word": "vitamin",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "secrete",
+        "pos": "v.",
+        "example": "The kidneys secrete urine"
+      },
+      {
+        "word": "excrete",
+        "pos": "v.",
+        "example": "The function of kidneys are excrete waste products"
+      },
+      {
+        "word": "devour",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "instinct",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "intuitive",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "potential",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "intelligence",
+        "pos": "n.",
+        "example": "Use your intelligence, and you're succeed some day"
+      },
+      {
+        "word": "functional",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "sensitive",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "flexible",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "acoustic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "optical",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "nocturnal",
+        "pos": "adj.",
+        "example": "Hamsters are nocturnal creatures"
+      },
+      {
+        "word": "dormant",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "hibernation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "track",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "trace",
+        "pos": "v./n.",
+        "example": "They traced the criminal to a house in the city"
+      },
+      {
+        "word": "alternate",
+        "pos": "v.",
+        "example": "Sunny weather alternated with rain"
+      },
+      {
+        "word": "prey",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "predator",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "victim",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "captive",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "defensive",
+        "pos": "adj.",
+        "example": "we took a defensive attitude in the negotiation"
+      },
+      {
+        "word": "undergo",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "suffer",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "vulnerable",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "subsistence",
+        "pos": "n.",
+        "example": "The standard of living at that time was on the edge of subsistence 当时的生活水平出于勉强维生边缘"
+      },
+      {
+        "word": "exist",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "exterminate",
+        "pos": "v.",
+        "example": "We've made great efforts to exterminate mosquitoes and flies"
+      },
+      {
+        "word": "tame",
+        "pos": "v./adj.",
+        "example": "The tame lions can communicate and dance togather with the actors"
+      },
+      {
+        "word": "keeper",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shepherd",
+        "pos": "n.",
+        "example": "The shepherd set out to look for sheep that had wandered away"
+      }
+    ],
+    "Космос": [
+      {
+        "word": "galaxy",
+        "pos": "n.",
+        "example": "The sun is only a very small start in the Galaxy"
+      },
+      {
+        "word": "cosmos",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "universe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "interstellar",
+        "pos": "adj.",
+        "example": "These elements become part of the interstellar gas and dust"
+      },
+      {
+        "word": "terrestrial",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "celestial",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "astronomy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "astrology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "astronaut",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "comet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "meteorite",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "crater",
+        "pos": "n.",
+        "example": "They came to the lip of a dead volcanic crater"
+      },
+      {
+        "word": "dust",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ash",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "envelope",
+        "pos": "n.",
+        "example": "The surface of the sun is a glowing gas envelope"
+      },
+      {
+        "word": "chunk",
+        "pos": "n.",
+        "example": "My mother bought a chunk of meat"
+      },
+      {
+        "word": "spacecraft",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "spaceship",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "probe",
+        "pos": "n.",
+        "example": "Their probe into the cause of the fire proved futile"
+      },
+      {
+        "word": "module",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "propulsion",
+        "pos": "n.",
+        "example": "This aircraft works by jet propulsion"
+      },
+      {
+        "word": "pressure",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dynamics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "motion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vent",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "tail",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "curve",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "exploration",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "expedition",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "flyby",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "observatory",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "telescope",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "spectacle",
+        "pos": "n.",
+        "example": "The sunrise was a splendid spectacle"
+      },
+      {
+        "word": "orbit",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ecliptic",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "diameter",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "radius",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "substance",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "composition",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "compound",
+        "pos": "n./adj./v.",
+        "example": "English loves compound words: \"washing machine\" and that sort of thing"
+      },
+      {
+        "word": "fossil",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sample",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "specimen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "particle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "molecule",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "atom",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "electron",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "quantum",
+        "pos": "n.",
+        "example": "In this example, we employed the quantum mechanics principle"
+      },
+      {
+        "word": "liquid",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "fluid",
+        "pos": "n./adj.",
+        "example": "When you are sick, you should drink plenty of fluids"
+      },
+      {
+        "word": "solid",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "synthesis",
+        "pos": "v.",
+        "example": "Darwinian theory has been synthesised with modern genetics"
+      },
+      {
+        "word": "formation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "method",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "spectrum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dimension",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "frequency",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "signal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "antenna",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "circuit",
+        "pos": "n.",
+        "example": "For many years, He was the banana on the cicruit"
+      },
+      {
+        "word": "refraction",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ultraviolet",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "radioactive",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "distinct",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "discernible",
+        "pos": "adj.",
+        "example": "Night fell, but the outline of the factory buildings was still discernible"
+      },
+      {
+        "word": "invisible",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "collision",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "squash",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "fragment",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "cataclysmic",
+        "pos": "adj.",
+        "example": "One can readily trace the disappearance of dinosaurs to a cataclysmic"
+      },
+      {
+        "word": "overwhelming",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "despair",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "desperate",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "hopeless",
+        "pos": "adj.",
+        "example": null
+      }
+    ],
+    "Образование": [
+      {
+        "word": "education",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "primary",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "secondary",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "university",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "college",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "institute",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "academy",
+        "pos": "n.",
+        "example": "This is an academy of music"
+      },
+      {
+        "word": "learn",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "study",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "acquire",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "knowledge",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "expertise",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "novice",
+        "pos": "n.",
+        "example": "I'm a complete novice at yoga"
+      },
+      {
+        "word": "recruit",
+        "pos": "v.",
+        "example": "The country's first act would be to recruit for the navy"
+      },
+      {
+        "word": "literate",
+        "pos": "adj.",
+        "example": "Over one-quarter of the adult population are not fully literate"
+      },
+      {
+        "word": "illiteracy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "numerate",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "problem",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "issue",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "affair",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "controversial",
+        "pos": "adj.",
+        "example": "They tried to stay away from controversial topics at the dinner party"
+      },
+      {
+        "word": "puzzle",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "riddle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "obscure",
+        "pos": "adj.",
+        "example": "Rules for the game are somewhat obscure"
+      },
+      {
+        "word": "instil",
+        "pos": "v.",
+        "example": "A sense of duty must be instilled in our children"
+      },
+      {
+        "word": "cram",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "emphasise",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "enhance",
+        "pos": "v.",
+        "example": "A good score of IELTS enhance my change of getting the offer"
+      },
+      {
+        "word": "enable",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "inspire",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "motive",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "motivate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "stimulate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "spur",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "impetus",
+        "pos": "n.",
+        "example": "The car ran down the bridge under it's own impetus"
+      },
+      {
+        "word": "indulge",
+        "pos": "v.",
+        "example": "You can indulge yourself without spending a fortune"
+      },
+      {
+        "word": "spoil",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "abuse",
+        "pos": "v.",
+        "example": "It's easy to abuse one's powser"
+      },
+      {
+        "word": "intelligent",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "clever",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "smart",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "all-round",
+        "pos": "adj.",
+        "example": "She is an all-round artist"
+      },
+      {
+        "word": "genius",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "elite",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "idiot",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wisdom",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wit",
+        "pos": "n.",
+        "example": "Holmes was a gregarious, a great wit, a man of wide interests"
+      },
+      {
+        "word": "aptitude",
+        "pos": "n.",
+        "example": "That student has an aptitude for music"
+      },
+      {
+        "word": "capable",
+        "pos": "adj.",
+        "example": "Not everyone is capable of judging fine arts"
+      },
+      {
+        "word": "excellent",
+        "pos": "adj.",
+        "example": "She had a high reputation for her excellent detective novels"
+      },
+      {
+        "word": "outstanding",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "brilliant",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "prestige",
+        "pos": "n.",
+        "example": "These new policies will affect the president's national and international prestige"
+      },
+      {
+        "word": "reputation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "eminent",
+        "pos": "adj.",
+        "example": "The students are expecting the arrival of an eminent scientist"
+      },
+      {
+        "word": "notorious",
+        "pos": "adj.",
+        "example": "The notorious thief was finally caught and put to prison"
+      },
+      {
+        "word": "esteem",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "respect",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "diligent",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "painstaking",
+        "pos": "adj.",
+        "example": "The mastery of a language requires painstaking effort"
+      },
+      {
+        "word": "skill",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "approac",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "scheme",
+        "pos": "n./v.",
+        "example": "All the scheme an intrigues are doomed to failure"
+      },
+      {
+        "word": "headmaster",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "principal",
+        "pos": "n./adj.",
+        "example": "He is going to resign from the position of principal"
+      },
+      {
+        "word": "dean",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "faculty",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "professor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "scholar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "scientist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mentor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tutor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lecturer",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "assistant",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "candidate",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "degree",
+        "pos": "n.",
+        "example": "He left without completing his degree"
+      },
+      {
+        "word": "qualify",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "certify",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "license",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "permit",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "diploma",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "diplomat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ambassador",
+        "pos": "n.",
+        "example": "He was appointed ambassador to France"
+      },
+      {
+        "word": "pupil",
+        "pos": "n.",
+        "example": "As a girl, she had been a model pupil"
+      },
+      {
+        "word": "graduate",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "ceremony",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bachelor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "master",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "doctor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fresher",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sophomore",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "junior",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "senior",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "alumni",
+        "pos": "n.",
+        "example": "My alumni and alumna are persent at my birthday party"
+      },
+      {
+        "word": "compus",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "orientation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "platform",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "coed",
+        "pos": "adj./n.",
+        "example": "A nationwide research is under way for typical coeds"
+      },
+      {
+        "word": "register",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "roster",
+        "pos": "n.",
+        "example": "I am on the roster for tomorrow night"
+      },
+      {
+        "word": "enrol",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "matriculation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "accommodation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dorm",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dining hall",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "canteen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "laboratory",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "experiment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "data",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "quantity",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "quality",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "library",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "literature",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "article",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "author",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tale",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fiction",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "story",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "diary",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "poetry",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "magazine",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "journal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "coverage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bibliography",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "encyclopedia",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "biography",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "documentary",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "series",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "record",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "file",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "profile",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "draft",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sketch",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "brochure",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "manual",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "frame",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "index",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "catalogue",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "category",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "inventory",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "content",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "context",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "list",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "chapter",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "volume",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "reel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "subject",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "object",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "major",
+        "pos": "n./v./adj.",
+        "example": null
+      },
+      {
+        "word": "minor",
+        "pos": "n./adj.",
+        "example": "My major is English, but I also have a minor in history."
+      },
+      {
+        "word": "sociology",
+        "pos": "n.",
+        "example": "A few years ago, sociology was the most popular subject for undergraduates"
+      },
+      {
+        "word": "politics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "economics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "marketing",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "accounting",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "audit",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "statistics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "psychology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "philosophy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "logic",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "biology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "physics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "chemistry",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "agriculture",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "logistics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "geography",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "history",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "engineering",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mechanics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "electronics",
+        "pos": "n.",
+        "example": "That country wants to increase tariffs on items such as electronics"
+      },
+      {
+        "word": "maths",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "arithmetic",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "geometry",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "algebra",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "calculus",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plus",
+        "pos": "prep./adj.",
+        "example": null
+      },
+      {
+        "word": "sum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "total",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "merger",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "equation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "identical",
+        "pos": "adj.",
+        "example": "This is the identical hotel we stayed at last year"
+      },
+      {
+        "word": "minus",
+        "pos": "adj./prep.",
+        "example": null
+      },
+      {
+        "word": "substract",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "multiply",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "divide",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "dividend",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "remainder",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rational",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "parameter",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "variable",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "even",
+        "pos": "adj./adv.",
+        "example": null
+      },
+      {
+        "word": "odd",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "mean",
+        "pos": "n./adj.",
+        "example": "The professor asked the students to take 200 values and calculate the mean"
+      },
+      {
+        "word": "double",
+        "pos": "adj./n./v.",
+        "example": null
+      },
+      {
+        "word": "triple",
+        "pos": "adj./n./v",
+        "example": null
+      },
+      {
+        "word": "quadruple",
+        "pos": "adj./n./v.",
+        "example": null
+      },
+      {
+        "word": "multiple",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "maximum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "minimum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "approximately",
+        "pos": "adv.",
+        "example": null
+      },
+      {
+        "word": "chart",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "graph",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "diagram",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "table",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "matrix",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rectangle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cube",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "angle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "triangle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "diagonal",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "straight",
+        "pos": "adj./adv.",
+        "example": null
+      },
+      {
+        "word": "circle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "round",
+        "pos": "adj./n./adv.",
+        "example": null
+      },
+      {
+        "word": "dot",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "sphere",
+        "pos": "n.",
+        "example": "We move in different social sphere"
+      },
+      {
+        "word": "cone",
+        "pos": "n.",
+        "example": "The police have sectioned off the road with traffic cones"
+      },
+      {
+        "word": "extent",
+        "pos": "n.",
+        "example": "No one cares about the extent of his debts"
+      },
+      {
+        "word": "width",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "length",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "decimal",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "percent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "proportion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rate",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ratio",
+        "pos": "n.",
+        "example": "The ratio of 3 to 9 is the same as that 9 to 27"
+      },
+      {
+        "word": "fraction",
+        "pos": "n.",
+        "example": "She spends only a fraction of her earnings on clothes"
+      },
+      {
+        "word": "scale",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "ounce",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "density",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "Fahrenheit",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "mercury",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "battery",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "volt",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "radiate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "emit",
+        "pos": "v.",
+        "example": "The tail exhaust pipe of the car emitted poisonous smoke"
+      },
+      {
+        "word": "transparent",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "hollow",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "ozone",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gravity",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "friction",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "eccentric",
+        "pos": "adj.",
+        "example": "The old lady has some eccentric habits"
+      },
+      {
+        "word": "displace",
+        "pos": "v.",
+        "example": "A bone in his knee was displaced when he crashed against another player"
+      },
+      {
+        "word": "boil",
+        "pos": "v./n.",
+        "example": "The watched pot never boils 性急烧水不沸"
+      },
+      {
+        "word": "melt",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "dissolve",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "rust",
+        "pos": "v./n.",
+        "example": "If you leave your metal tools outside in the rain, they will rust"
+      },
+      {
+        "word": "ferment",
+        "pos": "v./n.",
+        "example": "The whole country was in a state of ferment"
+      },
+      {
+        "word": "dilute",
+        "pos": "v./adj.",
+        "example": "The nurse diluted the drug with sailine water"
+      },
+      {
+        "word": "acid",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "noxious",
+        "pos": "adj.",
+        "example": "Increasing tax on petrol would encourage people to drive cars with fewer emissions"
+      },
+      {
+        "word": "static",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "inert",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "inherent",
+        "pos": "adj.",
+        "example": "Polarity is inherent in a magent"
+      },
+      {
+        "word": "formula",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "component",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "compose",
+        "pos": "v.",
+        "example": "Water is composed of hydrogen and oxygen"
+      },
+      {
+        "word": "mixture",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "blend",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "theory",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "empirical",
+        "pos": "adj.",
+        "example": "His thesis is not very convincing for lack of empirical evidence"
+      },
+      {
+        "word": "pratical",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "doctrine",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "principle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "discipline",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "term",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "semester",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "timetable",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "schedule",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "deadline",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "course",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lesson",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "curriculum",
+        "pos": "n.",
+        "example": "The staff should work togather to revise the school curriculum"
+      },
+      {
+        "word": "seminar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "forum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "syllabus",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "system",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rudimentary",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "basic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "fundamental",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "elementary",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "profound",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "superficial",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "surface",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "compulsory",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "prerequisite",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "selective",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "elective",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "assignment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "submit",
+        "pos": "v.",
+        "example": "submit to 服从于；屈从于。submit sth. to 把某物提交给"
+      },
+      {
+        "word": "preview",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "review",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "revise",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "inspect",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "consult",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "skim",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "scan",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "scrutinise",
+        "pos": "v.",
+        "example": "scrutiny n. 详细审查"
+      },
+      {
+        "word": "recite",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "dictate",
+        "pos": "v.",
+        "example": "The English teacher dictates to the class every other week"
+      },
+      {
+        "word": "examination",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "test",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "quiz",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "presentation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plagiarise",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "copy",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "print",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "thesis",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "essay",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "paper",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dissertation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "project",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "heading",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "outset",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "outline",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "point",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gist",
+        "pos": "n.",
+        "example": "He cannot understand the gist of their argument"
+      },
+      {
+        "word": "opinion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "introduce",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "reference",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cite",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "elicit",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "quote",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "extract",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "abstract",
+        "pos": "n./adj./v.",
+        "example": null
+      },
+      {
+        "word": "summary",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "assume",
+        "pos": "v.",
+        "example": "assumption n. 假设；假想"
+      },
+      {
+        "word": "presume",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "suppose",
+        "pos": "v.",
+        "example": "Let us suppose another planet with conditions similar to those on the earth"
+      },
+      {
+        "word": "hypothesis",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "postulate",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "speculate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "predict",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "perceive",
+        "pos": "v.",
+        "example": "I perceived that it was not possible to make her change her mind"
+      },
+      {
+        "word": "detect",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "discern",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "recognise",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "conscious",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "reckon",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "deem",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "imply",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "deliberate",
+        "pos": "v./adj.",
+        "example": null
+      },
+      {
+        "word": "represent",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "insist",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "persist",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "understand",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "comprehend",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "analyse",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "diagnose",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "infer",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "deduce",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "conclude",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "analogy",
+        "pos": "n.",
+        "example": "analogous adj. 类似的。by analogy 通过类推法"
+      },
+      {
+        "word": "compare",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "contrast",
+        "pos": "n.",
+        "example": "by contrast/in contrast 与之相比，相比之下。in contrast to 与...截然不同"
+      },
+      {
+        "word": "overlap",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "contradiction",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "disagree",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "differ",
+        "pos": "v.",
+        "example": "differ from 与...不同"
+      },
+      {
+        "word": "diverse",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "nuance",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "inductive",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "detail",
+        "pos": "n.",
+        "example": "detailed adj. 详细的。in detail 详细地"
+      },
+      {
+        "word": "thorough",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "example",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "instance",
+        "pos": "n.",
+        "example": "for instance 例如"
+      },
+      {
+        "word": "confirm",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "demonstrate",
+        "pos": "v.",
+        "example": "demonstration n. 示范；游行示威。demonstrative adj. 情感外露的；喜怒形于色的。demonstrator n. 示范者；游行示威者"
+      },
+      {
+        "word": "illustrate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "manifest",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "prove",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "determine",
+        "pos": "v.",
+        "example": "determinant n. 决定因素。 determined adj. 下定决心的。determine to do sth. 决心做某事。determine beforehand 事先决定"
+      },
+      {
+        "word": "decide",
+        "pos": "v.",
+        "example": "decision n. 决定；抉择"
+      },
+      {
+        "word": "resolve",
+        "pos": "v.",
+        "example": "resolution n. 决心；分辨率。solution n. 解决方案；溶液"
+      },
+      {
+        "word": "survey",
+        "pos": "n./v.",
+        "example": "动词的时候重音在中间"
+      },
+      {
+        "word": "research",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "observe",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "inquire",
+        "pos": "v.",
+        "example": "inquiry n. 询问；调查。 inquire into 调查"
+      },
+      {
+        "word": "query",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "questionnaire",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "achieve",
+        "pos": "v.",
+        "example": "achievement n. 成就；完成；达到。achieve success 取得成功"
+      },
+      {
+        "word": "accomplish",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "attain",
+        "pos": "v.",
+        "example": "attainment n. 达到；成就。attain one's goal 达到某人目标"
+      },
+      {
+        "word": "credit",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "score",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mark",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "grade",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "rank",
+        "pos": "n./v.",
+        "example": "ranking n. 排名（表）；等级"
+      },
+      {
+        "word": "row",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "queue",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "grant",
+        "pos": "v.",
+        "example": "take sth. for granted 认为某事是理所应当的"
+      },
+      {
+        "word": "praise",
+        "pos": "n./v.",
+        "example": "full of praise 赞不绝口 praise sb. for sth. 为某事赞扬某人"
+      },
+      {
+        "word": "appreciate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "feedback",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "underestimate",
+        "pos": "v.",
+        "example": "estimate v. 估算；n. 估算；评价"
+      },
+      {
+        "word": "overestimate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "apply",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "fellowship",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "scholarship",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "reward",
+        "pos": "n./v.",
+        "example": "\breward sb. for sth. 为某事报答某人。 as a reward for 作为对（某事）的报酬"
+      },
+      {
+        "word": "award",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "prize",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "fee",
+        "pos": "n.",
+        "example": null
+      }
+    ],
+    "Технологии и изобретения": [
+      {
+        "word": "technology",
+        "pos": "n.",
+        "example": "technological adj. 技术上的；advanced technology 先进的技术"
+      },
+      {
+        "word": "technique",
+        "pos": "n.",
+        "example": "technical adj. 技术的；技能的；工艺的。technician n. 技术员；技师"
+      },
+      {
+        "word": "polytechnic",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "engineer",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mechanic",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "advance",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "innovate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "breakthrough",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gizmo",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "patent",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "devise",
+        "pos": "v.",
+        "example": "device n. 装置；设备"
+      },
+      {
+        "word": "discover",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "disclose",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "reveal",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "uncover",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "expose",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "domain",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "field",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "realm",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "foundation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "specialise",
+        "pos": "v.",
+        "example": "specialise in 专攻；专门研究；专门经营"
+      },
+      {
+        "word": "absorb",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "concentrate",
+        "pos": "v.",
+        "example": "concentration n. 专心；浓度。concentrate on 专心于"
+      },
+      {
+        "word": "focus",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "utilise",
+        "pos": "v.",
+        "example": "utility n. 效用；有用。utilities n. （水、电、煤气等）公用事业。utilisation=utilization n. 利用；使用"
+      },
+      {
+        "word": "usage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tester",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "apply",
+        "pos": "v.",
+        "example": "apply to 适用于。apply A to B 把 A 应用于 B"
+      },
+      {
+        "word": "device",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "appliance",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "facility",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "equipment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "instrument",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tool",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gauge",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "measure",
+        "pos": "v./n.",
+        "example": "measurable adj. 可测量的。measurement n. 测量；衡量；尺寸。take measures 采取措施"
+      },
+      {
+        "word": "calculate",
+        "pos": "v.",
+        "example": "calculation n. 计算。calculator n. 计算器"
+      },
+      {
+        "word": "compute",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "count",
+        "pos": "v.",
+        "example": "counter n. 柜台；计数器"
+      },
+      {
+        "word": "estimate",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "assess",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "evaluate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "accessory",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "byproduct",
+        "pos": "n.",
+        "example": "bypass n. 旁路。bypath n. 旁道；小路。bywork n. 业余活计。byname n. 绰号"
+      },
+      {
+        "word": "auxiliary",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "versatile",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "add",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "accumulate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "assemble",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "gather",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "attach",
+        "pos": "v.",
+        "example": "attachment n. 附件；附属物。attach importance to 重视"
+      },
+      {
+        "word": "belong",
+        "pos": "v.",
+        "example": "belong to 属于"
+      },
+      {
+        "word": "optics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "microscope",
+        "pos": "n.",
+        "example": "microphone n. 麦克风。microwave n. 微波；微波炉。microbe n. 微生物"
+      },
+      {
+        "word": "lens",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "radar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "echo",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "sensor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "multimedia",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "network",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "browser",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dial",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "microcomputer",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "laptop",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "software",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "keyboard",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "screen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "loudspeaker",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "microphone",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cassette",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tape",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "binary",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "digital",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "wireless",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "high-definition",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "audio",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "vision",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fantasy",
+        "pos": "n.",
+        "example": "He is unable to divorce fantasy from reality"
+      },
+      {
+        "word": "science fiction",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pump",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "generator",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gear",
+        "pos": "n./v.",
+        "example": "Education should be geared to children's needs"
+      },
+      {
+        "word": "pivot",
+        "pos": "n.",
+        "example": "The mother is often the pivot of family life"
+      },
+      {
+        "word": "hydraulic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "drainage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sewage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ventilation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "compress",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "condense",
+        "pos": "v.",
+        "example": "A long story may be condensed into a few sentences"
+      },
+      {
+        "word": "refine",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "simplify",
+        "pos": "v.",
+        "example": "simplicity n. 简单；质朴。simple adj. 简单的。simply adv. 简单地；仅仅"
+      },
+      {
+        "word": "purify",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "filter",
+        "pos": "v./n.",
+        "example": "filter through （消息等）慢慢传开；走漏"
+      },
+      {
+        "word": "distil",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "mode",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mould",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "prototype",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "framework",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "aspect",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "phase",
+        "pos": "n.",
+        "example": "The first phase of the project has been completed"
+      },
+      {
+        "word": "operate",
+        "pos": "v.",
+        "example": "operation n. 操作；企业；手术"
+      },
+      {
+        "word": "facilitate",
+        "pos": "v.",
+        "example": "Many modern inventions facilitate housework"
+      },
+      {
+        "word": "transform",
+        "pos": "v.",
+        "example": "transformation n. 变化；转变"
+      },
+      {
+        "word": "convert",
+        "pos": "v./n.",
+        "example": "conversion n. 转变；换算。convert defeat into victory 转败为胜"
+      },
+      {
+        "word": "alter",
+        "pos": "v.",
+        "example": "alternative adj. 可供选择的。an alter ego 知己；个性的另一面"
+      },
+      {
+        "word": "shift",
+        "pos": "v./n.",
+        "example": "The wind shifted to the north"
+      },
+      {
+        "word": "turn",
+        "pos": "v./n.",
+        "example": "turning n. 旋转；转弯处"
+      },
+      {
+        "word": "adapt",
+        "pos": "v.",
+        "example": "adaptation n. 适应。adapt to sth. 适应某事"
+      },
+      {
+        "word": "adjust",
+        "pos": "v.",
+        "example": "adjustment n. 调整；适应。 adjust to 适应"
+      },
+      {
+        "word": "pinpoint",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "accurate",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "precise",
+        "pos": "adj.",
+        "example": "precisely adv. 正是；恰好地。at that precise moment 恰好在那个时刻"
+      },
+      {
+        "word": "correct",
+        "pos": "adj.",
+        "example": "correction n. 改正。incorrect adj. 不正确的；错误的"
+      },
+      {
+        "word": "error",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mistake",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "flaw",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wrong",
+        "pos": "adj./adv.",
+        "example": "go wrong 出现问题；出差错"
+      },
+      {
+        "word": "fault",
+        "pos": "n./v.",
+        "example": "faulty adj. 有错误的；有缺陷的。false adj. 不正确的。find fault with 挑错；挑剔；抱怨"
+      },
+      {
+        "word": "stumble",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "contingency",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "circumstance",
+        "pos": "n.",
+        "example": null
+      }
+    ],
+    "Культура и история": [
+      {
+        "word": "culture",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "civilization",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "renaissance",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "epic",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "ideology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tradition",
+        "pos": "n.",
+        "example": "traditional adj. 传统的；惯例的。by tradition 根据传说；依照传说"
+      },
+      {
+        "word": "convention",
+        "pos": "n.",
+        "example": "conventional adj. 传统的；惯例的"
+      },
+      {
+        "word": "custom",
+        "pos": "n.",
+        "example": "customs n. 海关；关税"
+      },
+      {
+        "word": "feudalism",
+        "pos": "n.",
+        "example": "Feudalism was not abolished in England util 1660"
+      },
+      {
+        "word": "slavery",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ethical",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "moral",
+        "pos": "adj./n.",
+        "example": "immoral adj. 不道德的。moral principles 道德准则。moral standards 道德水准"
+      },
+      {
+        "word": "tribe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "aboriginal",
+        "pos": "n./adj.",
+        "example": "original adj. 原本的；最初的。origin n. 起源"
+      },
+      {
+        "word": "inhabitant",
+        "pos": "n.",
+        "example": "inhabit v. 居住于；栖息于"
+      },
+      {
+        "word": "native",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "local",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "exotic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "foreigner",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "alien",
+        "pos": "n./adj.",
+        "example": "alienate v. 使疏远；使不友好；离间。an alien culture 异域文化"
+      },
+      {
+        "word": "anthropologist",
+        "pos": "n.",
+        "example": "anthropology n. 人类学"
+      },
+      {
+        "word": "humanitarian",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "heritage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "inherit",
+        "pos": "v.",
+        "example": "inheritance n. 继承；遗产"
+      },
+      {
+        "word": "antique",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "archaeology",
+        "pos": "n.",
+        "example": "archaeological adj. 考古学的；archaeologist n. 考古学家"
+      },
+      {
+        "word": "excavate",
+        "pos": "v.",
+        "example": "excavation n. 挖掘；发掘"
+      },
+      {
+        "word": "museum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pottery",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "engrave",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "decorate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "religion",
+        "pos": "n.",
+        "example": "religious adj. 宗教的"
+      },
+      {
+        "word": "ritual",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "etiquette",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "belief",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "soul",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "spirit",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sacred",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "hallowed",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "holy",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "Pope",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bishop",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "missionary",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "priest",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "Bible",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "church",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cathedral",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "choir",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "monk",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "temple",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pagoda",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "empire",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "imperial",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "royal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "dynasty",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "chronology",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "emperor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "king",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "queen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "prince",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "princess",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "majesty",
+        "pos": "n.",
+        "example": "majestic adj. 宏伟的；庄严的"
+      },
+      {
+        "word": "nobility",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lord",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "knight",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "guardian",
+        "pos": "n./adj.",
+        "example": "guard n. 守卫 v. 保护"
+      },
+      {
+        "word": "nostalgia",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "homesick",
+        "pos": "adj.",
+        "example": "homesickness n. 思乡之情"
+      },
+      {
+        "word": "celebrity",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "status",
+        "pos": "n.",
+        "example": "social status 社会地位"
+      },
+      {
+        "word": "background",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "experience",
+        "pos": "n.",
+        "example": "experienced adj. 经验丰富的"
+      },
+      {
+        "word": "anecdote",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "accident",
+        "pos": "n.",
+        "example": "accidental adj. 意外的；偶然的；附属的。by accident 偶然。 an aviation accident 空难"
+      },
+      {
+        "word": "incident",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "thrive",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "prosperity",
+        "pos": "n.",
+        "example": "prosper v. 成功；繁荣。prosperous adj. 繁荣的"
+      },
+      {
+        "word": "setback",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "adversity",
+        "pos": "n.",
+        "example": null
+      }
+    ],
+    "Язык и лингвистика": [
+      {
+        "word": "language",
+        "pos": "\bn.",
+        "example": null
+      },
+      {
+        "word": "symbol",
+        "pos": "n.",
+        "example": "symbolise=symbolize v. 象征"
+      },
+      {
+        "word": "sign",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "gesture",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "handwriting",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pictograph",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wedge",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "knot",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "linguistics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "semantic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "syntax",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "grammar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "phonetics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pronounce",
+        "pos": "v.",
+        "example": "pronunciation n. 发音 pronounced adj. 显著的；表达明确的"
+      },
+      {
+        "word": "intonation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "inflection",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dialect",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "accent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "utterance",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "oral",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "verbal",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "syllable",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "phoneme",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vowel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "consonent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "alphabet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "logogram",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vocabulary",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dictionary",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "idiom",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "phrase",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "clause",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "expression",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tense",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "root",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "prefix",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "suffix",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "abbreviation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "synonym",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "antonym",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "noun",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "singular",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "plural",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "pronoun",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "verb",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "adjective",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "adverb",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "preposition",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "conjunction",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "consistent",
+        "pos": "adj.",
+        "example": "inconsistent adj. 不一致的。consist v. 由...组成。be consistent with 与...一致"
+      },
+      {
+        "word": "complicated",
+        "pos": "adj.",
+        "example": "complicate v. 使复杂化"
+      },
+      {
+        "word": "complex",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "compile",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "version",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "translate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "paraphrase",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "interpret",
+        "pos": "v.",
+        "example": "interpretation n. 口译；解释。interpreter n. 口译员"
+      },
+      {
+        "word": "narrate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "illuminate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "decipher",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "eloquence",
+        "pos": "n.",
+        "example": "eloquent adj. 雄辩的；有口才的"
+      },
+      {
+        "word": "communicate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "discussion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "brainstorm",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "debate",
+        "pos": "v./n.",
+        "example": "debatable adj. 有争议的。debate about/on/upon sth. 就某事进行讨论。have a debate with sb. 与某人进行辩论"
+      },
+      {
+        "word": "commentary",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "negotiate",
+        "pos": "v.",
+        "example": "negotiation n. 协商；谈判。negotiate about 就...进行协商"
+      },
+      {
+        "word": "contention",
+        "pos": "n.",
+        "example": null
+      }
+    ],
+    "Развлечения и спорт": [
+      {
+        "word": "medium",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "press",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "journalist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "critic",
+        "pos": "n.",
+        "example": "critical adj. 批评的；挑剔的。criticism n. 批评；职责。criticise=criticize v. 批评。a movie critic 影评人"
+      },
+      {
+        "word": "commentator",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "exponent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "announcer",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "correspondent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "messenger",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "editor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "typist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "handout",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "leaflet",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "propaganda",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "publish",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "disseminate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "foresee",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "anticipate",
+        "pos": "v.",
+        "example": "participate v. 参与"
+      },
+      {
+        "word": "expect",
+        "pos": "v.",
+        "example": "expectation n. 期待；期望"
+      },
+      {
+        "word": "await",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "pastime",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "entertain",
+        "pos": "v.",
+        "example": "entertainment n. 娱乐；消遣；款待"
+      },
+      {
+        "word": "recreation",
+        "pos": "n.",
+        "example": "a recreation ground 公共娱乐场"
+      },
+      {
+        "word": "amuse",
+        "pos": "v.",
+        "example": "amuse oneself 自娱自乐"
+      },
+      {
+        "word": "gossip",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rumour",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "consensus",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "festival",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "feast",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "programme",
+        "pos": "n./v.",
+        "example": "programmer n. 程序设计员"
+      },
+      {
+        "word": "rehearsal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "perform",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "imitate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "mimic",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "simulate",
+        "pos": "v.",
+        "example": "simulative adj. 模拟的；假装的"
+      },
+      {
+        "word": "circus",
+        "pos": "n.",
+        "example": "a circus clown 马戏团小丑"
+      },
+      {
+        "word": "magic",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "drama",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "concert",
+        "pos": "n.",
+        "example": "musicale n. 社交音乐会。concertmaster n. 首席小提琴手。concertgoer n. 常去听音乐会者。concerto n. 协奏曲。conductor n. （乐队、合唱团）指挥。melody n. 旋律。rhythm n. 节奏。lyrics n. 歌词。score n. 总谱。in concert with 与...合作"
+      },
+      {
+        "word": "symphony",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "orchestra",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ballet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "opera",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "comedy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tragedy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "animation",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "film",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "movie",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "X-rated",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "artist",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "craftsman",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "painter",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "role",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "scene",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "stage",
+        "pos": "n.",
+        "example": "the stage 戏剧演出"
+      },
+      {
+        "word": "gallery",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "exhibition",
+        "pos": "n.展览",
+        "example": null
+      },
+      {
+        "word": "aesthetic",
+        "pos": "adj. n.",
+        "example": null
+      },
+      {
+        "word": "collect",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "select",
+        "pos": "v./adj.",
+        "example": null
+      },
+      {
+        "word": "opt",
+        "pos": "v.",
+        "example": "option n. 选择；选择权。 opt for sth. 选择某事物"
+      },
+      {
+        "word": "photograph",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "portrait",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "painting",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sculpture",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "draw",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "sketch",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "depict",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "describe",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "carve",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "improvise",
+        "pos": "v.",
+        "example": "improvisation n. 即兴创作"
+      },
+      {
+        "word": "musical",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "classical",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "jazz",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rock",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hip-hop",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pop",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lyric",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "band",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "solo",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "melody",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rhythm",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tone",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tune",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "disc",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "piano",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "violin",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cello",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "guitar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "harmonica",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "trumpet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "drum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "flute",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "competition",
+        "pos": "n.",
+        "example": "compete v. 竞争。competitor n. 竞争者"
+      },
+      {
+        "word": "tournament",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "Olympic",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "sponsor",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "patron",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "athlete",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "champion",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "spectator",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "volunteer",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "famous",
+        "pos": "adj.",
+        "example": "fame n. 名声。be famous for 以...闻名"
+      },
+      {
+        "word": "well-known",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "energetic",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "vigorous",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "stadium",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gym",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "training",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "exercise",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "indoor",
+        "pos": "adj.",
+        "example": "indoors adv. 在室内"
+      },
+      {
+        "word": "outdoor",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "motion",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "mobile",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "movement",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "yoga",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sprawl",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "stretch",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "strain",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "chess",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "badminton",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "golf",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "billiards",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "soccer",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tennis",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "volleyball",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hockey",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cricket",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "goal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "racket",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "kick",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "knock",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "flip",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "pitch",
+        "pos": "v./n.",
+        "example": "She pitched the ball as far as she could"
+      },
+      {
+        "word": "throw",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "toss",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "slide",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "slip",
+        "pos": "v./n.",
+        "example": "a slip of the tongue 口误；失言"
+      },
+      {
+        "word": "glide",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "tumble",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "ski",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "skate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "cycling",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dive",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "drift",
+        "pos": "v.",
+        "example": "drift from one country to another 从一国流浪到另一国"
+      },
+      {
+        "word": "jump",
+        "pos": "v.",
+        "example": "from the jump 从一开始"
+      },
+      {
+        "word": "leap",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "plunge",
+        "pos": "v./n.",
+        "example": "plunge whole-heartedly 全心全意的投入"
+      },
+      {
+        "word": "spring",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "hop",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "bounce",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "tent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "camp",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "picnic",
+        "pos": "n./v.",
+        "example": "go for a picnic"
+      },
+      {
+        "word": "hunt",
+        "pos": "v./n.",
+        "example": "hunter n. 猎人。hunt for 寻找"
+      },
+      {
+        "word": "race",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "marathon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pedestrian",
+        "pos": "n.",
+        "example": "a pedestrian crossing 人形横道"
+      },
+      {
+        "word": "pace",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "step",
+        "pos": "n.",
+        "example": "footstep n. 脚步声；足迹。step by step 一步一步；逐步"
+      },
+      {
+        "word": "excursion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cruise",
+        "pos": "v.",
+        "example": "cruiser n. 巡洋舰；舱式游艇；巡逻警车"
+      },
+      {
+        "word": "trip",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "vacation",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "hike",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "jog",
+        "pos": "v.",
+        "example": "jogger n. 慢跑锻炼的人。jogging n. 慢跑"
+      },
+      {
+        "word": "stride",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "wander",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "linger",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "lag",
+        "pos": "v./n.",
+        "example": "lag behind sb./sth. 落后于某人/某物"
+      },
+      {
+        "word": "climb",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "pull",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "drag",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "bend",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "bow",
+        "pos": "v./n.",
+        "example": "take a bow"
+      }
+    ],
+    "Предметы и материалы": [
+      {
+        "word": "stuff",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "item",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "merchandise",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "souvenir",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "artifact",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "material",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "raw",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "crude",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "necessity",
+        "pos": "n.",
+        "example": "necessary adj. 必须的；必要的"
+      },
+      {
+        "word": "outfit",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "kit",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "utensil",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "garbage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rubbish",
+        "pos": "n.",
+        "example": "clear away the rubbish 清除垃圾"
+      },
+      {
+        "word": "trash",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "recycle",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "reuse",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "litter",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "waste",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "junk",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "landfill",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sewerage",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "detergent",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lotion",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shampoo",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "soap",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "tub",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plug",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "tap",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pipe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tube",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mop",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "broom",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "sweep",
+        "pos": "v.",
+        "example": "sweep the board 囊括所有奖项"
+      },
+      {
+        "word": "mattress",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "carpet",
+        "pos": "n.",
+        "example": "red carpet （迎接贵宾用的）红毯"
+      },
+      {
+        "word": "rug",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "mat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cushion",
+        "pos": "n.",
+        "example": "a back cushion 靠背垫。a sofa cushion 沙发垫"
+      },
+      {
+        "word": "pad",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "blanket",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "quilt",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sheet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pillow",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sponge",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "towel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "staple",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "nail",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "razor",
+        "pos": "n.",
+        "example": "an electric razor 电动剃须刀"
+      },
+      {
+        "word": "shave",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "fuse",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "cable",
+        "pos": "n.",
+        "example": "a cable car 缆车"
+      },
+      {
+        "word": "cord",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "strand",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "match",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "candle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wax",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "portfolio",
+        "pos": "n.",
+        "example": "briefcase n. 公事包"
+      },
+      {
+        "word": "paperback",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pamphlet",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tissue",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cover",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "Xerox",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "duplicate",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "memorandum",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "stationery",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "glue",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ink",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rubber",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "scissors",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "shear",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "edge",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "rim",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "element",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "factor",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "section",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tag",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "label",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "badge",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bolt",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "knob",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "handle",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "shutter",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "curtain",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "pane",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "opacity",
+        "pos": "n.",
+        "example": "opaque n. 不透明物体；adj. 不透明的"
+      },
+      {
+        "word": "jar",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "barrel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bucket",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pail",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "phone",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bell",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "camera",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "portable",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "spotlight",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lantern",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bulb",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "flashlight",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "refrigerator",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "frigde",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vacuum",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "fan",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "switch",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "hurdle",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fence",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "padal",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "shelf",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "ladder",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lift",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "stool",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "drawer",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "umbrella",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "raincoat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dredge",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "can",
+        "pos": "v./n.",
+        "example": null
+      },
+      {
+        "word": "mill",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "forge",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "alloy",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "metal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "iron",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "lead",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "brass",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "bronze",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cement",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "pitch",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lime",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plaster",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "leather",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "plastic",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "fiber",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fabric",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "knit",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "weave",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "canvas",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "linen",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cotton",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "nylon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "lumber",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "wooden",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "mine",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pit",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "fuel",
+        "pos": "n./v.",
+        "example": "add fuel to 给...加燃料"
+      },
+      {
+        "word": "lubricate",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "diamond",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "crystal",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "inferior",
+        "pos": "adj./n.",
+        "example": "inferiority"
+      },
+      {
+        "word": "counterfeit",
+        "pos": "adj./v.",
+        "example": null
+      },
+      {
+        "word": "fake",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "fragile",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "miniature",
+        "pos": "adj./n.",
+        "example": null
+      },
+      {
+        "word": "available",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "\bdurable",
+        "pos": "adj.",
+        "example": null
+      }
+    ],
+    "Мода и тренды": [
+      {
+        "word": "fashion",
+        "pos": "n./v.",
+        "example": "fashionable adj. 流行的。come into fashion 流行起来；开始流行。out of fashion 过时的"
+      },
+      {
+        "word": "style",
+        "pos": "n.",
+        "example": "stylish adj. 时髦的；有格调的"
+      },
+      {
+        "word": "trend",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "tendency",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "current",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "popularity",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "vogue",
+        "pos": "n.",
+        "example": "in vogue 流行的"
+      },
+      {
+        "word": "prevail",
+        "pos": "v.",
+        "example": "prevalence n. 流行；普遍存在。prevailing adj. 盛行的。prevail over/against 压倒；战胜"
+      },
+      {
+        "word": "model",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "icon",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "idol",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "luxury",
+        "pos": "n.",
+        "example": "luxurious adj. 奢侈的；豪华的"
+      },
+      {
+        "word": "extravagant",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "jewelry",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "jewel",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gem",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "jade",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "adorn",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "ornament",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "embellish",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "embroider",
+        "pos": "v.",
+        "example": null
+      },
+      {
+        "word": "hairdressing",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "pigment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "dye",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "masquerade",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "veil",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "costume",
+        "pos": "n.",
+        "example": "academic costume 学位服；a costume ball 化装舞会"
+      },
+      {
+        "word": "fascinate",
+        "pos": "v.",
+        "example": "fascinating adj. 迷人的。be fascinated with 迷上"
+      },
+      {
+        "word": "decent",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "exquisite",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "grace",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "elegance",
+        "pos": "n.",
+        "example": "elegant adj. 优雅的"
+      },
+      {
+        "word": "perfect",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "appearance",
+        "pos": "n.",
+        "example": "appear v. 出现"
+      },
+      {
+        "word": "cosmetics",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "make-up",
+        "pos": "n.",
+        "example": "make up 化妆"
+      },
+      {
+        "word": "handsome",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "charming",
+        "pos": "adj.",
+        "example": "Prince Charming白马王子"
+      },
+      {
+        "word": "pretty",
+        "pos": "adj./adv.",
+        "example": null
+      },
+      {
+        "word": "beautiful",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "ugly",
+        "pos": "adj.",
+        "example": null
+      },
+      {
+        "word": "dress",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "clothe",
+        "pos": "v.",
+        "example": "clothes n. 衣服。clothing n. 衣服"
+      },
+      {
+        "word": "uniform",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "garment",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "laundry",
+        "pos": "n.",
+        "example": "do/hang/iron the laundry 洗/晾/熨衣服"
+      },
+      {
+        "word": "wardrobe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "overall",
+        "pos": "n./adj.",
+        "example": null
+      },
+      {
+        "word": "overcoat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "robe",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "gown",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "sweater",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "jacket",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "skirt",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "jeans",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "trousers",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "clasp",
+        "pos": "n./v.",
+        "example": null
+      },
+      {
+        "word": "button",
+        "pos": "n./v.",
+        "example": "unbutton v. 解开...的纽扣；如解开纽扣一样解开"
+      },
+      {
+        "word": "glove",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "hat",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "cap",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "brim",
+        "pos": "n.",
+        "example": null
+      },
+      {
+        "word": "scarf",
+        "pos": "n.",
+        "example": null
+      }
+    ]
+  }
+}

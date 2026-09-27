@@ -17,19 +17,25 @@ const GUIDE_TYPE_ORDER = ['general', 'topic', 'country'];
 const TABS = [
   { id: 'lessons', label: 'Уроки' },
   { id: 'practice', label: 'Практика' },
+  { id: 'vocab', label: 'Словарь' },
   { id: 'guides', label: 'Гайды' },
 ];
 
 export default function Learn({ token, onCancel }) {
   const [tab, setTab] = useState('lessons');
   const [practiceSub, setPracticeSub] = useState('essays');
+  const [vocabTopic, setVocabTopic] = useState(null);
+  const [vocabSearch, setVocabSearch] = useState('');
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState({});
 
   useEffect(() => {
-    apiIeltsLearn(token).then(setData).catch(e => setError(e.message)).finally(() => setLoading(false));
+    apiIeltsLearn(token).then(d => {
+      setData(d);
+      setVocabTopic(Object.keys(d.vocabulary || {})[0] || null);
+    }).catch(e => setError(e.message)).finally(() => setLoading(false));
   }, [token]);
 
   function toggle(id) {
@@ -109,6 +115,33 @@ export default function Learn({ token, onCancel }) {
                   })}
                 </div>
               ))}
+            </>
+          )}
+
+          {tab === 'vocab' && (
+            <>
+              <div className="learn-subtabs" style={{ flexWrap: 'wrap' }}>
+                {Object.keys(data.vocabulary).map(topic => (
+                  <button key={topic} className={`learn-subtab ${vocabTopic === topic ? 'active' : ''}`} onClick={() => { setVocabTopic(topic); setVocabSearch(''); }}>
+                    {topic} ({data.vocabulary[topic].length})
+                  </button>
+                ))}
+              </div>
+              <input
+                className="learn-vocab-search"
+                value={vocabSearch}
+                onChange={e => setVocabSearch(e.target.value)}
+                placeholder="Поиск слова..."
+              />
+              {(data.vocabulary[vocabTopic] || [])
+                .filter(w => !vocabSearch || w.word.toLowerCase().includes(vocabSearch.toLowerCase()))
+                .map((w, i) => (
+                  <div key={i} className="learn-vocab-row">
+                    <span className="learn-vocab-word">{w.word}</span>
+                    <span className="learn-vocab-pos">{w.pos}</span>
+                    {w.example && <div className="learn-vocab-example">{w.example}</div>}
+                  </div>
+                ))}
             </>
           )}
 

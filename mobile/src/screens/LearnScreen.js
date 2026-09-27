@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, S, withOpacity } from '../theme';
 import { API_URL } from '../config';
@@ -19,6 +19,7 @@ const GUIDE_TYPE_ORDER = ['general', 'topic', 'country'];
 const TABS = [
   { id: 'lessons', label: 'Уроки' },
   { id: 'practice', label: 'Практика' },
+  { id: 'vocab', label: 'Словарь' },
   { id: 'guides', label: 'Гайды' },
 ];
 
@@ -31,11 +32,13 @@ export default function LearnScreen({ navigation, route }) {
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState({});
   const [practiceSub, setPracticeSub] = useState('essays'); // essays | speaking
+  const [vocabTopic, setVocabTopic] = useState(null);
+  const [vocabSearch, setVocabSearch] = useState('');
 
   useEffect(() => {
     fetch(`${API_URL}/api/ielts/learn`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json())
-      .then(setData)
+      .then(d => { setData(d); setVocabTopic(Object.keys(d.vocabulary || {})[0] || null); })
       .catch(() => setError('Не удалось загрузить материалы'))
       .finally(() => setLoading(false));
   }, []);
@@ -124,6 +127,33 @@ export default function LearnScreen({ navigation, route }) {
             </>
           )}
 
+          {tab === 'vocab' && (
+            <>
+              <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
+                {Object.keys(data.vocabulary).map(topic => (
+                  <TouchableOpacity key={topic} style={[s.subTab, vocabTopic === topic && s.subTabActive]} onPress={() => { setVocabTopic(topic); setVocabSearch(''); }}>
+                    <Text style={[s.subTabText, vocabTopic === topic && s.subTabTextActive]}>{topic} ({data.vocabulary[topic].length})</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+              <TextInput
+                style={s.vocabSearch}
+                value={vocabSearch}
+                onChangeText={setVocabSearch}
+                placeholder="Поиск слова..."
+                placeholderTextColor={C.faint}
+              />
+              {(data.vocabulary[vocabTopic] || [])
+                .filter(w => !vocabSearch || w.word.toLowerCase().includes(vocabSearch.toLowerCase()))
+                .map((w, i) => (
+                  <View key={i} style={s.vocabRow}>
+                    <Text><Text style={s.vocabWord}>{w.word}</Text><Text style={s.vocabPos}>  {w.pos}</Text></Text>
+                    {w.example && <Text style={s.vocabExample}>{w.example}</Text>}
+                  </View>
+                ))}
+            </>
+          )}
+
           {tab === 'guides' && GUIDE_TYPE_ORDER.map(type => (
             <View key={type} style={{ marginBottom: 18 }}>
               <Text style={s.skillTitle}>{GUIDE_TYPE_LABELS[type]} ({data.guides.filter(g => g.type === type).length})</Text>
@@ -174,4 +204,9 @@ const s = StyleSheet.create({
   promptText: { color: C.text, fontSize: 13, lineHeight: 19 },
   sectionHeading: { color: C.primary, fontSize: 13, fontWeight: '700', marginBottom: 3 },
   sectionBody: { color: C.muted, fontSize: 13, lineHeight: 19 },
+  vocabSearch: { backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 9, color: C.text, fontSize: 13, marginBottom: 14 },
+  vocabRow: { paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: C.border },
+  vocabWord: { color: C.text, fontSize: 14, fontWeight: '700' },
+  vocabPos: { color: C.faint, fontSize: 12, fontStyle: 'italic' },
+  vocabExample: { color: C.muted, fontSize: 12, lineHeight: 18, marginTop: 3 },
 });
