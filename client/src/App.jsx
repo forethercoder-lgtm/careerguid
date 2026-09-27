@@ -144,7 +144,7 @@ export default function App() {
             onOrientation={() => setScreen('orientation')} onEssayFeedback={() => setScreen('essay')} onIelts={() => setScreen('ielts')} streak={streak} />
         )}
         {screen === 'orientation' && (
-          <Orientation token={token} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
+          <Orientation token={token} userEmail={user?.id} prefs={userPrefs} tasks={tasks} setTasks={setTasks} showNotif={showNotif}
             onDone={() => setScreen('home')} onCancel={() => setScreen('home')} />
         )}
         {screen === 'essay' && (
