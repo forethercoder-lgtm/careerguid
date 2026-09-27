@@ -98,3 +98,16 @@ export async function apiIeltsSubmit(token, { answers, writingText, writingPromp
 export async function apiIeltsLearn(token) {
   return callServerGet('/api/ielts/learn', token);
 }
+
+export async function apiReadingTests(token) {
+  const data = await callServerGet('/api/ielts/reading', token);
+  return data.tests;
+}
+
+export async function apiReadingTest(token, id) {
+  return callServerGet(`/api/ielts/reading/${id}`, token);
+}
+
+export async function apiReadingSubmit(token, id, answers) {
+  return callServer(`/api/ielts/reading/${id}/submit`, token, { answers });
+}

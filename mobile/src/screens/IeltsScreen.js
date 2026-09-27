@@ -85,7 +85,12 @@ export default function IeltsScreen({ navigation, route }) {
 
       <TouchableOpacity style={s.learnCard} onPress={() => navigation.navigate('Learn', { token })}>
         <Text style={s.ctaTitle}>📚 Уроки и материалы</Text>
-        <Text style={s.p}>19 уроков по всем навыкам, банк из 24 эссе, cue cards для Speaking и гайды по поступлению за рубеж</Text>
+        <Text style={s.p}>49 уроков по всем навыкам, банк из 200 эссе, 200 cue cards для Speaking и 71 гайд по поступлению за рубеж</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={s.learnCard} onPress={() => navigation.navigate('ReadingPractice', { token })}>
+        <Text style={s.ctaTitle}>📖 Reading практика</Text>
+        <Text style={s.p}>5 полных тестов с реальными текстами и автопроверкой — 9 типов заданий, ~200 вопросов</Text>
       </TouchableOpacity>
 
       <Section title="Формат">

@@ -14,6 +14,7 @@ const { connectDB } = require('./db');
 const authRouter = require('./auth');
 const ielts = require('./ielts');
 const universities = require('./universities');
+const readingPractice = require('./readingPractice');
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
@@ -510,6 +511,24 @@ app.get('/api/ielts/pretest', requireAuth, (req, res) => {
 
 app.get('/api/ielts/learn', requireAuth, (req, res) => {
   res.json(ielts.learningContent());
+});
+
+app.get('/api/ielts/reading', requireAuth, (req, res) => {
+  res.json({ tests: readingPractice.listTests() });
+});
+
+app.get('/api/ielts/reading/:id', requireAuth, (req, res) => {
+  const test = readingPractice.getTest(req.params.id);
+  if (!test) return res.status(404).json({ error: 'Тест не найден' });
+  res.json(test);
+});
+
+app.post('/api/ielts/reading/:id/submit', requireAuth, (req, res) => {
+  const { answers } = req.body;
+  if (!Array.isArray(answers)) return res.status(400).json({ error: 'Не переданы ответы' });
+  const result = readingPractice.scoreTest(req.params.id, answers);
+  if (!result) return res.status(404).json({ error: 'Тест не найден' });
+  res.json(result);
 });
 
 app.post('/api/ielts/pretest/submit', requireAuth, async (req, res) => {
