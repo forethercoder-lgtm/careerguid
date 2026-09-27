@@ -15,6 +15,7 @@ const authRouter = require('./auth');
 const ielts = require('./ielts');
 const universities = require('./universities');
 const readingPractice = require('./readingPractice');
+const listeningPractice = require('./listeningPractice');
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
@@ -24,6 +25,7 @@ const allowedOrigins = process.env.ALLOWED_ORIGIN
   : ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:3001'];
 app.use(cors({ origin: (origin, cb) => cb(null, !origin || allowedOrigins.some(o => origin.startsWith(o)) || true) }));
 app.use(express.json({ limit: '10mb' }));
+app.use('/audio', express.static(path.join(__dirname, 'public/audio')));
 
 app.use('/api/auth', authRouter);
 
@@ -527,6 +529,24 @@ app.post('/api/ielts/reading/:id/submit', requireAuth, (req, res) => {
   const { answers } = req.body;
   if (!Array.isArray(answers)) return res.status(400).json({ error: 'Не переданы ответы' });
   const result = readingPractice.scoreTest(req.params.id, answers);
+  if (!result) return res.status(404).json({ error: 'Тест не найден' });
+  res.json(result);
+});
+
+app.get('/api/ielts/listening', requireAuth, (req, res) => {
+  res.json({ tests: listeningPractice.listTests() });
+});
+
+app.get('/api/ielts/listening/:id', requireAuth, (req, res) => {
+  const test = listeningPractice.getTest(req.params.id);
+  if (!test) return res.status(404).json({ error: 'Тест не найден' });
+  res.json(test);
+});
+
+app.post('/api/ielts/listening/:id/submit', requireAuth, (req, res) => {
+  const { answers } = req.body;
+  if (!Array.isArray(answers)) return res.status(400).json({ error: 'Не переданы ответы' });
+  const result = listeningPractice.scoreTest(req.params.id, answers);
   if (!result) return res.status(404).json({ error: 'Тест не найден' });
   res.json(result);
 });

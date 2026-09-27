@@ -93,6 +93,11 @@ export default function IeltsScreen({ navigation, route }) {
         <Text style={s.p}>5 полных тестов с реальными текстами и автопроверкой — 9 типов заданий, ~200 вопросов</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity style={s.learnCard} onPress={() => navigation.navigate('ListeningPractice', { token })}>
+        <Text style={s.ctaTitle}>🎧 Listening практика</Text>
+        <Text style={s.p}>Реальное аудио с текстами, 5 секций, 50 вопросов и автопроверка</Text>
+      </TouchableOpacity>
+
       <Section title="Формат">
         <Text style={s.p}>Listening 30 мин · Reading 60 мин · Writing 60 мин · Speaking 11–14 мин. Каждая секция 1–9, overall — среднее. Результат действует 2 года.</Text>
       </Section>

@@ -111,3 +111,16 @@ export async function apiReadingTest(token, id) {
 export async function apiReadingSubmit(token, id, answers) {
   return callServer(`/api/ielts/reading/${id}/submit`, token, { answers });
 }
+
+export async function apiListeningTests(token) {
+  const data = await callServerGet('/api/ielts/listening', token);
+  return data.tests;
+}
+
+export async function apiListeningTest(token, id) {
+  return callServerGet(`/api/ielts/listening/${id}`, token);
+}
+
+export async function apiListeningSubmit(token, id, answers) {
+  return callServer(`/api/ielts/listening/${id}/submit`, token, { answers });
+}

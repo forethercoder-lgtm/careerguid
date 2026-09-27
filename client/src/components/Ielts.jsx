@@ -34,7 +34,7 @@ const RESOURCES = [
   ['IELTS Online Tests (банк практик)', 'https://ieltsonlinetests.com/'],
 ];
 
-export default function Ielts({ token, userEmail, tasks, setTasks, showNotif, onCancel, onLearn, onReading }) {
+export default function Ielts({ token, userEmail, tasks, setTasks, showNotif, onCancel, onLearn, onReading, onListening }) {
   const [mode, setMode] = useState('info'); // info | pretest
   const [lastResult, setLastResult] = useState(null);
 
@@ -91,6 +91,11 @@ export default function Ielts({ token, userEmail, tasks, setTasks, showNotif, on
       <div className="ielts-section card" style={{ cursor: 'pointer' }} onClick={onReading}>
         <div className="ielts-cta-title">📖 Reading практика</div>
         <p className="ielts-hint" style={{ marginBottom: 0 }}>5 полных тестов с реальными текстами и автопроверкой — 9 типов заданий, ~200 вопросов →</p>
+      </div>
+
+      <div className="ielts-section card" style={{ cursor: 'pointer' }} onClick={onListening}>
+        <div className="ielts-cta-title">🎧 Listening практика</div>
+        <p className="ielts-hint" style={{ marginBottom: 0 }}>Реальное аудио с текстами, 5 секций, 50 вопросов и автопроверка →</p>
       </div>
 
       <Section title="Формат">
