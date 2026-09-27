@@ -10,13 +10,14 @@ const countryGuidesData = require('./data/countryGuides.json');
 const topicGuidesData = require('./data/topicGuides.json');
 const vocabLessonsData = require('./data/ieltsVocabLessons.json');
 const vocabularyData = require('./data/ieltsVocabulary.json');
+const researchedTipsData = require('./data/ieltsResearchedTips.json');
 
 function learningContent() {
   const generalGuides = guidesData.guides.map(g => ({ ...g, type: 'general' }));
   const countryGuides = countryGuidesData.countryGuides.map(g => ({ ...g, type: 'country', title: `Как поступить в ${g.country}` }));
   const topicGuides = topicGuidesData.topicGuides.map(g => ({ ...g, type: 'topic' }));
   return {
-    lessons: [...lessonsData.lessons, ...vocabLessonsData.lessons],
+    lessons: [...lessonsData.lessons, ...vocabLessonsData.lessons, ...researchedTipsData.lessons],
     guides: [...generalGuides, ...topicGuides, ...countryGuides],
     practiceBank: ieltsInfo.writingTask2.practiceBank,
     part2Categories: ieltsInfo.speaking.part2Categories,
