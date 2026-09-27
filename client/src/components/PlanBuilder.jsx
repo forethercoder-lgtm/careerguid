@@ -9,7 +9,7 @@ const CATS = ['📚 Учёба', '📝 Документы', '🗣 Языки', '
 
 function getToday() { return new Date().toISOString().split('T')[0]; }
 
-export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation, onEssayFeedback, streak, setDocuments }) {
+export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation, onEssayFeedback, onIelts, streak, setDocuments }) {
   const [showAdd, setShowAdd] = useState(false);
   const [form, setForm] = useState({ title: '', cat: CATS[0], note: '' });
   const [breaking, setBreaking] = useState(false);
@@ -191,6 +191,7 @@ export default function PlanBuilder({ token, userEmail, prefs, tasks, setTasks, 
           {scholarships?.loading ? 'Ищу...' : '💰 Стипендии'}
         </button>
         <button className="btn btn-ghost" onClick={onEssayFeedback}>✍️ Проверить эссе</button>
+        <button className="btn btn-ghost" onClick={onIelts}>🗣 IELTS</button>
         <button className="btn btn-ghost" onClick={() => setShowActivities(s => !s)}>🎯 Активности для портфолио</button>
         <input
           ref={fileInputRef}

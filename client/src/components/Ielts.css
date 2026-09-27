@@ -1,0 +1,236 @@
+.ielts-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ielts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ielts-header h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+.ielts-cta-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.ielts-hint {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.ielts-note {
+  color: var(--text-faint);
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: italic;
+  margin-top: 8px;
+}
+.ielts-section h3 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.ielts-p {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.ielts-row {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ielts-row-k {
+  font-size: 13px;
+  font-weight: 700;
+  width: 130px;
+  flex-shrink: 0;
+}
+.ielts-row-v {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.ielts-block {
+  margin-bottom: 10px;
+}
+.ielts-block-k {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.ielts-link {
+  display: block;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 0;
+  text-decoration: none;
+}
+.ielts-link:hover { text-decoration: underline; }
+
+.ielts-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  padding: 30px 0;
+  justify-content: center;
+}
+.ielts-error {
+  color: var(--danger);
+  font-size: 13px;
+  margin-top: 10px;
+}
+.ielts-step-label {
+  color: var(--text-faint);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.ielts-progress-track {
+  height: 6px;
+  background: var(--surface-hover);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.ielts-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: width 0.2s;
+}
+.ielts-passage {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+}
+.ielts-question {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.ielts-textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 14px 16px;
+  resize: vertical;
+  margin: 12px 0 4px;
+}
+.ielts-textarea:focus { outline: none; border-color: var(--primary); }
+.ielts-wordcount {
+  color: var(--text-faint);
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 12px;
+}
+.ielts-result-row {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.ielts-result-sub {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+/* Reusable chip / radio primitives (kept local so this feature doesn't depend
+   on PreferencesSetup.css being loaded elsewhere). */
+.chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.chip {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--border-bright); }
+.chip.selected {
+  background: rgba(47,111,237,0.18);
+  border-color: var(--primary);
+  color: var(--text);
+}
+.radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+.radio-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+.radio-btn:hover { border-color: var(--border-bright); }
+.radio-btn.selected {
+  border-color: var(--primary);
+  background: rgba(47,111,237,0.1);
+  color: var(--text);
+}
+.radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--text-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.radio-btn.selected .radio-circle { border-color: var(--primary); }
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: ielts-spin 0.7s linear infinite;
+}
+@keyframes ielts-spin { to { transform: rotate(360deg); } }

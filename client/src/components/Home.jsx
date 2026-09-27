@@ -4,7 +4,7 @@ import TaskManager from './TaskManager';
 import { getDocuments, deleteDocument } from '../docStorage';
 import './Home.css';
 
-export default function Home({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation, onEssayFeedback, streak }) {
+export default function Home({ token, userEmail, prefs, tasks, setTasks, showNotif, onOrientation, onEssayFeedback, onIelts, streak }) {
   const [documents, setDocuments] = useState([]);
 
   useEffect(() => { setDocuments(getDocuments(userEmail)); }, [userEmail]);
@@ -16,7 +16,7 @@ export default function Home({ token, userEmail, prefs, tasks, setTasks, showNot
   return (
     <div className="home-page">
       <PlanBuilder token={token} userEmail={userEmail} prefs={prefs} tasks={tasks} setTasks={setTasks}
-        showNotif={showNotif} onOrientation={onOrientation} onEssayFeedback={onEssayFeedback}
+        showNotif={showNotif} onOrientation={onOrientation} onEssayFeedback={onEssayFeedback} onIelts={onIelts}
         streak={streak} setDocuments={setDocuments} />
 
       {documents.length > 0 && (

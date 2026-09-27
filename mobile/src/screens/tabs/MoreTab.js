@@ -106,11 +106,11 @@ export default function MoreTab({ navigation }) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={s.tile} onPress={() => navigation.navigate('Ielts')}>
+        <TouchableOpacity style={s.tile} onPress={() => navigation.navigate('Ielts', { token, user })}>
           <Text style={s.tileIcon}>🗣</Text>
           <View style={{ flex: 1 }}>
             <Text style={s.tileTitle}>Подготовка к IELTS</Text>
-            <Text style={s.tileText}>Критерии, план на 8 недель, бесплатные материалы</Text>
+            <Text style={s.tileText}>Тест уровня, критерии, план на 8 недель, бесплатные материалы</Text>
           </View>
         </TouchableOpacity>
 

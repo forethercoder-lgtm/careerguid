@@ -1,15 +1,24 @@
-// Static hosts (Firebase, etc.) don't run the Node backend themselves, so
-// requests must go straight to the Render server. Same-origin deployments
-// (Render itself, local dev via the Vite proxy) keep using relative paths.
-export const API_BASE = /\.(web\.app|firebaseapp\.com)$/.test(window.location.hostname)
-  ? 'https://careerguid.onrender.com'
-  : '';
+// Static hosts (Firebase, Vercel, etc.) don't run the Node backend themselves, so
+// requests must go straight to the Render server. Only local dev (Vite proxy in
+// vite.config.js forwards /api to localhost:3001) keeps using relative paths.
+export const API_BASE = window.location.hostname === 'localhost'
+  ? ''
+  : 'https://careerguid.onrender.com';
 
 async function callServer(path, token, body) {
   const res = await fetch(API_BASE + path, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(body),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Ошибка сервера');
+  return data;
+}
+
+async function callServerGet(path, token) {
+  const res = await fetch(API_BASE + path, {
+    headers: { Authorization: `Bearer ${token}` },
   });
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || 'Ошибка сервера');
@@ -76,4 +85,12 @@ export async function apiEssayFeedback(token, text) {
 
 export async function apiSuggestActivities(token, { query, goal, interests, countries, existingTasks }) {
   return callServer('/api/suggest-activities', token, { query, goal, interests, countries, existingTasks });
+}
+
+export async function apiIeltsPretest(token) {
+  return callServerGet('/api/ielts/pretest', token);
+}
+
+export async function apiIeltsSubmit(token, { answers, writingText, writingPrompt, targetBand, hoursPerWeek }) {
+  return callServer('/api/ielts/pretest/submit', token, { answers, writingText, writingPrompt, targetBand, hoursPerWeek });
 }

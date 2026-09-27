@@ -15,6 +15,7 @@ import OrientationResultsScreen from './src/screens/OrientationResultsScreen';
 import EssayFeedbackScreen from './src/screens/EssayFeedbackScreen';
 import PreferencesSurveyScreen from './src/screens/PreferencesSurveyScreen';
 import IeltsScreen from './src/screens/IeltsScreen';
+import IeltsPretestScreen from './src/screens/IeltsPretestScreen';
 import PremiumScreen from './src/screens/PremiumScreen';
 import { getItem, getJSON } from './src/storage';
 import { C } from './src/theme';
@@ -61,6 +62,7 @@ export default function App() {
               <Stack.Screen name="EssayFeedback" component={EssayFeedbackScreen} />
               <Stack.Screen name="PreferencesSurvey" component={PreferencesSurveyScreen} />
               <Stack.Screen name="Ielts" component={IeltsScreen} />
+              <Stack.Screen name="IeltsPretest" component={IeltsPretestScreen} />
               <Stack.Screen name="Premium" component={PremiumScreen} />
             </Stack.Navigator>
           </NavigationContainer>

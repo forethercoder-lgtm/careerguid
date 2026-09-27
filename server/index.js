@@ -12,6 +12,8 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const { connectDB } = require('./db');
 const authRouter = require('./auth');
+const ielts = require('./ielts');
+const universities = require('./universities');
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
@@ -66,11 +68,23 @@ app.post('/api/assistant', requireAuth, async (req, res) => {
   const client = requireGroq(res);
   if (!client) return;
   try {
+    const lastUser = [...(messages || [])].reverse().find(m => m.role === 'user')?.content || '';
+    let systemPrompt = ASSISTANT_SYSTEM;
+
+    // Если вопрос про IELTS — подмешиваем свежие данные с проверенных источников (see ielts.js IELTS_DOMAINS),
+    // чтобы ассистент отвечал по актуальным официальным материалам, а не только по своим знаниям.
+    if (ielts.ieltsRelated(lastUser)) {
+      const searchResults = await tavilySearch(lastUser, 5, ielts.IELTS_DOMAINS);
+      if (searchResults.length) {
+        systemPrompt += `\n\nСвежие данные по теме с проверенных источников (используй, если релевантно, и можешь сослаться на источник):\n${searchResults.map(r => `- ${r.title} (${r.url}): ${r.content}`).join('\n')}`;
+      }
+    }
+
     const response = await client.chat.completions.create({
       model: 'openai/gpt-oss-20b',
       reasoning_effort: 'low',
       max_tokens: 800,
-      messages: [{ role: 'system', content: ASSISTANT_SYSTEM }, ...messages]
+      messages: [{ role: 'system', content: systemPrompt }, ...messages]
     });
     res.json({ message: response.choices[0].message.content });
   } catch (error) {
@@ -130,7 +144,7 @@ async function reverseGeocode(lat, lon) {
   } catch { return null; }
 }
 
-async function tavilySearch(query, maxResults = 6) {
+async function tavilySearch(query, maxResults = 6, domains = null) {
   if (!process.env.TAVILY_API_KEY) return [];
   try {
     const searchRes = await fetch('https://api.tavily.com/search', {
@@ -141,7 +155,8 @@ async function tavilySearch(query, maxResults = 6) {
         query,
         search_depth: 'basic',
         include_answer: false,
-        max_results: maxResults
+        max_results: maxResults,
+        ...(domains && domains.length ? { include_domains: domains } : {}),
       })
     });
     const data = await searchRes.json();
@@ -285,7 +300,8 @@ app.post('/api/suggest-universities', requireAuth, async (req, res) => {
   try {
     const countryList = (countries || []).join(', ') || 'разные страны';
     const searchResults = await tavilySearch(
-      `best universities for ${specialty} ${educationLevel || ''} 2026 tuition requirements ${countryList}`, 8
+      `best universities for ${specialty} ${educationLevel || ''} 2026 tuition requirements ${countryList}`, 8,
+      universities.SEARCH_DOMAINS
     );
     const searchContext = searchResults.length
       ? searchResults.map(r => `- ${r.title}: ${r.content}`).join('\n')
@@ -488,6 +504,42 @@ ${truncated}
   }
 });
 
+app.get('/api/ielts/pretest', requireAuth, (req, res) => {
+  res.json({ questions: ielts.publicQuestions(), geminiEnabled: ielts.geminiEnabled });
+});
+
+app.post('/api/ielts/pretest/submit', requireAuth, async (req, res) => {
+  const { answers, writingText, writingPrompt, targetBand, hoursPerWeek } = req.body;
+  if (!Array.isArray(answers)) return res.status(400).json({ error: 'Не переданы ответы теста' });
+
+  try {
+    const objective = ielts.scoreObjective(answers);
+    const writing = writingText ? await ielts.evaluateWriting(writingText, writingPrompt) : null;
+
+    // Итоговая прикидка: если есть валидная оценка эссе — 55% объективный тест + 45% эссе, иначе только объективный тест.
+    let estimatedBand = objective.band;
+    if (writing && typeof writing.overallBand === 'number') {
+      estimatedBand = Math.round(((objective.band * 0.55) + (writing.overallBand * 0.45)) * 2) / 2;
+    }
+
+    const target = Number(targetBand) || Math.min(9, estimatedBand + 1);
+    const timeline = ielts.estimateTimeline(estimatedBand, target, Number(hoursPerWeek) || 5);
+    const studyPlan = ielts.scaleStudyPlan(Math.max(4, timeline.weeksLow || 8));
+
+    res.json({
+      objective,
+      writing,
+      estimatedBand,
+      targetBand: target,
+      timeline,
+      studyPlan,
+      disclaimer: 'Это ориентировочная самооценка по короткому тесту, а не официальный результат IELTS. Для точной оценки пройди бесплатный мок-тест British Council.',
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.post('/api/generate-starter-plan', requireAuth, async (req, res) => {
   const { specialty, university, goal } = req.body;
   const client = requireGroq(res);
@@ -619,6 +671,8 @@ if (require('fs').existsSync(clientBuild)) {
   app.get('*', (req, res) => {
     if (!req.path.startsWith('/api')) {
       res.sendFile(path.join(clientBuild, 'index.html'));
+    } else {
+      res.status(404).json({ error: 'Не найдено' });
     }
   });
 }

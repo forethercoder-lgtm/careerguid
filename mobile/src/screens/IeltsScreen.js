@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Linking } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { C } from '../theme';
+import { useFocusEffect } from '@react-navigation/native';
+import { C, S, withOpacity } from '../theme';
+import { getJSON } from '../storage';
 
 const TARGETS = [
   ['Бакалавр', '6.0–6.5 overall, не ниже 5.5–6.0 за секцию'],
@@ -43,14 +45,42 @@ const RESOURCES = [
   ['IELTS Online Tests (банк практик)', 'https://ieltsonlinetests.com/'],
 ];
 
-export default function IeltsScreen({ navigation }) {
+export default function IeltsScreen({ navigation, route }) {
+  const { token, user } = route.params || {};
   const insets = useSafeAreaInsets();
+  const [lastResult, setLastResult] = useState(null);
+
+  useFocusEffect(useCallback(() => {
+    (async () => {
+      if (!user?.email) return;
+      const r = await getJSON(`ielts_result_${user.email}`);
+      setLastResult(r);
+    })();
+  }, [user?.email]));
+
   return (
     <ScrollView style={s.page} contentContainerStyle={{ padding: 20, paddingTop: 14 + insets.top, paddingBottom: 40 + insets.bottom }}>
       <View style={s.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}><Text style={s.back}>← Назад</Text></TouchableOpacity>
         <Text style={s.title}>Подготовка к IELTS</Text>
         <View style={{ width: 48 }} />
+      </View>
+
+      <View style={s.ctaCard}>
+        {lastResult ? (
+          <>
+            <Text style={s.ctaTitle}>Твой уровень: ~{Number(lastResult.estimatedBand).toFixed(1)} · цель {Number(lastResult.targetBand).toFixed(1)}</Text>
+            <Text style={s.p}>Пройдено {lastResult.takenAt}. Пройди тест ещё раз, чтобы обновить прогноз.</Text>
+          </>
+        ) : (
+          <>
+            <Text style={s.ctaTitle}>🎯 Не знаешь свой уровень?</Text>
+            <Text style={s.p}>Пройди тест на 5 минут — узнаешь примерный балл, поставишь цель и получишь план подготовки.</Text>
+          </>
+        )}
+        <TouchableOpacity style={[S.btn, S.btnPrimary, { marginTop: 12 }]} onPress={() => navigation.navigate('IeltsPretest', { token, user })}>
+          <Text style={S.btnText}>{lastResult ? 'Пройти тест заново →' : 'Пройти тест уровня →'}</Text>
+        </TouchableOpacity>
       </View>
 
       <Section title="Формат">
@@ -107,6 +137,8 @@ const s = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 },
   back: { color: C.muted, fontSize: 13, fontWeight: '600', width: 48 },
   title: { color: C.text, fontSize: 17, fontWeight: '800' },
+  ctaCard: { backgroundColor: withOpacity(C.primary, 0.1), borderWidth: 1, borderColor: C.primary, borderRadius: 14, padding: 16, marginBottom: 16 },
+  ctaTitle: { color: C.text, fontSize: 15, fontWeight: '800', marginBottom: 4 },
   section: { backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 14, padding: 16, marginBottom: 12 },
   sectionTitle: { color: C.text, fontSize: 15, fontWeight: '800', marginBottom: 10 },
   p: { color: C.muted, fontSize: 13, lineHeight: 19 },

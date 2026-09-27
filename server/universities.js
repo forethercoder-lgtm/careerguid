@@ -12,6 +12,25 @@ try {
   console.warn('⚠️  server/data/universities.json не найден — справочник вузов пуст');
 }
 
+// Доверенные домены для живого веб-поиска (Tavily) при подборе вузов — используются как
+// include_domains, чтобы ИИ опирался на официальные рейтинги/порталы, а не выдумывал вузы.
+const SEARCH_DOMAINS = [
+  // Мировые рейтинги
+  'topuniversities.com', 'qs.com', 'timeshighereducation.com', 'shanghairanking.com', 'usnews.com',
+  // Официальные государственные порталы для абитуриентов по странам
+  'study-in-germany.de', 'daad.de', 'campusfrance.org', 'studyinaustralia.gov.au', 'educanada.ca',
+  'studyinnl.org', 'studyinjapan.go.jp', 'studyinkorea.go.kr', 'campuschina.org', 'gov.uk',
+  'study-uk.britishcouncil.org', 'studyinsweden.se',
+  // Официальные системы подачи документов
+  'ucas.com', 'commonapp.org', 'uni-assist.de',
+  // Открытые данные и агрегаторы (уже частично используются в приложении)
+  'collegescorecard.ed.gov', 'studyportals.com', 'mastersportal.com', 'bachelorsportal.com', 'phdportal.com',
+  // Стипендии
+  'chevening.org', 'fulbrightonline.org', 'scholarshipportal.com',
+  // Отраслевые новости и справочники
+  'insidehighered.com', 'universityworldnews.com', 'internationalstudent.com', 'topmba.com', 'che.de',
+];
+
 const norm = s => (s || '').toString().trim().toLowerCase();
 
 // Синонимы названий стран (RU и частые варианты EN → как в датасете)
@@ -57,4 +76,4 @@ function asPromptContext(list, max = 60) {
   return list.slice(0, max).map(u => `${u.name} — ${u.country}`).join('\n');
 }
 
-module.exports = { ALL, byCountry, byCountries, search, asPromptContext, resolveCountry };
+module.exports = { ALL, byCountry, byCountries, search, asPromptContext, resolveCountry, SEARCH_DOMAINS };
