@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { API_BASE } from '../api';
+import { GOOGLE_CLIENT_ID } from '../googleAuthConfig';
 import './AuthScreen.css';
 
 export default function AuthScreen({ onAuth }) {
@@ -10,6 +11,40 @@ export default function AuthScreen({ onAuth }) {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const googleBtnRef = useRef(null);
+
+  const handleGoogleResponse = useCallback(async (response) => {
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/api/auth/google`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken: response.credential }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setError(data.error || 'Не удалось войти через Google'); setLoading(false); return; }
+      onAuth({ token: data.token, user: data.user });
+    } catch {
+      setError('Сервер недоступен. Проверь подключение.');
+      setLoading(false);
+    }
+  }, [onAuth]);
+
+  useEffect(() => {
+    if (!GOOGLE_CLIENT_ID) return;
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      if (!window.google || !googleBtnRef.current) return;
+      window.google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: handleGoogleResponse });
+      window.google.accounts.id.renderButton(googleBtnRef.current, { theme: 'outline', size: 'large', width: 360, text: 'continue_with' });
+    };
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, [handleGoogleResponse]);
 
   async function submit(e) {
     e.preventDefault();
@@ -80,6 +115,13 @@ export default function AuthScreen({ onAuth }) {
             {loading ? <><span className="spinner" /> Загрузка...</> : (tab === 'login' ? 'Войти →' : 'Создать аккаунт →')}
           </button>
         </form>
+
+        {GOOGLE_CLIENT_ID && (
+          <>
+            <div className="auth-divider"><span>или</span></div>
+            <div ref={googleBtnRef} className="google-btn-container" />
+          </>
+        )}
 
         <div className="auth-security">🔒 Пароль хранится в зашифрованном виде</div>
       </div>

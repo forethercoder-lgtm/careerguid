@@ -1,11 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
+const { OAuth2Client } = require('google-auth-library');
 const { findByEmail, findById, createUser, updateUser, deleteUser } = require('./db');
 
 const router = express.Router();
 const SECRET = process.env.JWT_SECRET;
+const googleClient = process.env.GOOGLE_CLIENT_ID ? new OAuth2Client(process.env.GOOGLE_CLIENT_ID) : null;
 
 function sign(userId) {
   return jwt.sign({ userId: String(userId) }, SECRET, { expiresIn: '30d' });
@@ -48,6 +51,29 @@ router.post('/login', async (req, res) => {
     res.json({ token: sign(user.id), user: safeUser(user) });
   } catch (err) {
     res.status(500).json({ error: 'Ошибка сервера: ' + err.message });
+  }
+});
+
+router.post('/google', async (req, res) => {
+  try {
+    if (!googleClient) return res.status(500).json({ error: 'Вход через Google временно недоступен' });
+    const { idToken } = req.body;
+    if (!idToken) return res.status(400).json({ error: 'Не передан токен Google' });
+
+    const ticket = await googleClient.verifyIdToken({ idToken, audience: process.env.GOOGLE_CLIENT_ID });
+    const payload = ticket.getPayload();
+    const email = (payload.email || '').toLowerCase().trim();
+    if (!email) return res.status(400).json({ error: 'Google не вернул email' });
+
+    let user = await findByEmail(email);
+    if (!user) {
+      const passwordHash = await bcrypt.hash(crypto.randomBytes(32).toString('hex'), 12);
+      user = await createUser({ name: payload.name || 'Студент', email, passwordHash });
+    }
+    res.json({ token: sign(user.id), user: safeUser(user) });
+  } catch (err) {
+    console.error('Google auth error:', err.message);
+    res.status(401).json({ error: 'Не удалось подтвердить вход через Google' });
   }
 });
 
